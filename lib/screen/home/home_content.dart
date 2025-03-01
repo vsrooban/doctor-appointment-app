@@ -1,5 +1,6 @@
 import 'package:doctor_appointment_app/screen/home/list_doctors_page.dart';
 import 'package:doctor_appointment_app/util/custom_theme.dart';
+import 'package:doctor_appointment_app/widget/home_screen_categories_widget.dart';
 import 'package:doctor_appointment_app/widget/home_screen_slider_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -99,6 +100,8 @@ class _HomeContentState extends State<HomeContent> {
         ),
         SizedBox(height: 20),
         HomeScreenSliderWidget(),
+        SizedBox(height: 20),
+        HomeScreenCategoriesWidget(),
       ],
     );
   }

@@ -42,10 +42,12 @@ class _HomeScreenSliderWidgetState extends State<HomeScreenSliderWidget> {
     required String secondSubtitle,
   }) {
     return Container(
+      alignment: Alignment.center,
       margin: EdgeInsets.symmetric(horizontal: 18),
       height: 163,
       width: 342,
       decoration: BoxDecoration(
+  
         borderRadius: BorderRadius.all(Radius.circular(15)),
       ),
       child: Stack(
@@ -64,7 +66,7 @@ class _HomeScreenSliderWidgetState extends State<HomeScreenSliderWidget> {
           // Overlay Text
           Positioned(
             left: 20,
-            bottom: 70,
+            bottom: 30,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -115,13 +117,13 @@ class _HomeScreenSliderWidgetState extends State<HomeScreenSliderWidget> {
         ImageSlideshow(
           indicatorRadius: 5,
           width: double.infinity,
-          height: 200,
+          height: 150,
           initialPage: 0,
           indicatorColor: Colors.white,
           indicatorBackgroundColor: Colors.grey,
           autoPlayInterval: 3000,
           isLoop: true,
-          indicatorBottomPadding: 45,
+          indicatorBottomPadding: 15,
           children: _slides,
         ),
       ],
