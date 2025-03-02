@@ -122,9 +122,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             carouselController: _carouselController,
             options: CarouselOptions(
               height: 750,
-              viewportFraction: 1.0,
+              viewportFraction: 1.0,autoPlayInterval: Duration(seconds: 2),
               enlargeCenterPage: false,
-              autoPlay: false,
+              autoPlay: true,
               onPageChanged: (index, reason) {
                 setState(() {
                   _currentSlide = index;

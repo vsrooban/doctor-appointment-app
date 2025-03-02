@@ -14,10 +14,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
   // List of screens to switch between
   final List<Widget> _screens = [
-    HomeContent(), // Home page as a stateful widget
-    MapPage(),  // Map page as a stateful widget
-    DatePage(), // Date page as a stateful widget
-    ProfilePage(), // Profile page as a stateful widget
+    HomeContent(), 
+    MapPage(), 
+    DatePage(), 
+    ProfilePage(), 
   ];
 
   void _onItemTapped(int index) {
@@ -29,8 +29,10 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: _screens[_selectedIndex], // Display the selected screen
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.white,
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
         selectedItemColor: Color(0xFF1C2A3A), // Active icon color
