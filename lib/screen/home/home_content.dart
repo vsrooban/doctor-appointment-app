@@ -2,6 +2,7 @@ import 'package:doctor_appointment_app/screen/home/list_doctors_page.dart';
 import 'package:doctor_appointment_app/util/custom_theme.dart';
 import 'package:doctor_appointment_app/widget/home_screen_categories_widget.dart';
 import 'package:doctor_appointment_app/widget/home_screen_slider_widget.dart';
+import 'package:doctor_appointment_app/widget/nearby_clinics_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomeContent extends StatefulWidget {
@@ -102,6 +103,9 @@ class _HomeContentState extends State<HomeContent> {
         HomeScreenSliderWidget(),
         SizedBox(height: 20),
         HomeScreenCategoriesWidget(),
+        SizedBox(height: 20),
+        NearbyClinicsWidget(),
+
       ],
     );
   }
