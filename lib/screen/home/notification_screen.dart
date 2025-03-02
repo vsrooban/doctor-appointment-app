@@ -1,0 +1,71 @@
+import 'package:doctor_appointment_app/util/custom_theme.dart';
+import 'package:flutter/material.dart';
+
+class NotificationScreen extends StatelessWidget {
+  const NotificationScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Notification", style: AppTypography.h2),
+        centerTitle: true,
+        backgroundColor: Colors.white,
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.black),
+          onPressed: () => Navigator.pop(context),
+        ),
+        actions: [
+          Container(
+            margin: const EdgeInsets.only(right: 16),
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+            decoration: BoxDecoration(
+              color: Colors.black,
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: const Text("1 New", style: AppTypography.bodySRegular),
+          ),
+        ],
+      ),
+      body: ListView(
+        padding: const EdgeInsets.all(16),
+        children: [
+          _buildSectionHeader("TODAY"),
+          _buildNotificationItem(Icons.event_available, "Appointment Success", "You have successfully booked your appointment with Dr. Emily Walker.", "1h", Colors.green),
+          _buildNotificationItem(Icons.cancel, "Appointment Cancelled", "You have successfully cancelled your appointment with Dr. David Patel.", "2h", Colors.red),
+          _buildNotificationItem(Icons.schedule, "Schedule Changed", "You have successfully changed your appointment with Dr. Jesica Turner.", "8h", Colors.grey),
+          _buildSectionHeader("YESTERDAY"),
+          _buildNotificationItem(Icons.event_available, "Appointment Success", "You have successfully booked your appointment with Dr. David Patel.", "1d", Colors.green),
+          _buildNotificationItem(Icons.schedule, "Schedule Changed", "You have successfully changed your appointment with Dr. Jesica Turner.", "8h", Colors.grey),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildSectionHeader(String title) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 10),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(title, style: AppTypography.h3.copyWith(color: Colors.black54)),
+          Text("Mark all as read", style: AppTypography.bodySMedium.copyWith(color: Colors.grey)),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildNotificationItem(IconData icon, String title, String subtitle, String time, Color iconColor) {
+    return ListTile(
+      leading: CircleAvatar(
+        backgroundColor: iconColor.withOpacity(0.2),
+        child: Icon(icon, color: iconColor),
+      ),
+      title: Text(title, style: AppTypography.bodySBold),
+      subtitle: Text(subtitle, style: AppTypography.bodySRegular),
+      trailing: Text(time, style: AppTypography.bodyXSRegular.copyWith(color: Colors.grey)),
+      contentPadding: const EdgeInsets.symmetric(vertical: 5),
+    );
+  }
+}

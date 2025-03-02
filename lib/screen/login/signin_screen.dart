@@ -10,8 +10,10 @@ class SigninPage extends StatefulWidget {
 }
 
 class _SigninPageState extends State<SigninPage> {
-  final TextEditingController emailController = TextEditingController(text: "test@boodskap.io");
-  final TextEditingController passwordController = TextEditingController(text: "welcome123");
+  final TextEditingController emailController =
+      TextEditingController(text: "test@boodskap.io");
+  final TextEditingController passwordController =
+      TextEditingController(text: "welcome123");
   final _formKey = GlobalKey<FormState>();
   bool _obscureText = true;
 
@@ -39,6 +41,7 @@ class _SigninPageState extends State<SigninPage> {
           key: _formKey, // Associate form key
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Image.asset("assets/images/logo-hospital.png",
                   width: screenWidth * 0.15, height: screenWidth * 0.18),
@@ -46,11 +49,16 @@ class _SigninPageState extends State<SigninPage> {
               Text("HealthPal", style: AppTypography.h2),
               SizedBox(height: 20),
               Text("Hi, Welcome Back!", style: AppTypography.h1),
-              Text("Hope you're doing fine.", style: AppTypography.bodyLG.copyWith(color: Colors.grey)),
+              Text("Hope you're doing fine.",
+                  style: AppTypography.bodyLG.copyWith(color: Colors.grey)),
               SizedBox(height: 35),
-              _buildTextField(emailController, "Your Email", Icons.email, screenWidth, isEmail: true),
+              _buildTextField(
+                  emailController, "Your Email", Icons.email, screenWidth,
+                  isEmail: true),
               SizedBox(height: 15),
-              _buildTextField(passwordController, "Password", Icons.lock, screenWidth, isPassword: true),
+              _buildTextField(
+                  passwordController, "Password", Icons.lock, screenWidth,
+                  isPassword: true),
               SizedBox(height: 25),
               SizedBox(
                 height: 50,
@@ -58,26 +66,40 @@ class _SigninPageState extends State<SigninPage> {
                 child: ElevatedButton(
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
-                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => HomeScreen()));
                     } else {
                       _showInvalidCredentialsDialog(context);
                     }
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.black,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(25)),
                   ),
-                  child: Text("SIGN IN", style: AppTypography.bodySBold.copyWith(color: Colors.white)),
+                  child: Text("SIGN IN",
+                      style: AppTypography.bodySBold
+                          .copyWith(color: Colors.white)),
                 ),
               ),
               SizedBox(height: 30),
-              Text("or", style: AppTypography.bodyLG.copyWith(color: Colors.grey)),
+              Text("or",
+                  style: AppTypography.bodyLG.copyWith(color: Colors.grey)),
               SizedBox(height: 30),
-              _buildSocialButton("Continue with Google", "assets/images/google.png", continueWithGoogle, screenWidth),
+              _buildSocialButton("Continue with Google",
+                  "assets/images/google.png", continueWithGoogle, screenWidth),
               SizedBox(height: 10),
-              _buildSocialButton("Continue with Facebook", "assets/images/facebook.png", continueWithFacebook, screenWidth),
+              _buildSocialButton(
+                  "Continue with Facebook",
+                  "assets/images/facebook.png",
+                  continueWithFacebook,
+                  screenWidth),
               SizedBox(height: 25),
-              Text("Forgot Password", style: AppTypography.bodySSemiBold.copyWith(color: Colors.blue)),
+              Text("Forgot Password",
+                  style: AppTypography.bodySSemiBold
+                      .copyWith(color: Colors.blue, fontSize: 18)),
               SizedBox(height: 20),
               GestureDetector(
                 onTap: signUp,
@@ -87,8 +109,9 @@ class _SigninPageState extends State<SigninPage> {
                     style: AppTypography.bodyLG.copyWith(color: Colors.grey),
                     children: [
                       TextSpan(
-                        text: "Sign Up",
-                        style: AppTypography.bodySBold.copyWith(color: Colors.blue),
+                        text: "  Sign Up",
+                        style: AppTypography.bodySBold
+                            .copyWith(color: Colors.blue, fontSize: 18),
                       ),
                     ],
                   ),
@@ -101,59 +124,79 @@ class _SigninPageState extends State<SigninPage> {
     );
   }
 
-  Widget _buildTextField(
-      TextEditingController controller, String hint, IconData icon, double screenWidth,
+  Widget _buildTextField(TextEditingController controller, String hint,
+      IconData icon, double screenWidth,
       {bool isPassword = false, bool isEmail = false}) {
     return SizedBox(
       width: screenWidth * 0.8,
-      height: 60,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 8.0),
-        child: TextFormField(
-          controller: controller,
-          obscureText: isPassword ? _obscureText : false,
-          keyboardType: isEmail ? TextInputType.emailAddress : TextInputType.text,
-          cursorColor: Colors.black,
-          validator: (value) {
-            if (value == null || value.isEmpty) {
-              return "This field cannot be empty";
-            }
-            if (isEmail && !RegExp(r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$").hasMatch(value)) {
-              return "Enter a valid email";
-            }
-            if (isPassword && value.length < 6) {
-              return "Password must be at least 6 characters";
-            }
-            return null;
-          },
-          decoration: InputDecoration(
-            prefixIcon: Icon(icon, size: screenWidth * 0.05),
-            suffixIcon: isPassword
-                ? IconButton(
-                    icon: Icon(_obscureText ? Icons.visibility_off : Icons.visibility),
-                    onPressed: () {
-                      setState(() {
-                        _obscureText = !_obscureText;
-                      });
-                    },
-                  )
-                : null,
-            hintText: hint,
-            hintStyle: AppTypography.bodySRegular,
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
-            filled: true,
-            fillColor: Colors.grey[200],
-            focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),
-              borderSide: BorderSide(color: Colors.black),
+      height: 70,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        // crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          TextFormField(
+            controller: controller,
+            obscureText: isPassword ? _obscureText : false,
+            keyboardType:
+                isEmail ? TextInputType.emailAddress : TextInputType.text,
+            cursorColor: Colors.black,
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return "This field cannot be empty";
+              }
+              if (isEmail &&
+                  !RegExp(r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$")
+                      .hasMatch(value)) {
+                return "Enter a valid email";
+              }
+              if (isPassword && value.length < 6) {
+                return "Password must be at least 6 characters";
+              }
+              if (value.isEmpty) {
+                return "This field cannot be empty";
+              }
+              if (isEmail && value != "test@boodskap.io") {
+                return "Invalid email";
+              }
+              if (isPassword && value != "welcome123") {
+                return "Invalid password";
+              }
+              return null;
+            },
+            decoration: InputDecoration(
+              prefixIcon: Icon(icon, size: screenWidth * 0.05),
+              suffixIcon: isPassword
+                  ? IconButton(
+                      icon: Icon(_obscureText
+                          ? Icons.visibility_off
+                          : Icons.visibility),
+                      onPressed: () {
+                        setState(() {
+                          _obscureText = !_obscureText;
+                        });
+                      },
+                    )
+                  : null,
+              hintText: hint,
+              hintStyle: AppTypography.bodySRegular,
+              border:
+                  OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+              filled: true,
+              fillColor: Colors.grey[200],
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10),
+                borderSide: BorderSide(color: Colors.black),
+              ),
             ),
           ),
-        ),
+          SizedBox(height: 0), // Space for error message to avoid shrinking
+        ],
       ),
     );
   }
 
-  Widget _buildSocialButton(String text, String asset, Function onPressed, double screenWidth) {
+  Widget _buildSocialButton(
+      String text, String asset, Function onPressed, double screenWidth) {
     return SizedBox(
       width: screenWidth * 0.75,
       height: 45,
@@ -168,9 +211,11 @@ class _SigninPageState extends State<SigninPage> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(asset, width: screenWidth * 0.06, height: screenWidth * 0.06),
+            Image.asset(asset,
+                width: screenWidth * 0.06, height: screenWidth * 0.06),
             SizedBox(width: 10),
-            Text(text, style: AppTypography.bodyLG.copyWith(color: Colors.black)),
+            Text(text,
+                style: AppTypography.bodyXL.copyWith(color: Colors.black)),
           ],
         ),
       ),
@@ -183,8 +228,10 @@ void _showInvalidCredentialsDialog(BuildContext context) {
     context: context,
     builder: (BuildContext context) {
       return AlertDialog(
-        title: Text("Login Failed", style: TextStyle(fontWeight: FontWeight.bold)),
-        content: Text("Invalid email or password. Please use the default credentials."),
+        title:
+            Text("Login Failed", style: TextStyle(fontWeight: FontWeight.bold)),
+        content: Text(
+            "Invalid email or password. Please use the default credentials."),
         actions: [
           TextButton(
             onPressed: () {
