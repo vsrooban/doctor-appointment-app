@@ -3,12 +3,45 @@ import 'package:doctor_appointment_app/widget/favourite_button.dart';
 import 'package:flutter/material.dart';
 
 class DoctorsListCard extends StatefulWidget {
-  const DoctorsListCard({
+   DoctorsListCard({
     super.key,
-    required this.doctors,
   });
 
-  final List<Map<String, String>> doctors;
+  
+  final List<Map<String, String>> doctors = [
+    {
+      "name": "Dr. David Patel",
+      "specialty": "Cardiologist",
+      "hospital": "Cardiology Center, USA",
+      "rating": "5.0",
+      "reviews": "1,872 Reviews",
+      "image": "assets/images/doctor_4.png",
+    },
+    {
+      "name": "Dr. Jessica Turner",
+      "specialty": "Gynecologist",
+      "hospital": "Women's Clinic, Seattle, USA",
+      "rating": "4.9",
+      "reviews": "127 Reviews",
+      "image": "assets/images/doctor_2.png",
+    },
+    {
+      "name": "Dr. Michael Johnson",
+      "specialty": "Orthopedic Surgery",
+      "hospital": "Maple Associates, NY, USA",
+      "rating": "4.7",
+      "reviews": "5,223 Reviews",
+      "image": "assets/images/doctor_3.png",
+    },
+    {
+      "name": "Dr. Emily Walker",
+      "specialty": "Pediatrics",
+      "hospital": "Serenity Pediatrics's Clinic",
+      "rating": "5",
+      "reviews": "405 Reviews",
+      "image": "assets/images/doctor_1.png",
+    },
+  ];
 
   @override
   State<DoctorsListCard> createState() => _DoctorsListCardState();

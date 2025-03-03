@@ -33,123 +33,120 @@ class _SigninPageState extends State<SigninPage> {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
 
-    return SafeArea(
-      bottom: false,
-      child: Scaffold(
-        backgroundColor: Colors.white,
-        body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.08),
-          child: Form(
-            key: _formKey,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Image.asset("assets/images/logo-hospital.png",
-                    width: screenWidth * 0.15, height: screenWidth * 0.18),
-                SizedBox(height: 10),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text("Health",
-                        style: AppTypography.h1.copyWith(color: Colors.grey)),
-                    Text("Pal", style: AppTypography.h1),
-                  ],
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.08),
+        child: Form(
+          key: _formKey,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Image.asset("assets/images/logo-hospital.png",
+                  width: screenWidth * 0.15, height: screenWidth * 0.18),
+              SizedBox(height: 10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("Health",
+                      style: AppTypography.h1.copyWith(color: Colors.grey)),
+                  Text("Pal", style: AppTypography.h1),
+                ],
+              ),
+              SizedBox(height: 20),
+              Text("Hi, Welcome Back!", style: AppTypography.h1),
+              SizedBox(height: 5),
+              Text("Hope you're doing fine.",
+                  style:
+                      AppTypography.bodySBold.copyWith(color: Colors.grey)),
+              SizedBox(height: 35),
+              _buildTextField(
+                  emailController, "Your Email", Icons.email, screenWidth,
+                  isEmail: true),
+              SizedBox(height: 15),
+              _buildTextField(
+                  passwordController, "Password", Icons.lock, screenWidth,
+                  isPassword: true),
+              SizedBox(height: 25),
+              SizedBox(
+                height: 50,
+                width: screenWidth * 0.8,
+                child: ElevatedButton(
+                  onPressed: () {
+                    if (_formKey.currentState!.validate()) {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => HomeScreen()));
+                    } else {
+                      _showInvalidCredentialsDialog(context);
+                    }
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.black,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(25)),
+                  ),
+                  child: Text("Sign In",
+                      style: AppTypography.bodySBold
+                          .copyWith(color: Colors.white)),
                 ),
-                SizedBox(height: 20),
-                Text("Hi, Welcome Back!", style: AppTypography.h1),
-                SizedBox(height: 5),
-                Text("Hope you're doing fine.",
-                    style:
-                        AppTypography.bodySBold.copyWith(color: Colors.grey)),
-                SizedBox(height: 35),
-                _buildTextField(
-                    emailController, "Your Email", Icons.email, screenWidth,
-                    isEmail: true),
-                SizedBox(height: 15),
-                _buildTextField(
-                    passwordController, "Password", Icons.lock, screenWidth,
-                    isPassword: true),
-                SizedBox(height: 25),
-                SizedBox(
-                  height: 50,
-                  width: screenWidth * 0.8,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      if (_formKey.currentState!.validate()) {
-                        Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => HomeScreen()));
-                      } else {
-                        _showInvalidCredentialsDialog(context);
-                      }
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.black,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(25)),
-                    ),
-                    child: Text("Sign In",
+              ),
+              SizedBox(height: 30),
+              Row(
+                children: [
+                  Expanded(
+                      child: Divider(
+                    thickness: .5,
+                    color: Colors.grey,
+                  )),
+                  SizedBox(width: 10),
+                  Text("or",
+                      style:
+                          AppTypography.bodyLG.copyWith(color: Colors.grey)),
+                  SizedBox(width: 10),
+                  Expanded(
+                      child: Divider(
+                    thickness: .5,
+                    color: Colors.grey,
+                  )),
+                ],
+              ),
+              SizedBox(height: 30),
+              _buildSocialButton(
+                  "Sign In with Google",
+                  "assets/images/google.png",
+                  continueWithGoogle,
+                  screenWidth),
+              SizedBox(height: 10),
+              _buildSocialButton(
+                  "Sign In with Facebook",
+                  "assets/images/facebook.png",
+                  continueWithFacebook,
+                  screenWidth),
+              SizedBox(height: 25),
+              Text("Forgot Password",
+                  style: AppTypography.bodySSemiBold
+                      .copyWith(color: Colors.blue, fontSize: 18)),
+              SizedBox(height: 20),
+              GestureDetector(
+                onTap: signUp,
+                child: Text.rich(
+                  TextSpan(
+                    text: "Don't have an account yet? ",
+                    style: AppTypography.bodyLG.copyWith(color: Colors.grey),
+                    children: [
+                      TextSpan(
+                        text: "  Sign Up",
                         style: AppTypography.bodySBold
-                            .copyWith(color: Colors.white)),
+                            .copyWith(color: Colors.blue, fontSize: 18),
+                      ),
+                    ],
                   ),
                 ),
-                SizedBox(height: 30),
-                Row(
-                  children: [
-                    Expanded(
-                        child: Divider(
-                      thickness: .5,
-                      color: Colors.grey,
-                    )),
-                    SizedBox(width: 10),
-                    Text("or",
-                        style:
-                            AppTypography.bodyLG.copyWith(color: Colors.grey)),
-                    SizedBox(width: 10),
-                    Expanded(
-                        child: Divider(
-                      thickness: .5,
-                      color: Colors.grey,
-                    )),
-                  ],
-                ),
-                SizedBox(height: 30),
-                _buildSocialButton(
-                    "Sign In with Google",
-                    "assets/images/google.png",
-                    continueWithGoogle,
-                    screenWidth),
-                SizedBox(height: 10),
-                _buildSocialButton(
-                    "Sign In with Facebook",
-                    "assets/images/facebook.png",
-                    continueWithFacebook,
-                    screenWidth),
-                SizedBox(height: 25),
-                Text("Forgot Password",
-                    style: AppTypography.bodySSemiBold
-                        .copyWith(color: Colors.blue, fontSize: 18)),
-                SizedBox(height: 20),
-                GestureDetector(
-                  onTap: signUp,
-                  child: Text.rich(
-                    TextSpan(
-                      text: "Don't have an account yet? ",
-                      style: AppTypography.bodyLG.copyWith(color: Colors.grey),
-                      children: [
-                        TextSpan(
-                          text: "  Sign Up",
-                          style: AppTypography.bodySBold
-                              .copyWith(color: Colors.blue, fontSize: 18),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
