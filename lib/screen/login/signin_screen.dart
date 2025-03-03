@@ -26,7 +26,7 @@ class _SigninPageState extends State<SigninPage> {
   }
 
   void signUp() {
-    // Navigate to sign-up screen
+    // Navigate to sign-up scRreen
   }
 
   @override
@@ -34,12 +34,13 @@ class _SigninPageState extends State<SigninPage> {
     double screenWidth = MediaQuery.of(context).size.width;
 
     return SafeArea(
+      bottom: false,
       child: Scaffold(
         backgroundColor: Colors.white,
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.08),
           child: Form(
-            key: _formKey, 
+            key: _formKey,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -47,9 +48,11 @@ class _SigninPageState extends State<SigninPage> {
                 Image.asset("assets/images/logo-hospital.png",
                     width: screenWidth * 0.15, height: screenWidth * 0.18),
                 SizedBox(height: 10),
-                Row(mainAxisAlignment: MainAxisAlignment.center,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("Health", style: AppTypography.h1.copyWith(color: Colors.grey)),
+                    Text("Health",
+                        style: AppTypography.h1.copyWith(color: Colors.grey)),
                     Text("Pal", style: AppTypography.h1),
                   ],
                 ),
@@ -57,7 +60,8 @@ class _SigninPageState extends State<SigninPage> {
                 Text("Hi, Welcome Back!", style: AppTypography.h1),
                 SizedBox(height: 5),
                 Text("Hope you're doing fine.",
-                    style: AppTypography.bodySBold.copyWith(color: Colors.grey)),
+                    style:
+                        AppTypography.bodySBold.copyWith(color: Colors.grey)),
                 SizedBox(height: 35),
                 _buildTextField(
                     emailController, "Your Email", Icons.email, screenWidth,
@@ -206,8 +210,9 @@ class _SigninPageState extends State<SigninPage> {
                   : null,
               hintText: hint,
               hintStyle: AppTypography.bodySRegular,
-              border:
-                  OutlineInputBorder(borderRadius: BorderRadius.circular(10),borderSide: BorderSide(width: 0.1,color: Colors.grey)),
+              border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  borderSide: BorderSide(width: 0.1, color: Colors.grey)),
               filled: true,
               fillColor: Color(0xfff7f9fa),
               focusedBorder: OutlineInputBorder(
@@ -233,7 +238,7 @@ class _SigninPageState extends State<SigninPage> {
           backgroundColor: Colors.white,
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8),
-              side: BorderSide(color: Colors.grey,width: 0.1)),
+              side: BorderSide(color: Colors.grey, width: 0.1)),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -242,7 +247,8 @@ class _SigninPageState extends State<SigninPage> {
                 width: screenWidth * 0.05, height: screenWidth * 0.05),
             SizedBox(width: 10),
             Text(text,
-                style: AppTypography.bodyXSMedium.copyWith(color: Colors.black)),
+                style:
+                    AppTypography.bodyXSMedium.copyWith(color: Colors.black)),
           ],
         ),
       ),

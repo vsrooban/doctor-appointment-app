@@ -68,8 +68,8 @@ class CategoryItem extends StatelessWidget {
       children: [
         Container(
           alignment: Alignment.center,
-          height: 62,
-          width: 62,
+          height: 50,
+          width: 50,
           decoration: BoxDecoration(
             color: bgColor,
             borderRadius: BorderRadius.circular(8),
