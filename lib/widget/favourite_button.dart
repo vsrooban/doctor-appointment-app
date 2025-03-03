@@ -19,9 +19,9 @@ class _FavoriteButtonState extends State<FavoriteButton> {
         });
       },
       child: Icon(
-        isFavorite ? Icons.favorite : Icons.favorite_border,
+        isFavorite ? Icons.favorite_border : Icons.favorite,
         size: 16,
-        color: isFavorite ? Colors.red : Colors.grey,
+        color: isFavorite ? Colors.grey : Colors.red,
       ),
     );
   }
