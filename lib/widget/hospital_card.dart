@@ -1,3 +1,4 @@
+import 'package:doctor_appointment_app/widget/favourite_button.dart';
 import 'package:flutter/material.dart';
 import 'package:doctor_appointment_app/util/custom_theme.dart';
 
@@ -103,18 +104,7 @@ class _ClinicCardState extends State<ClinicCard> {
               Positioned(
                 top: 10,
                 right: 10,
-                child: GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      isFavorite = !isFavorite;
-                    });
-                  },
-                  child: Icon(
-                    isFavorite ? Icons.favorite : Icons.favorite_border,
-                    color: isFavorite ? Colors.red : Colors.white,
-                    size: 24,
-                  ),
-                ),
+                child: FavoriteButton(),
               ),
             ],
           ),
