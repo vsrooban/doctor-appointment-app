@@ -3,7 +3,7 @@ import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 
 class HomeScreenSliderWidget extends StatefulWidget {
   @override
-  _HomeScreenSliderWidgetState createState() => _HomeScreenSliderWidgetState();
+  _HomeScreenSliderWidgetState createState() =>   _HomeScreenSliderWidgetState();
 }
 
 class _HomeScreenSliderWidgetState extends State<HomeScreenSliderWidget> {
@@ -43,9 +43,9 @@ class _HomeScreenSliderWidgetState extends State<HomeScreenSliderWidget> {
   }) {
     return Container(
       alignment: Alignment.center,
-      margin: EdgeInsets.symmetric(horizontal: 18),
+      margin: EdgeInsets.symmetric(horizontal: 20),
       height: 163,
-      width: 342,
+      width: 382,
       decoration: BoxDecoration(
   
         borderRadius: BorderRadius.all(Radius.circular(15)),
@@ -60,7 +60,7 @@ class _HomeScreenSliderWidgetState extends State<HomeScreenSliderWidget> {
               imagePath,
               fit: BoxFit.cover,
               height: 163,
-              width: 342,
+              width: 382,
             ),
           ),
           // Overlay Text

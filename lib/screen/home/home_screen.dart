@@ -10,14 +10,30 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  Widget _buildNavItem(IconData icon, int index) {
+    bool isSelected = _selectedIndex == index;
+    return Container(
+      padding: EdgeInsets.all(10),
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: isSelected ? Color.fromARGB(255, 243, 244, 244) : Colors.transparent,
+      ),
+      child: Icon(
+        icon,
+        size: 30,
+        color: isSelected ? const Color.fromARGB(255, 86, 85, 85) : Colors.grey,
+      ),
+    );
+  }
+
   int _selectedIndex = 0; // Track the selected tab index
 
   // List of screens to switch between
   final List<Widget> _screens = [
-    HomeContent(), 
-    MapPage(), 
-    DatePage(), 
-    ProfilePage(), 
+    HomeContent(),
+    MapPage(),
+    DatePage(),
+    ProfilePage(),
   ];
 
   void _onItemTapped(int index) {
@@ -30,30 +46,30 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: _screens[_selectedIndex], // Display the selected screen
+      body: _screens[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.white,
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
-        selectedItemColor: Color(0xFF1C2A3A), // Active icon color
-        unselectedItemColor: Colors.grey, // Inactive icon color
-        showUnselectedLabels: false,
-        type: BottomNavigationBarType.fixed, // Prevent shifting effect
-        items: const [
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.grey,
+        showUnselectedLabels: true,
+        type: BottomNavigationBarType.fixed,
+        items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home, size: 30),
+            icon: _buildNavItem(Icons.home, 0),
             label: "",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.location_on, size: 30),
+            icon: _buildNavItem(Icons.location_on, 1),
             label: "",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_month, size: 30),
+            icon: _buildNavItem(Icons.calendar_month, 2),
             label: "",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person, size: 30),
+            icon: _buildNavItem(Icons.person, 3),
             label: "",
           ),
         ],
@@ -61,10 +77,6 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-
-
-
-
 
 // Map Page as a StatefulWidget
 class MapPage extends StatefulWidget {
