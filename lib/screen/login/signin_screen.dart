@@ -132,7 +132,6 @@ class _SigninPageState extends State<SigninPage> {
       height: 70,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        // crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           TextFormField(
             controller: controller,
@@ -189,7 +188,7 @@ class _SigninPageState extends State<SigninPage> {
               ),
             ),
           ),
-          SizedBox(height: 0), // Space for error message to avoid shrinking
+          SizedBox(height: 0), 
         ],
       ),
     );
