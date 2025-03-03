@@ -230,7 +230,7 @@ void _showInvalidCredentialsDialog(BuildContext context) {
         title:
             Text("Login Failed", style: TextStyle(fontWeight: FontWeight.bold)),
         content: Text(
-            "Invalid email or password. Please use the default credentials."),
+            "Invalid email or password."),
         actions: [
           TextButton(
             onPressed: () {

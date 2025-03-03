@@ -1,4 +1,5 @@
 import 'package:doctor_appointment_app/screen/home/list_doctors_page.dart';
+import 'package:doctor_appointment_app/screen/home/notification_screen.dart';
 import 'package:doctor_appointment_app/util/custom_theme.dart';
 import 'package:doctor_appointment_app/widget/home_screen_categories_widget.dart';
 import 'package:doctor_appointment_app/widget/home_screen_slider_widget.dart';
@@ -47,7 +48,9 @@ class _HomeContentState extends State<HomeContent> {
                   children: [
                     InkWell(
                       hoverColor: Colors.transparent,
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>NotificationScreen()));
+                      },
                       child: const Icon(
                         size: 24,
                         Icons.notifications,

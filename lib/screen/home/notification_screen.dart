@@ -1,3 +1,5 @@
+import 'package:doctor_appointment_app/screen/home/home_content.dart';
+import 'package:doctor_appointment_app/screen/home/home_screen.dart';
 import 'package:doctor_appointment_app/util/custom_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +16,9 @@ class NotificationScreen extends StatelessWidget {
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.black),
-          onPressed: () => Navigator.pop(context),
+          onPressed: () {
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+          },
         ),
         actions: [
           Container(
@@ -24,11 +28,12 @@ class NotificationScreen extends StatelessWidget {
               color: Colors.black,
               borderRadius: BorderRadius.circular(20),
             ),
-            child: const Text("1 New", style: AppTypography.bodySRegular),
+            child:  Text("1 New", style: AppTypography.bodySRegular.copyWith(color: Colors.white)),
           ),
         ],
       ),
-      body: ListView(
+      backgroundColor: Colors.white,
+      body: ListView(      
         padding: const EdgeInsets.all(16),
         children: [
           _buildSectionHeader("TODAY"),
