@@ -103,7 +103,7 @@ class _AllDoctorsPageState extends State<AllDoctorsPage> {
                       showCheckmark: false,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20)),
-                      label: Text(categories[index], style: AppTypography.bodySRegular),
+                      label: Text(categories[index], style: AppTypography.bodySBold),
                       selected: selectedCategoryIndex == index,
                       onSelected: (selected) {
                         setState(() {
@@ -144,6 +144,7 @@ class _AllDoctorsPageState extends State<AllDoctorsPage> {
                 itemBuilder: (context, index) {
                   final doctor = doctors[index];
                   return Card(
+                    color: Colors.white,
                     margin: const EdgeInsets.symmetric(vertical: 8.0),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
