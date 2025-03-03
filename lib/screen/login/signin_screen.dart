@@ -33,91 +33,119 @@ class _SigninPageState extends State<SigninPage> {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
 
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.08),
-        child: Form(
-          key: _formKey, // Associate form key
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Image.asset("assets/images/logo-hospital.png",
-                  width: screenWidth * 0.15, height: screenWidth * 0.18),
-              SizedBox(height: 10),
-              Text("HealthPal", style: AppTypography.h2),
-              SizedBox(height: 20),
-              Text("Hi, Welcome Back!", style: AppTypography.h1),
-              Text("Hope you're doing fine.",
-                  style: AppTypography.bodyLG.copyWith(color: Colors.grey)),
-              SizedBox(height: 35),
-              _buildTextField(
-                  emailController, "Your Email", Icons.email, screenWidth,
-                  isEmail: true),
-              SizedBox(height: 15),
-              _buildTextField(
-                  passwordController, "Password", Icons.lock, screenWidth,
-                  isPassword: true),
-              SizedBox(height: 25),
-              SizedBox(
-                height: 50,
-                width: screenWidth * 0.6,
-                child: ElevatedButton(
-                  onPressed: () {
-                    if (_formKey.currentState!.validate()) {
-                      Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => HomeScreen()));
-                    } else {
-                      _showInvalidCredentialsDialog(context);
-                    }
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.black,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(25)),
-                  ),
-                  child: Text("SIGN IN",
-                      style: AppTypography.bodySBold
-                          .copyWith(color: Colors.white)),
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        body: Padding(
+          padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.08),
+          child: Form(
+            key: _formKey, 
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Image.asset("assets/images/logo-hospital.png",
+                    width: screenWidth * 0.15, height: screenWidth * 0.18),
+                SizedBox(height: 10),
+                Row(mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("Health", style: AppTypography.h1.copyWith(color: Colors.grey)),
+                    Text("Pal", style: AppTypography.h1),
+                  ],
                 ),
-              ),
-              SizedBox(height: 30),
-              Text("or",
-                  style: AppTypography.bodyLG.copyWith(color: Colors.grey)),
-              SizedBox(height: 30),
-              _buildSocialButton("Continue with Google",
-                  "assets/images/google.png", continueWithGoogle, screenWidth),
-              SizedBox(height: 10),
-              _buildSocialButton(
-                  "Continue with Facebook",
-                  "assets/images/facebook.png",
-                  continueWithFacebook,
-                  screenWidth),
-              SizedBox(height: 25),
-              Text("Forgot Password",
-                  style: AppTypography.bodySSemiBold
-                      .copyWith(color: Colors.blue, fontSize: 18)),
-              SizedBox(height: 20),
-              GestureDetector(
-                onTap: signUp,
-                child: Text.rich(
-                  TextSpan(
-                    text: "Don't have an account yet? ",
-                    style: AppTypography.bodyLG.copyWith(color: Colors.grey),
-                    children: [
-                      TextSpan(
-                        text: "  Sign Up",
+                SizedBox(height: 20),
+                Text("Hi, Welcome Back!", style: AppTypography.h1),
+                SizedBox(height: 5),
+                Text("Hope you're doing fine.",
+                    style: AppTypography.bodySBold.copyWith(color: Colors.grey)),
+                SizedBox(height: 35),
+                _buildTextField(
+                    emailController, "Your Email", Icons.email, screenWidth,
+                    isEmail: true),
+                SizedBox(height: 15),
+                _buildTextField(
+                    passwordController, "Password", Icons.lock, screenWidth,
+                    isPassword: true),
+                SizedBox(height: 25),
+                SizedBox(
+                  height: 50,
+                  width: screenWidth * 0.8,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) {
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HomeScreen()));
+                      } else {
+                        _showInvalidCredentialsDialog(context);
+                      }
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.black,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(25)),
+                    ),
+                    child: Text("Sign In",
                         style: AppTypography.bodySBold
-                            .copyWith(color: Colors.blue, fontSize: 18),
-                      ),
-                    ],
+                            .copyWith(color: Colors.white)),
                   ),
                 ),
-              ),
-            ],
+                SizedBox(height: 30),
+                Row(
+                  children: [
+                    Expanded(
+                        child: Divider(
+                      thickness: .5,
+                      color: Colors.grey,
+                    )),
+                    SizedBox(width: 10),
+                    Text("or",
+                        style:
+                            AppTypography.bodyLG.copyWith(color: Colors.grey)),
+                    SizedBox(width: 10),
+                    Expanded(
+                        child: Divider(
+                      thickness: .5,
+                      color: Colors.grey,
+                    )),
+                  ],
+                ),
+                SizedBox(height: 30),
+                _buildSocialButton(
+                    "Sign In with Google",
+                    "assets/images/google.png",
+                    continueWithGoogle,
+                    screenWidth),
+                SizedBox(height: 10),
+                _buildSocialButton(
+                    "Sign In with Facebook",
+                    "assets/images/facebook.png",
+                    continueWithFacebook,
+                    screenWidth),
+                SizedBox(height: 25),
+                Text("Forgot Password",
+                    style: AppTypography.bodySSemiBold
+                        .copyWith(color: Colors.blue, fontSize: 18)),
+                SizedBox(height: 20),
+                GestureDetector(
+                  onTap: signUp,
+                  child: Text.rich(
+                    TextSpan(
+                      text: "Don't have an account yet? ",
+                      style: AppTypography.bodyLG.copyWith(color: Colors.grey),
+                      children: [
+                        TextSpan(
+                          text: "  Sign Up",
+                          style: AppTypography.bodySBold
+                              .copyWith(color: Colors.blue, fontSize: 18),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -138,7 +166,7 @@ class _SigninPageState extends State<SigninPage> {
             obscureText: isPassword ? _obscureText : false,
             keyboardType:
                 isEmail ? TextInputType.emailAddress : TextInputType.text,
-            cursorColor: Colors.black,
+            cursorColor: Colors.grey,
             validator: (value) {
               if (value == null || value.isEmpty) {
                 return "This field cannot be empty";
@@ -179,16 +207,16 @@ class _SigninPageState extends State<SigninPage> {
               hintText: hint,
               hintStyle: AppTypography.bodySRegular,
               border:
-                  OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                  OutlineInputBorder(borderRadius: BorderRadius.circular(10),borderSide: BorderSide(width: 0.1,color: Colors.grey)),
               filled: true,
-              fillColor: Colors.grey[200],
+              fillColor: Color(0xfff7f9fa),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
-                borderSide: BorderSide(color: Colors.black),
+                borderSide: BorderSide(color: Colors.grey),
               ),
             ),
           ),
-          SizedBox(height: 0), 
+          SizedBox(height: 0),
         ],
       ),
     );
@@ -197,7 +225,7 @@ class _SigninPageState extends State<SigninPage> {
   Widget _buildSocialButton(
       String text, String asset, Function onPressed, double screenWidth) {
     return SizedBox(
-      width: screenWidth * 0.75,
+      width: screenWidth * 0.8,
       height: 45,
       child: ElevatedButton(
         onPressed: () => onPressed(),
@@ -205,16 +233,16 @@ class _SigninPageState extends State<SigninPage> {
           backgroundColor: Colors.white,
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8),
-              side: BorderSide(color: Colors.grey)),
+              side: BorderSide(color: Colors.grey,width: 0.1)),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(asset,
-                width: screenWidth * 0.06, height: screenWidth * 0.06),
+                width: screenWidth * 0.05, height: screenWidth * 0.05),
             SizedBox(width: 10),
             Text(text,
-                style: AppTypography.bodyXL.copyWith(color: Colors.black)),
+                style: AppTypography.bodyXSMedium.copyWith(color: Colors.black)),
           ],
         ),
       ),
@@ -229,8 +257,7 @@ void _showInvalidCredentialsDialog(BuildContext context) {
       return AlertDialog(
         title:
             Text("Login Failed", style: TextStyle(fontWeight: FontWeight.bold)),
-        content: Text(
-            "Invalid email or password."),
+        content: Text("Invalid email or password."),
         actions: [
           TextButton(
             onPressed: () {
