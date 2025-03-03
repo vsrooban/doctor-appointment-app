@@ -1,3 +1,4 @@
+import 'package:doctor_appointment_app/screen/home/doctor_details_screen.dart';
 import 'package:doctor_appointment_app/screen/home/home_screen.dart';
 import 'package:doctor_appointment_app/util/custom_theme.dart';
 import 'package:doctor_appointment_app/widget/doctor_card.dart';
@@ -105,7 +106,9 @@ class _AllDoctorsPageState extends State<AllDoctorsPage> {
               ),
               const SizedBox(height: 15),
               Expanded(
-                child: DoctorsListCard(),
+                child: InkWell(onTap: () {
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>DoctorDetailsScreen()));
+                },child: DoctorsListCard()),
               ),
             ],
           ),
