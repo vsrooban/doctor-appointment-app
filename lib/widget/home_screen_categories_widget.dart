@@ -83,6 +83,7 @@ class CategoryItem extends StatelessWidget {
             fontFamily: 'Inter',
             fontWeight: FontWeight.w700,
             color: Color(0xFF4B5563),
+            fontSize: 12,
           ),
         )
       ],

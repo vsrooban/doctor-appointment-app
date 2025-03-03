@@ -116,7 +116,7 @@ class _HomeScreenSliderWidgetState extends State<HomeScreenSliderWidget> {
         ImageSlideshow(
           indicatorRadius: 5,
           width: double.infinity,
-          height: 150,
+          height: 180,
           initialPage: 0,
           indicatorColor: Colors.white,
           indicatorBackgroundColor: Colors.grey,

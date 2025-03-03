@@ -18,6 +18,7 @@ class _HomeContentState extends State<HomeContent> {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        SizedBox(height: 20,),
         Padding(
           padding: const EdgeInsets.all(20.0),
           child: Row(
