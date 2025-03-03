@@ -1,5 +1,5 @@
 import 'package:doctor_appointment_app/util/custom_theme.dart';
-import 'package:doctor_appointment_app/widget/Doctor_card.dart';
+// import 'package:doctor_appointment_app/widget/Doctor_card.dart';
 import 'package:doctor_appointment_app/widget/favourite_button.dart';
 import 'package:flutter/material.dart';
 

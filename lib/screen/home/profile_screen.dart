@@ -73,7 +73,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const SizedBox(height: 10),
+        const SizedBox(height: 20),
         Center(
           child: Text("Profile", style: AppTypography.h1),
         ),
@@ -127,7 +127,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 icon: Icons.favorite_border,
                 text: "Favorite",
                 onTap: () {
-                Navigator.pushReplacement(
+                Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) => FavouriteScreen(),

@@ -1,6 +1,4 @@
-import 'package:doctor_appointment_app/screen/home/doctor_details_screen.dart';
 import 'package:doctor_appointment_app/screen/login/welcome_screen.dart';
-import 'package:doctor_appointment_app/widget/doctor_details_card_widget.dart';
 import 'package:flutter/material.dart';
 
 
@@ -25,7 +23,7 @@ class _MyAppState extends State<MyApp> {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: DoctorDetailsCardWidget(),
+      home: WelcomeScreen(),
     );
   }
 }

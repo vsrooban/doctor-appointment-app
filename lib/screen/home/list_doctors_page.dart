@@ -1,6 +1,6 @@
 import 'package:doctor_appointment_app/screen/home/home_screen.dart';
 import 'package:doctor_appointment_app/util/custom_theme.dart';
-import 'package:doctor_appointment_app/widget/Doctor_card.dart';
+import 'package:doctor_appointment_app/widget/doctor_card.dart';
 import 'package:flutter/material.dart';
 
 class AllDoctorsPage extends StatefulWidget {
@@ -19,40 +19,6 @@ class _AllDoctorsPageState extends State<AllDoctorsPage> {
     "Neurologist"
   ];
   int selectedCategoryIndex = 0;
-  final List<Map<String, String>> doctors = [
-    {
-      "name": "Dr. David Patel",
-      "specialty": "Cardiologist",
-      "hospital": "Cardiology Center, USA",
-      "rating": "5.0",
-      "reviews": "1,872 Reviews",
-      "image": "assets/images/doctor_4.png",
-    },
-    {
-      "name": "Dr. Jessica Turner",
-      "specialty": "Gynecologist",
-      "hospital": "Women's Clinic, Seattle, USA",
-      "rating": "4.9",
-      "reviews": "127 Reviews",
-      "image": "assets/images/doctor_2.png",
-    },
-    {
-      "name": "Dr. Michael Johnson",
-      "specialty": "Orthopedic Surgery",
-      "hospital": "Maple Associates, NY, USA",
-      "rating": "4.7",
-      "reviews": "5,223 Reviews",
-      "image": "assets/images/doctor_3.png",
-    },
-    {
-      "name": "Dr. Emily Walker",
-      "specialty": "Pediatrics",
-      "hospital": "Serenity Pediatrics's Clinic",
-      "rating": "5",
-      "reviews": "405 Reviews",
-      "image": "assets/images/doctor_1.png",
-    },
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -139,7 +105,7 @@ class _AllDoctorsPageState extends State<AllDoctorsPage> {
               ),
               const SizedBox(height: 15),
               Expanded(
-                child: DoctorsListCard(doctors: doctors),
+                child: DoctorsListCard(),
               ),
             ],
           ),
