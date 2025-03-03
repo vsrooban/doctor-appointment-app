@@ -7,7 +7,7 @@ class HomeScreenCategoriesWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 25),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       height: 226,
       width: 390,
       child: Column(

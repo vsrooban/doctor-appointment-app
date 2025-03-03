@@ -22,7 +22,7 @@ class _NearbyClinicsWidgetState extends State<NearbyClinicsWidget> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -42,7 +42,7 @@ class _NearbyClinicsWidgetState extends State<NearbyClinicsWidget> {
             padding: const EdgeInsets.only(left: 25,),
             
             child: SizedBox(
-              height: 160, // Adjusted height for scrolling
+              height: 150, // Adjusted height for scrolling
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: clinics.length,

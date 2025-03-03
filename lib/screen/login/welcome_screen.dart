@@ -113,53 +113,55 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Column(
-        children: [
-          CarouselSlider(
-            items: _slides,
-            carouselController: _carouselController,
-            options: CarouselOptions(
-              height: 750,
-              viewportFraction: 1.0,autoPlayInterval: Duration(seconds: 2),
-              enlargeCenterPage: false,
-              autoPlay: true,
-              onPageChanged: (index, reason) {
-                setState(() {
-                  _currentSlide = index;
-                });
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        body: Column(
+          children: [
+            CarouselSlider(
+              items: _slides,
+              carouselController: _carouselController,
+              options: CarouselOptions(
+                height: 750,
+                viewportFraction: 1.0,autoPlayInterval: Duration(seconds: 2),
+                enlargeCenterPage: false,
+                autoPlay: true,
+                onPageChanged: (index, reason) {
+                  setState(() {
+                    _currentSlide = index;
+                  });
+                },
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: _slides.asMap().entries.map((entry) {
+                return Container(
+                  width: _currentSlide == entry.key ? 12.0 : 8.0,
+                  height: _currentSlide == entry.key ? 12.0 : 8.0,
+                  margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: _currentSlide == entry.key ? Colors.black : Colors.grey,
+                  ),
+                );
+              }).toList(),
+            ),
+            SizedBox(height: 20),
+            TextButton(
+              onPressed: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => SigninPage()),
+                );
               },
+              child: Text(
+                'Skip',
+                style: AppTypography.bodySBold.copyWith(color: Colors.grey),
+              ),
             ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: _slides.asMap().entries.map((entry) {
-              return Container(
-                width: _currentSlide == entry.key ? 12.0 : 8.0,
-                height: _currentSlide == entry.key ? 12.0 : 8.0,
-                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: _currentSlide == entry.key ? Colors.black : Colors.grey,
-                ),
-              );
-            }).toList(),
-          ),
-          SizedBox(height: 20),
-          TextButton(
-            onPressed: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) => SigninPage()),
-              );
-            },
-            child: Text(
-              'Skip',
-              style: AppTypography.bodySBold.copyWith(color: Colors.grey),
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
