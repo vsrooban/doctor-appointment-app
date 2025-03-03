@@ -50,7 +50,11 @@ class _HomeContentState extends State<HomeContent> {
                     InkWell(
                       hoverColor: Colors.transparent,
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>NotificationScreen()));
+                        Navigator.push(
+  context,
+  MaterialPageRoute(builder: (context) => const NotificationScreen(previousScreen: 'home')),
+);
+
                       },
                       child: const Icon(
                         size: 24,
