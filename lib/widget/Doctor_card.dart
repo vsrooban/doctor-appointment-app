@@ -41,6 +41,14 @@ class DoctorsListCard extends StatefulWidget {
       "reviews": "405 Reviews",
       "image": "assets/images/doctor_1.png",
     },
+    {
+      "name": "Dr. Emma Green",
+      "specialty": "Gynecologist",
+      "hospital": "Bernard Clinic",
+      "rating": "5",
+      "reviews": "405 Reviews",
+      "image": "assets/images/doctor_5.png",
+    },
   ];
 
   @override
