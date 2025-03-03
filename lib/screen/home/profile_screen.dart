@@ -1,4 +1,5 @@
 import 'package:doctor_appointment_app/screen/home/notification_screen.dart';
+import 'package:doctor_appointment_app/screen/login/signin_screen.dart';
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -57,8 +58,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     padding: const EdgeInsets.all(8.0),
                     child: ElevatedButton(
                       onPressed: () {
-                        Navigator.pop(context);
-                        Navigator.pushNamed(context, '/signin');
+                        
+                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>SigninPage()));
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.black,
