@@ -48,11 +48,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         children: [
           Expanded(
             child: ImageSlideshow(
+              
               width: double.infinity,
               indicatorBottomPadding: 10,
               // height: MediaQuery.of(context).size.height * 0.50,
               autoPlayInterval: 2000,
-              isLoop: false,
+              isLoop: true,
               onPageChanged: _onSlideChange,
               children: slides.map((slide) {
                 return _buildSlide(

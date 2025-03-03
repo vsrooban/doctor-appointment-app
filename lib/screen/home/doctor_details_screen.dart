@@ -2,7 +2,6 @@ import 'package:doctor_appointment_app/screen/home/list_doctors_page.dart';
 import 'package:doctor_appointment_app/util/custom_theme.dart';
 import 'package:doctor_appointment_app/widget/doctor_details_card_widget.dart';
 import 'package:doctor_appointment_app/widget/experience_widget.dart';
-// import 'package:doctor_appointment_app/widget/Doctor_card.dart';
 import 'package:doctor_appointment_app/widget/favourite_button.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +23,7 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 20,
+              height: 30,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
