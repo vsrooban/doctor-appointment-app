@@ -44,7 +44,7 @@ class _HomeContentState extends State<HomeContent> {
                 ],
               ),
               CircleAvatar(
-                backgroundColor: Colors.grey,
+                backgroundColor: const Color.fromARGB(255, 238, 237, 237),
                 child: Stack(
                   children: [
                     InkWell(
