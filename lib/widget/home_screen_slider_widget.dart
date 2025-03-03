@@ -44,10 +44,9 @@ class _HomeScreenSliderWidgetState extends State<HomeScreenSliderWidget> {
     return Container(
       alignment: Alignment.center,
       margin: EdgeInsets.symmetric(horizontal: 20),
-      height: 163,
-      width: 382,
+      // height: 163,
+      // width: 382,
       decoration: BoxDecoration(
-  
         borderRadius: BorderRadius.all(Radius.circular(15)),
       ),
       child: Stack(

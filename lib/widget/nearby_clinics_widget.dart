@@ -17,46 +17,44 @@ class _NearbyClinicsWidgetState extends State<NearbyClinicsWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return 
-      Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Nearby Medical Centers',
-                  style: AppTypography.h3,
-                ),
-                Text(
-                  'See All',
-                  style: AppTypography.bodySMedium.copyWith(color: Colors.grey),
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(height: 10),
-          Padding(
-            padding: const EdgeInsets.only(left: 25,),
-            
-            child: SizedBox(
-              height: 150, // Adjusted height for scrolling
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: clinics.length,
-                itemBuilder: (context, index) {
-                  return ClinicCard(
-                    imagePath: clinics[index]["image"]!,
-                    name: clinics[index]["name"]!,
-                  );
-                },
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                'Nearby Medical Centers',
+                style: AppTypography.h3,
               ),
+              Text(
+                'See All',
+                style: AppTypography.bodySMedium.copyWith(color: Colors.grey),
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(height: 10),
+        Padding(
+          padding: const EdgeInsets.only(left: 25),
+          child: SizedBox(
+            height: 150, // Adjusted height for scrolling
+            child: ListView.builder(padding: EdgeInsets.all(0),shrinkWrap: true,addAutomaticKeepAlives: false,
+              scrollDirection: Axis.horizontal,
+              itemCount: clinics.length,
+              itemBuilder: (context, index) {
+                return ClinicCard(
+                  imagePath: clinics[index]["image"]!,
+                  name: clinics[index]["name"]!,
+                );
+              },
             ),
           ),
-        ],
-      );
+        ),
+      ],
+    );
   }
 }
 

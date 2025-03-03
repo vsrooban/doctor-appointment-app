@@ -1,7 +1,7 @@
 import 'package:doctor_appointment_app/screen/login/signin_screen.dart';
 import 'package:doctor_appointment_app/util/custom_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
@@ -12,157 +12,138 @@ class WelcomeScreen extends StatefulWidget {
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
   int _currentSlide = 0;
-  final CarouselSliderController _carouselController = CarouselSliderController();
 
-  // List of slide content
-  List<Widget> get _slides => [
-        _buildSlide(
-          imagePath: 'assets/images/doctor_2.png',
-          title: 'Meet Doctors Online',
-          description:
-              'Connect with Specialized Doctors Online for Convenient and Comprehensive Medical Consultations.',
-          onNext: () => _goToNextSlide(),
-        ),
-        _buildSlide(
-          imagePath: 'assets/images/doctor_1.png',
-          title: 'Connect with Specialists',
-          description:
-              'Connect with Specialized Doctors Online for Convenient and Comprehensive Medical Consultations.',
-          onNext: () => _goToNextSlide(),
-        ),
-        _buildSlide(
-          imagePath: 'assets/images/doctor_3.png',
-          title: 'Thousands of Online Specialists',
-          description:
-              'Explore a Vast Array of Online Medical Specialists, Offering an Extensive Range of Expertise Tailored to Your Healthcare Needs.',
-          onNext: () {
-            // Navigate to sign-in on last slide
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(builder: (context) => SigninPage()),
-            );
-          },
-        ),
-      ];
+  final List<Map<String, String>> slides = [
+    {
+      'imagePath': 'assets/images/doctor_2.png',
+      'title': 'Meet Doctors Online',
+      'description':
+          'Connect with Specialized Doctors Online for Convenient and Comprehensive Medical Consultations.',
+    },
+    {
+      'imagePath': 'assets/images/doctor_1.png',
+      'title': 'Connect with Specialists',
+      'description':
+          'Connect with Specialized Doctors Online for Convenient and Comprehensive Medical Consultations.',
+    },
+    {
+      'imagePath': 'assets/images/doctor_3.png',
+      'title': 'Thousands of Online Specialists',
+      'description':
+          'Explore a Vast Array of Online Medical Specialists, Offering an Extensive Range of Expertise Tailored to Your Healthcare Needs.',
+    },
+  ];
 
-  void _goToNextSlide() {
-    if (_currentSlide < _slides.length - 1) {
-      setState(() {
-        _currentSlide++;
-      });
-      _carouselController.animateToPage(_currentSlide);
-    } else {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => SigninPage()),
-      );
-    }
-  }
-
-  static Widget _buildSlide({
-    required String imagePath,
-    required String title,
-    required String description,
-    required VoidCallback onNext,
-  }) {
-    return Column(
-      children: [
-        Container(
-          height: 532,
-          width: 390,
-          child: Image.asset(
-            imagePath,
-            fit: BoxFit.cover,
-          ),
-        ),
-        SizedBox(height: 30),
-        Container(
-          alignment: Alignment.topCenter,
-          height: 170,
-          width: 311,
-          child: Column(
-            children: [
-              Text(title, style: AppTypography.h2),
-              SizedBox(height: 10),
-              Text(
-                description,
-                textAlign: TextAlign.center,
-                style: AppTypography.bodySSemiBold.copyWith(color: Colors.grey),
-              ),
-              SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: onNext,
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xFF1C2A3A),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(25),
-                  ),
-                  fixedSize: Size(311, 48),
-                ),
-                child: Text(
-                  "Next",
-                  style: AppTypography.bodySBold.copyWith(color: Colors.white),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ],
-    );
+  void _onSlideChange(int index) {
+    setState(() {
+      _currentSlide = index;
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: Colors.white,
-        body: Column(
-          children: [
-            CarouselSlider(
-              items: _slides,
-              carouselController: _carouselController,
-              options: CarouselOptions(
-                height: 750,
-                viewportFraction: 1.0,autoPlayInterval: Duration(seconds: 2),
-                enlargeCenterPage: false,
-                autoPlay: true,
-                onPageChanged: (index, reason) {
-                  setState(() {
-                    _currentSlide = index;
-                  });
-                },
-              ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: _slides.asMap().entries.map((entry) {
-                return Container(
-                  width: _currentSlide == entry.key ? 12.0 : 8.0,
-                  height: _currentSlide == entry.key ? 12.0 : 8.0,
-                  margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: _currentSlide == entry.key ? Colors.black : Colors.grey,
-                  ),
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Column(
+        children: [
+          Expanded(
+            child: ImageSlideshow(
+              width: double.infinity,
+              indicatorBottomPadding: 10,
+              // height: MediaQuery.of(context).size.height * 0.50,
+              autoPlayInterval: 2000,
+              isLoop: false,
+              onPageChanged: _onSlideChange,
+              children: slides.map((slide) {
+                return _buildSlide(
+                  imagePath: slide['imagePath']!,
+                  title: slide['title']!,
+                  description: slide['description']!,
                 );
               }).toList(),
             ),
-            SizedBox(height: 20),
-            TextButton(
-              onPressed: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => SigninPage()),
-                );
-              },
-              child: Text(
-                'Skip',
-                style: AppTypography.bodySBold.copyWith(color: Colors.grey),
-              ),
+          ),
+          SizedBox(height: 10),
+          TextButton(
+            onPressed: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => SigninPage()),
+              );
+            },
+            child: Text(
+              'Skip',
+              style: AppTypography.bodySBold.copyWith(color: Colors.grey),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
+    );
+  }
+
+  Widget _buildSlide({
+    required String imagePath,
+    required String title,
+    required String description,
+  }) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Expanded(
+          flex: 70,
+          child: Image.asset(
+            imagePath,
+            // height: MediaQuery.of(context).size.height * 0.95,
+            fit: BoxFit.cover,
+          ),
+        ),
+        SizedBox(height: 10),
+        Expanded(
+          flex: 30,
+          child: Container(
+            alignment: Alignment.topCenter,
+            width: 311,
+            child: Column(
+              children: [
+                SizedBox(height: 10),
+                Text(title, style: AppTypography.h2),
+                SizedBox(height: 10),
+                Text(
+                  description,
+                  textAlign: TextAlign.center,
+                  style:
+                      AppTypography.bodySSemiBold.copyWith(color: Colors.grey),
+                ),
+                SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    if (_currentSlide < slides.length - 1) {
+                      _onSlideChange(_currentSlide + 1);
+                    } else {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (context) => SigninPage()),
+                      );
+                    }
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color(0xFF1C2A3A),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(25),
+                    ),
+                    fixedSize: Size(311, 48),
+                  ),
+                  child: Text(
+                    "Next",
+                    style:
+                        AppTypography.bodySBold.copyWith(color: Colors.white),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

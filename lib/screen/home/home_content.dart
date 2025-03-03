@@ -51,10 +51,11 @@ class _HomeContentState extends State<HomeContent> {
                       hoverColor: Colors.transparent,
                       onTap: () {
                         Navigator.push(
-  context,
-  MaterialPageRoute(builder: (context) => const NotificationScreen(previousScreen: 'home')),
-);
-
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const NotificationScreen(
+                                  previousScreen: 'home')),
+                        );
                       },
                       child: const Icon(
                         size: 24,
@@ -87,7 +88,8 @@ class _HomeContentState extends State<HomeContent> {
           width: 352,
           child: SearchBar(
             onTap: () {
-              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>AllDoctorsPage()));
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (context) => AllDoctorsPage()));
             },
             textStyle: WidgetStateProperty.all(
                 AppTypography.bodySRegular.copyWith(color: Colors.grey)),
@@ -107,15 +109,21 @@ class _HomeContentState extends State<HomeContent> {
             leading: Icon(Icons.search, color: Colors.grey),
           ),
         ),
-        SizedBox(height: 15),
-        HomeScreenSliderWidget(),
-        SizedBox(height: 15),
-        HomeScreenCategoriesWidget(),
-        SizedBox(height: 15),
-        NearbyClinicsWidget(),
-         SizedBox(height: 15),
-        
-
+        Expanded(
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                SizedBox(height: 15),
+                HomeScreenSliderWidget(),
+                SizedBox(height: 15),
+                HomeScreenCategoriesWidget(),
+                // SizedBox(height: 15),
+                NearbyClinicsWidget(),
+                SizedBox(height: 10),
+              ],
+            ),
+          ),
+        ),
       ],
     );
   }
