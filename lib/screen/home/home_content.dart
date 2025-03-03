@@ -103,13 +103,21 @@ class _HomeContentState extends State<HomeContent> {
             leading: Icon(Icons.search, color: Colors.grey),
           ),
         ),
-        SizedBox(height: 15),
-        HomeScreenSliderWidget(),
-        SizedBox(height: 15),
-        HomeScreenCategoriesWidget(),
-        SizedBox(height: 15),
-        NearbyClinicsWidget(),
-         SizedBox(height: 15),
+        Expanded(
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                SizedBox(height: 15),
+                HomeScreenSliderWidget(),
+                SizedBox(height: 15),
+                HomeScreenCategoriesWidget(),
+                // SizedBox(height: 15),
+                NearbyClinicsWidget(),
+                 SizedBox(height: 10),
+              ],
+            ),
+          ),
+        ),
         
 
       ],
