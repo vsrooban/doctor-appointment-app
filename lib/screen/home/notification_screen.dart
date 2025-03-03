@@ -3,9 +3,9 @@ import 'package:doctor_appointment_app/util/custom_theme.dart';
 import 'package:flutter/material.dart';
 
 class NotificationScreen extends StatelessWidget {
-  final String previousScreen; // Declare previousScreen
+  final String previousScreen; 
 
-  const NotificationScreen({super.key, required this.previousScreen}); // Require it in constructor
+  const NotificationScreen({super.key, required this.previousScreen}); 
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class NotificationScreen extends StatelessWidget {
           leading: IconButton(
             icon: const Icon(Icons.arrow_back, color: Colors.black),
             onPressed: () {
-              _handleBackNavigation(context); // Call function
+              _handleBackNavigation(context); 
             },
           ),
           actions: [
