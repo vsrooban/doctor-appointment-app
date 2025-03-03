@@ -1,3 +1,4 @@
+import 'package:doctor_appointment_app/screen/home/favourite_screen.dart';
 import 'package:doctor_appointment_app/screen/home/notification_screen.dart';
 import 'package:doctor_appointment_app/screen/login/signin_screen.dart';
 import 'package:doctor_appointment_app/util/custom_theme.dart';
@@ -125,14 +126,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ProfileMenuItem(
                 icon: Icons.favorite_border,
                 text: "Favorite",
-                // onTap: () {
-                // Navigator.pushReplacement(
-                //   context,
-                //   MaterialPageRoute(
-                //     builder: (context) => FavouriteScreen(),
-                //   ),
-                // );
-                // },
+                onTap: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => FavouriteScreen(),
+                  ),
+                );
+                },
               ),
               const Divider(),
               ProfileMenuItem(

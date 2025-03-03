@@ -2,16 +2,22 @@ import 'package:doctor_appointment_app/screen/home/home_screen.dart';
 import 'package:doctor_appointment_app/util/custom_theme.dart';
 import 'package:flutter/material.dart';
 
-class NotificationScreen extends StatelessWidget {
+class NotificationScreen extends StatefulWidget {
   final String previousScreen; 
 
   const NotificationScreen({super.key, required this.previousScreen}); 
 
   @override
+  State<NotificationScreen> createState() => _NotificationScreenState();
+}
+
+class _NotificationScreenState extends State<NotificationScreen> {
+  @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           title: const Text("Notification", style: AppTypography.h2),
           centerTitle: true,
           backgroundColor: Colors.white,
@@ -56,7 +62,7 @@ class NotificationScreen extends StatelessWidget {
   }
 
   void _handleBackNavigation(BuildContext context) {
-    if (previousScreen == 'home') {
+    if (widget.previousScreen == 'home') {
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomeScreen()));
     } else {
       Navigator.pop(context); 
