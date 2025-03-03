@@ -1,4 +1,5 @@
 import 'package:doctor_appointment_app/screen/home/home_content.dart';
+import 'package:doctor_appointment_app/screen/home/profile_screen.dart';
 import 'package:doctor_appointment_app/util/custom_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -33,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
     HomeContent(),
     MapPage(),
     DatePage(),
-    ProfilePage(),
+    ProfileScreen(),
   ];
 
   void _onItemTapped(int index) {
