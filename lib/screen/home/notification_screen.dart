@@ -1,4 +1,3 @@
-import 'package:doctor_appointment_app/screen/home/home_content.dart';
 import 'package:doctor_appointment_app/screen/home/home_screen.dart';
 import 'package:doctor_appointment_app/util/custom_theme.dart';
 import 'package:flutter/material.dart';
@@ -33,6 +32,7 @@ class NotificationScreen extends StatelessWidget {
         ],
       ),
       backgroundColor: Colors.white,
+      
       body: ListView(      
         padding: const EdgeInsets.all(16),
         children: [
