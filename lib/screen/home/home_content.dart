@@ -58,11 +58,8 @@ class _HomeContentState extends State<HomeContent> {
                                   previousScreen: 'home')),
                         );
                       },
-                      child: const Icon(
-                        size: 24,
-                        Icons.notifications,
-                        color: Color(0xFF4B5563),
-                      ),
+                      child: Image.asset('assets/images/notification-bing.png'),
+                     
                     ),
                     Positioned(
                       right: 0,

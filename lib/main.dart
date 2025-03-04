@@ -1,5 +1,6 @@
 import 'package:doctor_appointment_app/screen/login/splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 
 void main() {
@@ -21,6 +22,7 @@ class _MyAppState extends State<MyApp> {
       title: 'Doctor Appointment App',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        textTheme: GoogleFonts.interTextTheme(),
         useMaterial3: true,
       ),
       home: SplashScreen(),
