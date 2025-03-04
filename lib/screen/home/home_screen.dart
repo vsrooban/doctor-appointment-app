@@ -1,3 +1,4 @@
+import 'package:doctor_appointment_app/screen/home/booking_screen.dart';
 import 'package:doctor_appointment_app/screen/home/home_content.dart';
 import 'package:doctor_appointment_app/screen/home/profile_screen.dart';
 import 'package:doctor_appointment_app/util/custom_theme.dart';
@@ -33,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final List<Widget> _screens = [
     HomeContent(),
     MapPage(),
-    DatePage(),
+    BookingScreen(),
     ProfileScreen(),
   ];
 
