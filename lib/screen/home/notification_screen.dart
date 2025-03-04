@@ -18,20 +18,22 @@ class _NotificationScreenState extends State<NotificationScreen> {
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
+          const SizedBox(height: 20),
           Row(
+            
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-               const SizedBox(height: 15),
               IconButton(
                 icon: const Icon(Icons.arrow_back, color: Colors.black),
                 onPressed: () {
                   _handleBackNavigation(context);
                 },
               ),
-              const Spacer(),
+              // const Spacer(),
               Text('Notification', style: AppTypography.h1),
-              const Spacer(),
+              // const Spacer(),
               Container(
-                margin: const EdgeInsets.only(right: 16),
+                // margin: const EdgeInsets.only(right: 16),
                 padding:
                     const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                 decoration: BoxDecoration(

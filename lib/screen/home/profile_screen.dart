@@ -73,7 +73,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const SizedBox(height: 20),
+        const SizedBox(height: 35),
         Center(
           child: Text("Profile", style: AppTypography.h1),
         ),
