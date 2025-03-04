@@ -15,22 +15,22 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: const [
         StatItem(
-          icon: Icons.people_alt_sharp,
+          imagePath: 'assets/images/user_image.png',
           value: '2,000+',
           label: 'patients',
         ),
         StatItem(
-          icon: Icons.emoji_events_rounded,
+          imagePath: 'assets/images/medal_image.png',
           value: '10+',
           label: 'experience',
         ),
         StatItem(
-          icon: Icons.star,
+          imagePath: 'assets/images/star_image.png',
           value: '5',
           label: 'rating',
         ),
         StatItem(
-          icon: Icons.message_sharp,
+          imagePath: 'assets/images/messages.png',
           value: '1,872+',
           label: 'reviews',
         ),
@@ -40,13 +40,13 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
 }
 
 class StatItem extends StatefulWidget {
-  final IconData icon;
+  final String imagePath;
   final String value;
   final String label;
 
   const StatItem({
     super.key,
-    required this.icon,
+    required this.imagePath,
     required this.value,
     required this.label,
   });
@@ -63,7 +63,7 @@ class _StatItemState extends State<StatItem> {
         CircleAvatar(
           radius: 30,
           backgroundColor: const Color(0xFFF3F4F6),
-          child: Icon(widget.icon, color: const Color(0xFF1C2A3A), size: 30),
+          child: Image.asset(widget.imagePath, width: 30, height: 30),
         ),
         const SizedBox(height: 5),
         Text(widget.value, style: AppTypography.bodySSemiBold),

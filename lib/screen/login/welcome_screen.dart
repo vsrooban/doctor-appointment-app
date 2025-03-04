@@ -16,13 +16,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   final List<Map<String, String>> slides = [
     {
       'imagePath': 'assets/images/doctor_2.png',
-      'title': 'Meet Doctors Online',
+      'title': 'Connect with Specialists',
       'description':
           'Connect with Specialized Doctors Online for Convenient and Comprehensive Medical Consultations.',
     },
     {
       'imagePath': 'assets/images/doctor_1.png',
-      'title': 'Connect with Specialists',
+      'title': 'Meet Doctors Online',
       'description':
           'Connect with Specialized Doctors Online for Convenient and Comprehensive Medical Consultations.',
     },
@@ -48,7 +48,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         children: [
           Expanded(
             child: ImageSlideshow(
-              
               width: double.infinity,
               indicatorBottomPadding: 10,
               // height: MediaQuery.of(context).size.height * 0.50,

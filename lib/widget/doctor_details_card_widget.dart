@@ -26,8 +26,8 @@ class DoctorDetailsCardWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              width: 95,
-              height: 120,
+              width: 100,
+              height: 100,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 color: Colors.grey[300],
@@ -42,7 +42,7 @@ class DoctorDetailsCardWidget extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(doctor['name']!, style: AppTypography.bodyLG),
+                  Text(doctor['name']!, style: AppTypography.h3),
                   const Divider(thickness: .3, color: Colors.grey),
                   Text(doctor['specialty']!, style: AppTypography.bodySBold),
                   Row(
