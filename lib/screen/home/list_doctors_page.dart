@@ -71,35 +71,33 @@ class _AllDoctorsPageState extends State<AllDoctorsPage> {
             const SizedBox(height: 15),
             SizedBox(
               height: 40,
-              child: Expanded(
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: categories.length,
-                  itemBuilder: (context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                      child: ChoiceChip(
-                        showCheckmark: false,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20)),
-                        label: Text(categories[index], style: AppTypography.bodySBold),
-                        selected: selectedCategoryIndex == index,
-                        onSelected: (selected) {
-                          setState(() {
-                            selectedCategoryIndex = index;
-                          });
-                        },
-                        selectedColor: Colors.black,
-                        backgroundColor: Colors.white,
-                        labelStyle: TextStyle(
-                          color: selectedCategoryIndex == index
-                              ? Colors.white
-                              : Colors.black,
-                        ),
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: categories.length,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                    child: ChoiceChip(
+                      showCheckmark: false,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20)),
+                      label: Text(categories[index], style: AppTypography.bodySBold),
+                      selected: selectedCategoryIndex == index,
+                      onSelected: (selected) {
+                        setState(() {
+                          selectedCategoryIndex = index;
+                        });
+                      },
+                      selectedColor: Colors.black,
+                      backgroundColor: Colors.white,
+                      labelStyle: TextStyle(
+                        color: selectedCategoryIndex == index
+                            ? Colors.white
+                            : Colors.black,
                       ),
-                    );
-                  },
-                ),
+                    ),
+                  );
+                },
               ),
             ),
             const SizedBox(height: 15),
