@@ -86,7 +86,7 @@ class _HomeContentState extends State<HomeContent> {
           width: 352,
           child: SearchBar(
             onTap: () {
-              Navigator.pushReplacement(context,
+              Navigator.push(context,
                   MaterialPageRoute(builder: (context) => AllDoctorsPage()));
             },
             textStyle: WidgetStateProperty.all(

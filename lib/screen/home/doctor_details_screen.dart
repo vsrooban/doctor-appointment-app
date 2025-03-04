@@ -30,7 +30,7 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
               children: [
                 IconButton(
                     onPressed: () {
-                      Navigator.pushReplacement(
+                      Navigator.pop(
                           context,
                           MaterialPageRoute(
                               builder: (context) => AllDoctorsPage()));
