@@ -104,7 +104,10 @@ class _ClinicCardState extends State<ClinicCard> {
               Positioned(
                 top: 10,
                 right: 10,
-                child: FavoriteButton(),
+                child: CircleAvatar(
+                  backgroundColor: Colors.grey.shade50,
+                  child: FavoriteButton(),
+                  ),
               ),
             ],
           ),

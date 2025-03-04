@@ -15,15 +15,14 @@ class _FavoriteButtonState extends State<FavoriteButton> {
     return InkWell(
       onTap: () {
         setState(() {
-          isFavorite = !isFavorite; 
+          isFavorite = !isFavorite;
         });
       },
-      child: Icon(
-        isFavorite ? Icons.favorite_border : Icons.favorite,
-        size: 16,
-        color: isFavorite ? Colors.grey : Colors.red,
+      child: Image.asset(
+        isFavorite ? "assets/images/heart.png" : "assets/images/heart-filled.png",
+        color: isFavorite ? Colors.grey : Colors.black,
+        colorBlendMode: BlendMode.srcIn, 
       ),
     );
   }
 }
-

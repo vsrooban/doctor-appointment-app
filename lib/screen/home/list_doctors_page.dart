@@ -1,4 +1,3 @@
-import 'package:doctor_appointment_app/screen/home/doctor_details_screen.dart';
 import 'package:doctor_appointment_app/screen/home/home_screen.dart';
 import 'package:doctor_appointment_app/util/custom_theme.dart';
 import 'package:doctor_appointment_app/widget/doctor_card.dart';
@@ -43,51 +42,64 @@ class _AllDoctorsPageState extends State<AllDoctorsPage> {
               ],
             ),
             const SizedBox(height: 10),
-            TextField(
-              cursorColor: Colors.grey,
-              style: TextStyle(color: Colors.grey),
-              decoration: InputDecoration(
-                prefixIcon: const Icon(Icons.search, color: Colors.grey),
-                hintText: 'Search doctor...',
-                hintStyle: AppTypography.bodySRegular,
-                filled: true,
-                fillColor: Color(0xfff7f9fa),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  borderSide: BorderSide(color: Colors.white,width: 0.1),
-                ),
+            SizedBox(
+          height: 40,
+          width: 352,
+          child: SearchBar(
+            // onTap: () {
+            //   Navigator.pushReplacement(context,
+            //       MaterialPageRoute(builder: (context) => AllDoctorsPage()));
+            // },
+            textStyle: WidgetStateProperty.all(
+                AppTypography.bodySRegular.copyWith(color: Colors.grey)),
+            side: const WidgetStatePropertyAll(BorderSide(
+                color: Color.fromARGB(255, 199, 197, 197), width: 0.01)),
+            hintText: 'Search doctor...',
+            hintStyle: WidgetStateProperty.all(
+                AppTypography.bodySRegular.copyWith(color: Colors.grey)),
+            shape: WidgetStateProperty.all(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8),
+                side: const BorderSide(style: BorderStyle.solid, width: 0.1),
               ),
             ),
+            backgroundColor: WidgetStateProperty.all(const Color(0xFFF3F4F6)),
+            shadowColor: WidgetStateProperty.all(Colors.transparent),
+            leading: Icon(Icons.search, color: Colors.grey),
+          ),
+        ),
             const SizedBox(height: 15),
             SizedBox(
               height: 40,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: categories.length,
-                itemBuilder: (context, index) {
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                    child: ChoiceChip(
-                      showCheckmark: false,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20)),
-                      label: Text(categories[index], style: AppTypography.bodySBold),
-                      selected: selectedCategoryIndex == index,
-                      onSelected: (selected) {
-                        setState(() {
-                          selectedCategoryIndex = index;
-                        });
-                      },
-                      selectedColor: Colors.black,
-                      backgroundColor: Colors.grey[200],
-                      labelStyle: TextStyle(
-                        color: selectedCategoryIndex == index
-                            ? Colors.white
-                            : Colors.black,
+              child: Expanded(
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: categories.length,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                      child: ChoiceChip(
+                        showCheckmark: false,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20)),
+                        label: Text(categories[index], style: AppTypography.bodySBold),
+                        selected: selectedCategoryIndex == index,
+                        onSelected: (selected) {
+                          setState(() {
+                            selectedCategoryIndex = index;
+                          });
+                        },
+                        selectedColor: Colors.black,
+                        backgroundColor: Colors.white,
+                        labelStyle: TextStyle(
+                          color: selectedCategoryIndex == index
+                              ? Colors.white
+                              : Colors.black,
+                        ),
                       ),
-                    ),
-                  );
-                },
+                    );
+                  },
+                ),
               ),
             ),
             const SizedBox(height: 15),
@@ -97,18 +109,16 @@ class _AllDoctorsPageState extends State<AllDoctorsPage> {
                 Text('532 founds', style: AppTypography.bodySBold),
                 Row(
                   children: [
-                    Text('Default', style: AppTypography.bodySMedium.copyWith(color: Colors.grey)),
+                    Text('Default', style: AppTypography.bodySBold.copyWith(color: Colors.grey)),
                     const SizedBox(width: 4),
-                    const Icon(Icons.import_export, size: 18,color: Colors.grey,),
+                    const Icon(Icons.import_export, size: 20,color: Colors.grey,),
                   ],
                 )
               ],
             ),
             // const SizedBox(height: 15),
             Expanded(
-              child: InkWell(onTap: () {
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>DoctorDetailsScreen()));
-              },child: DoctorsListCard()),
+              child: DoctorsListCard(),
             ),
           ],
         ),
