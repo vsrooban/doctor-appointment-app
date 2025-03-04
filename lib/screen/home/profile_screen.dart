@@ -151,7 +151,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               const Divider(),
                ProfileMenuItem(
-                  icon: Image.asset("assets/images/Setting-2.png"),
+                  icon: Image.asset("assets/images/setting-2.png"),
                    text: "Settings"),
               const Divider(),
                ProfileMenuItem(
