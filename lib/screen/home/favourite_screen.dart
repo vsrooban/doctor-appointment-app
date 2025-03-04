@@ -80,7 +80,7 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: InkWell(
-                onTap: () {
+                onDoubleTap: () {
                   RemoveFavoriteBottomSheet.show(
                     context,
                     name: "Dr. David Patel",
