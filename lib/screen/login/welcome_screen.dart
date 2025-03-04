@@ -50,7 +50,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             child: ImageSlideshow(
               width: double.infinity,
               indicatorBottomPadding: 10,
-              // height: MediaQuery.of(context).size.height * 0.50,
               autoPlayInterval: 2000,
               isLoop: true,
               onPageChanged: _onSlideChange,
@@ -93,7 +92,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           flex: 70,
           child: Image.asset(
             imagePath,
-            // height: MediaQuery.of(context).size.height * 0.95,
             fit: BoxFit.cover,
           ),
         ),

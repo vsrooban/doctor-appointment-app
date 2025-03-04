@@ -68,7 +68,8 @@ class ClinicCard extends StatefulWidget {
   final String distance;
   final String category;
 
-  const ClinicCard({super.key, 
+  const ClinicCard({
+    super.key,
     required this.imagePath,
     required this.name,
     required this.address,
@@ -99,7 +100,8 @@ class _ClinicCardState extends State<ClinicCard> {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.vertical(top: Radius.circular(15)),
-                child: Image.asset(widget.imagePath, fit: BoxFit.cover, width: double.infinity, height: 150),
+                child: Image.asset(widget.imagePath,
+                    fit: BoxFit.cover, width: double.infinity, height: 150),
               ),
               Positioned(
                 top: 10,
@@ -107,7 +109,7 @@ class _ClinicCardState extends State<ClinicCard> {
                 child: CircleAvatar(
                   backgroundColor: Colors.grey.shade50,
                   child: FavoriteButton(),
-                  ),
+                ),
               ),
             ],
           ),
@@ -121,19 +123,23 @@ class _ClinicCardState extends State<ClinicCard> {
                 Row(children: [
                   Icon(Icons.location_on, size: 16, color: Colors.grey),
                   SizedBox(width: 5),
-                  Expanded(child: Text(widget.address, style: AppTypography.bodySRegular)),
+                  Expanded(
+                      child: Text(widget.address,
+                          style: AppTypography.bodySRegular)),
                 ]),
                 SizedBox(height: 5),
                 Row(children: [
                   Icon(Icons.star, size: 16, color: Colors.orange),
                   Text(" ${widget.rating} ", style: AppTypography.bodySBold),
-                  Text("(${widget.reviews} Reviews)", style: AppTypography.bodySRegular),
+                  Text("(${widget.reviews} Reviews)",
+                      style: AppTypography.bodySRegular),
                 ]),
                 SizedBox(height: 5),
                 Row(children: [
                   Icon(Icons.directions_walk, size: 16, color: Colors.grey),
                   SizedBox(width: 5),
-                  Text("${widget.distance} / 40 min", style: AppTypography.bodySRegular),
+                  Text("${widget.distance} / 40 min",
+                      style: AppTypography.bodySRegular),
                   Spacer(),
                   Icon(Icons.local_hospital, size: 16, color: Colors.grey),
                   SizedBox(width: 5),

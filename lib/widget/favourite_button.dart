@@ -19,9 +19,11 @@ class _FavoriteButtonState extends State<FavoriteButton> {
         });
       },
       child: Image.asset(
-        isFavorite ? "assets/images/heart.png" : "assets/images/heart-filled.png",
+        isFavorite
+            ? "assets/images/heart.png"
+            : "assets/images/heart-filled.png",
         color: isFavorite ? Colors.grey : Colors.black,
-        colorBlendMode: BlendMode.srcIn, 
+        colorBlendMode: BlendMode.srcIn,
       ),
     );
   }

@@ -120,20 +120,20 @@ class _ProfileScreenState extends State<ProfileScreen> {
         Expanded(
           child: ListView(
             children: [
-               ProfileMenuItem(
+              ProfileMenuItem(
                   icon: Image.asset("assets/images/user-edit.png"),
-                   text: "Edit Profile"),
+                  text: "Edit Profile"),
               const Divider(),
               ProfileMenuItem(
                 icon: Image.asset("assets/images/heart.png"),
                 text: "Favorite",
                 onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => FavouriteScreen(),
-                  ),
-                );
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => FavouriteScreen(),
+                    ),
+                  );
                 },
               ),
               const Divider(),
@@ -150,18 +150,18 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 },
               ),
               const Divider(),
-               ProfileMenuItem(
+              ProfileMenuItem(
                   icon: Image.asset("assets/images/setting-2.png"),
-                   text: "Settings"),
+                  text: "Settings"),
               const Divider(),
-               ProfileMenuItem(
+              ProfileMenuItem(
                   icon: Image.asset("assets/images/message-question.png"),
-                   text: "Help and Support"),
+                  text: "Help and Support"),
               const Divider(),
-               ProfileMenuItem(
+              ProfileMenuItem(
                   icon: Image.asset("assets/images/security-safe.png"),
                   text: "Terms and Conditions"),
-               Divider(),
+              Divider(),
               ProfileMenuItem(
                 icon: Image.asset("assets/images/logout.png"),
                 text: "Log Out",

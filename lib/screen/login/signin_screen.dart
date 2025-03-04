@@ -18,15 +18,15 @@ class _SigninPageState extends State<SigninPage> {
   bool _obscureText = true;
 
   void continueWithGoogle() {
-    // Handle Google sign-in
+  
   }
 
   void continueWithFacebook() {
-    // Handle Facebook sign-in
+
   }
 
   void signUp() {
-    // Navigate to sign-up scRreen
+    
   }
 
   @override

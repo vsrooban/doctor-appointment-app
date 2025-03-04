@@ -40,8 +40,11 @@ class _NearbyClinicsWidgetState extends State<NearbyClinicsWidget> {
         Padding(
           padding: const EdgeInsets.only(left: 25),
           child: SizedBox(
-            height: 150, // Adjusted height for scrolling
-            child: ListView.builder(padding: EdgeInsets.all(0),shrinkWrap: true,addAutomaticKeepAlives: false,
+            height: 150,
+            child: ListView.builder(
+              padding: EdgeInsets.all(0),
+              shrinkWrap: true,
+              addAutomaticKeepAlives: false,
               scrollDirection: Axis.horizontal,
               itemCount: clinics.length,
               itemBuilder: (context, index) {

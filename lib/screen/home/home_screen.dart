@@ -18,7 +18,9 @@ class _HomeScreenState extends State<HomeScreen> {
       padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: isSelected ? Color.fromARGB(255, 243, 244, 244) : Colors.transparent,
+        color: isSelected
+            ? Color.fromARGB(255, 243, 244, 244)
+            : Colors.transparent,
       ),
       child: Icon(
         icon,
@@ -28,9 +30,8 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  int _selectedIndex = 0; // Track the selected tab index
+  int _selectedIndex = 0;
 
-  // List of screens to switch between
   final List<Widget> _screens = [
     HomeContent(),
     MapPage(),
@@ -80,7 +81,6 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-// Map Page as a StatefulWidget
 class MapPage extends StatefulWidget {
   const MapPage({super.key});
 
@@ -97,7 +97,6 @@ class _MapPageState extends State<MapPage> {
   }
 }
 
-// Date Page as a StatefulWidget
 class DatePage extends StatefulWidget {
   const DatePage({super.key});
 

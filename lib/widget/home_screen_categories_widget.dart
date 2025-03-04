@@ -15,17 +15,41 @@ class HomeScreenCategoriesWidget extends StatelessWidget {
           _buildHeader(),
           const SizedBox(height: 10),
           _buildCategoryRow([
-            CategoryItem(label: 'Dentistry', imagePath: 'assets/images/dentist_symbol.png', bgColor: Color(0xFFDC9497)),
-            CategoryItem(label: 'Cardiology', imagePath: 'assets/images/heart_symbol.png', bgColor: Color(0xFF93C19E)),
-            CategoryItem(label: 'Pulmonology', imagePath: 'assets/images/lungs_symbol.png', bgColor: Color(0xFFF5AD7E)),
-            CategoryItem(label: 'General', imagePath: 'assets/images/stethoscopes_symbol.png', bgColor: Color(0xFFACA1CD)),
+            CategoryItem(
+                label: 'Dentistry',
+                imagePath: 'assets/images/dentist_symbol.png',
+                bgColor: Color(0xFFDC9497)),
+            CategoryItem(
+                label: 'Cardiology',
+                imagePath: 'assets/images/heart_symbol.png',
+                bgColor: Color(0xFF93C19E)),
+            CategoryItem(
+                label: 'Pulmonology',
+                imagePath: 'assets/images/lungs_symbol.png',
+                bgColor: Color(0xFFF5AD7E)),
+            CategoryItem(
+                label: 'General',
+                imagePath: 'assets/images/stethoscopes_symbol.png',
+                bgColor: Color(0xFFACA1CD)),
           ]),
           const SizedBox(height: 20),
           _buildCategoryRow([
-            CategoryItem(label: 'Neurology', imagePath: 'assets/images/brain_symbol.png', bgColor: Color(0xFF4D9B91)),
-            CategoryItem(label: 'Gastro', imagePath: 'assets/images/stomach_symbol.png', bgColor: Color(0xFF352261)),
-            CategoryItem(label: 'Laboratory', imagePath: 'assets/images/lab_symbol.png', bgColor: Color(0xFFDEB6B5)),
-            CategoryItem(label: 'Vaccination', imagePath: 'assets/images/injection_symbol.png', bgColor: Color(0xFF89CCDB)),
+            CategoryItem(
+                label: 'Neurology',
+                imagePath: 'assets/images/brain_symbol.png',
+                bgColor: Color(0xFF4D9B91)),
+            CategoryItem(
+                label: 'Gastro',
+                imagePath: 'assets/images/stomach_symbol.png',
+                bgColor: Color(0xFF352261)),
+            CategoryItem(
+                label: 'Laboratory',
+                imagePath: 'assets/images/lab_symbol.png',
+                bgColor: Color(0xFFDEB6B5)),
+            CategoryItem(
+                label: 'Vaccination',
+                imagePath: 'assets/images/injection_symbol.png',
+                bgColor: Color(0xFF89CCDB)),
           ]),
         ],
       ),
@@ -37,7 +61,8 @@ class HomeScreenCategoriesWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text('Categories', style: AppTypography.h3),
-        Text('See All', style: AppTypography.bodySMedium.copyWith(color: Colors.grey)),
+        Text('See All',
+            style: AppTypography.bodySMedium.copyWith(color: Colors.grey)),
       ],
     );
   }
@@ -78,7 +103,8 @@ class CategoryItem extends StatelessWidget {
         ),
         SizedBox(height: 4),
         Text(
-          label,overflow: TextOverflow.ellipsis,
+          label,
+          overflow: TextOverflow.ellipsis,
           style: const TextStyle(
             fontFamily: 'Inter',
             fontWeight: FontWeight.w700,

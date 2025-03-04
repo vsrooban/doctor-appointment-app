@@ -48,7 +48,8 @@ class DoctorDetailsCardWidget extends StatelessWidget {
                   Row(
                     children: [
                       const Icon(Icons.location_on_outlined, size: 12),
-                      Text(doctor['hospital']!, style: AppTypography.bodySRegular),
+                      Text(doctor['hospital']!,
+                          style: AppTypography.bodySRegular),
                     ],
                   ),
                 ],
