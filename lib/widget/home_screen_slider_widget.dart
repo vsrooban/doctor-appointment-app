@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 
 class HomeScreenSliderWidget extends StatefulWidget {
+  const HomeScreenSliderWidget({super.key});
+
   @override
   _HomeScreenSliderWidgetState createState() =>   _HomeScreenSliderWidgetState();
 }

@@ -41,9 +41,9 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
                   style: AppTypography.h1,
                 ),
                 SizedBox(
-                  child: FavoriteButton(),
                   height: 20,
                   width: 20,
+                  child: FavoriteButton(),
                 ),
               ],
             ),

@@ -81,6 +81,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
 // Map Page as a StatefulWidget
 class MapPage extends StatefulWidget {
+  const MapPage({super.key});
+
   @override
   State<MapPage> createState() => _MapPageState();
 }
@@ -96,6 +98,8 @@ class _MapPageState extends State<MapPage> {
 
 // Date Page as a StatefulWidget
 class DatePage extends StatefulWidget {
+  const DatePage({super.key});
+
   @override
   State<DatePage> createState() => _DatePageState();
 }
@@ -111,6 +115,8 @@ class _DatePageState extends State<DatePage> {
 
 // Profile Page as a StatefulWidget
 class ProfilePage extends StatefulWidget {
+  const ProfilePage({super.key});
+
   @override
   State<ProfilePage> createState() => _ProfilePageState();
 }

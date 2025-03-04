@@ -2,6 +2,8 @@ import 'package:doctor_appointment_app/util/custom_theme.dart';
 import 'package:flutter/material.dart';
 
 class ExperienceWidget extends StatefulWidget {
+  const ExperienceWidget({super.key});
+
   @override
   _ExperienceWidgetState createState() => _ExperienceWidgetState();
 }
@@ -43,11 +45,11 @@ class StatItem extends StatefulWidget {
   final String label;
 
   const StatItem({
-    Key? key,
+    super.key,
     required this.icon,
     required this.value,
     required this.label,
-  }) : super(key: key);
+  });
 
   @override
   _StatItemState createState() => _StatItemState();
