@@ -120,11 +120,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
         Expanded(
           child: ListView(
             children: [
-              const ProfileMenuItem(
-                  icon: Icons.person_2_outlined, text: "Edit Profile"),
+               ProfileMenuItem(
+                  icon: Image.asset("assets/images/user-edit.png"),
+                   text: "Edit Profile"),
               const Divider(),
               ProfileMenuItem(
-                icon: Icons.favorite_border,
+                icon: Image.asset("assets/images/heart.png"),
                 text: "Favorite",
                 onTap: () {
                 Navigator.push(
@@ -137,7 +138,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               const Divider(),
               ProfileMenuItem(
-                icon: Icons.notifications_none,
+                icon: Image.asset("assets/images/notification.png"),
                 text: "Notifications",
                 onTap: () {
                   Navigator.push(
@@ -149,18 +150,20 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 },
               ),
               const Divider(),
-              const ProfileMenuItem(
-                  icon: Icons.settings_outlined, text: "Settings"),
+               ProfileMenuItem(
+                  icon: Image.asset("assets/images/Setting-2.png"),
+                   text: "Settings"),
               const Divider(),
-              const ProfileMenuItem(
-                  icon: Icons.help_outline_sharp, text: "Help and Support"),
+               ProfileMenuItem(
+                  icon: Image.asset("assets/images/message-question.png"),
+                   text: "Help and Support"),
               const Divider(),
-              const ProfileMenuItem(
-                  icon: Icons.description_outlined,
+               ProfileMenuItem(
+                  icon: Image.asset("assets/images/security-safe.png"),
                   text: "Terms and Conditions"),
-              const Divider(),
+               Divider(),
               ProfileMenuItem(
-                icon: Icons.logout_outlined,
+                icon: Image.asset("assets/images/logout.png"),
                 text: "Log Out",
                 showTrailingIcon: false,
                 onTap: _showLogoutDialog,
@@ -174,7 +177,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 }
 
 class ProfileMenuItem extends StatelessWidget {
-  final IconData icon;
+  final Widget icon;
   final String text;
   final bool showTrailingIcon;
   final VoidCallback? onTap;
@@ -190,7 +193,7 @@ class ProfileMenuItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: Icon(icon, color: Colors.black54),
+      leading: icon,
       title: Text(text, style: AppTypography.bodyLG),
       trailing: showTrailingIcon
           ? const Icon(
