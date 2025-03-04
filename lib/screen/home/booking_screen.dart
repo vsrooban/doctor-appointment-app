@@ -1,7 +1,7 @@
 import 'package:doctor_appointment_app/util/custom_theme.dart';
 import 'package:doctor_appointment_app/widget/completed_widget.dart';
 import 'package:doctor_appointment_app/widget/upcoming_widget.dart';
-import 'package:doctor_appointment_app/widget/canceled_widget.dart'; // Import CanceledWidget
+import 'package:doctor_appointment_app/widget/canceled_widget.dart';
 import 'package:flutter/material.dart';
 
 class BookingScreen extends StatefulWidget {
@@ -67,7 +67,7 @@ class _BookingScreenState extends State<BookingScreen> {
               children: const [
                 UpcomingWidget(),
                 CompletedWidget(),
-                CanceledWidget(), // Add CanceledWidget
+                CanceledWidget(),
               ],
             ),
           ),

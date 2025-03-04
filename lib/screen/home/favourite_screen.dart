@@ -31,14 +31,13 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                 onPressed: () {
                   Navigator.pop(context);
                 },
-                 icon: const Icon(Icons.arrow_back, size: 24),
+                icon: const Icon(Icons.arrow_back, size: 24),
               ),
               const Spacer(),
               Center(child: Text('Favorites', style: AppTypography.h1)),
               const Spacer(),
             ],
           ),
-          // const SizedBox(height: 15),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: List.generate(sections.length, (index) {
@@ -49,7 +48,6 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                   });
                 },
                 child: Column(
-                  
                   children: [
                     Text(
                       sections[index],
@@ -75,7 +73,6 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
             }),
           ),
           const Divider(thickness: 0.5, color: Colors.grey),
-          // const SizedBox(height: 20),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.all(8.0),
@@ -86,13 +83,10 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                     name: "Dr. David Patel",
                     specialty: "Cardiologist",
                     location: "Cardiology Center, USA",
-                    image: "assets/images/doctor_4.png", 
+                    image: "assets/images/doctor_4.png",
                     ratings: '4.9',
-                    review:  "405 Reviews",
-                    onRemove: () {
-                      // Handle the removal logic here
-                      // print("Removed from favorites");
-                    },
+                    review: "405 Reviews",
+                    onRemove: () {},
                   );
                 },
                 child: selectedIndex == 0 ? DoctorsListCard() : HospitalList(),

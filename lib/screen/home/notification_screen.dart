@@ -29,11 +29,8 @@ class _NotificationScreenState extends State<NotificationScreen> {
                   _handleBackNavigation(context);
                 },
               ),
-              // const Spacer(),
               Text('Notification', style: AppTypography.h1),
-              // const Spacer(),
               Container(
-                // margin: const EdgeInsets.only(right: 16),
                 padding:
                     const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                 decoration: BoxDecoration(
@@ -114,14 +111,15 @@ class _NotificationScreenState extends State<NotificationScreen> {
       String time, Color iconColor) {
     return ListTile(
       leading: CircleAvatar(
-        backgroundColor: iconColor.withValues(alpha:  0.2),
+        backgroundColor: iconColor.withValues(alpha: 0.2),
         child: Image.asset(
           imagePath,
           color: iconColor,
         ),
       ),
       title: Text(title, style: AppTypography.bodyLG),
-      subtitle: Text(subtitle, style: AppTypography.bodySMedium.copyWith(color: Colors.grey)),
+      subtitle: Text(subtitle,
+          style: AppTypography.bodySMedium.copyWith(color: Colors.grey)),
       trailing: Text(time,
           style: AppTypography.bodyXSRegular.copyWith(color: Colors.grey)),
       contentPadding: const EdgeInsets.symmetric(vertical: 15),

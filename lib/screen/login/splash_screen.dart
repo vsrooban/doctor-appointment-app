@@ -1,5 +1,6 @@
 import 'package:doctor_appointment_app/screen/login/welcome_screen.dart';
 import 'package:flutter/material.dart';
+
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
@@ -18,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen>
 
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 1), // Fast and smooth
+      duration: const Duration(seconds: 1),
     );
 
     _animation = Tween<double>(begin: 0.8, end: 1.2).animate(
@@ -28,7 +29,6 @@ class _SplashScreenState extends State<SplashScreen>
       ),
     );
 
-    // Add repeating behavior - zoom in and out continuously
     _controller.forward();
     _controller.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
@@ -38,7 +38,6 @@ class _SplashScreenState extends State<SplashScreen>
       }
     });
 
-    // Automatically move to WelcomeScreen after 2 seconds
     Future.delayed(const Duration(seconds: 4), () {
       Navigator.pushReplacement(
         context,

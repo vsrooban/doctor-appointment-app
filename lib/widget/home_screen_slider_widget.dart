@@ -5,7 +5,7 @@ class HomeScreenSliderWidget extends StatefulWidget {
   const HomeScreenSliderWidget({super.key});
 
   @override
-  _HomeScreenSliderWidgetState createState() =>   _HomeScreenSliderWidgetState();
+  _HomeScreenSliderWidgetState createState() => _HomeScreenSliderWidgetState();
 }
 
 class _HomeScreenSliderWidgetState extends State<HomeScreenSliderWidget> {
@@ -46,8 +46,6 @@ class _HomeScreenSliderWidgetState extends State<HomeScreenSliderWidget> {
     return Container(
       alignment: Alignment.center,
       margin: EdgeInsets.symmetric(horizontal: 20),
-      // height: 163,
-      // width: 382,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(15)),
       ),
@@ -64,7 +62,6 @@ class _HomeScreenSliderWidgetState extends State<HomeScreenSliderWidget> {
               width: 382,
             ),
           ),
-          // Overlay Text
           Positioned(
             left: 20,
             bottom: 30,
@@ -114,7 +111,6 @@ class _HomeScreenSliderWidgetState extends State<HomeScreenSliderWidget> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        // Image Slideshow
         ImageSlideshow(
           indicatorRadius: 5,
           width: double.infinity,

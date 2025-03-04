@@ -68,7 +68,9 @@ class _StatItemState extends State<StatItem> {
         const SizedBox(height: 5),
         Text(widget.value, style: AppTypography.bodySSemiBold),
         const SizedBox(height: 5),
-        Text(widget.label, style: AppTypography.bodySRegular.copyWith(color: const Color(0xFF6B7280))),
+        Text(widget.label,
+            style: AppTypography.bodySRegular
+                .copyWith(color: const Color(0xFF6B7280))),
       ],
     );
   }

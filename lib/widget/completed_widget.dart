@@ -121,12 +121,16 @@ class _DoctorCardState extends State<DoctorCard> {
                         style: const TextStyle(
                             fontSize: 16, fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(height: 5,),
+                      SizedBox(
+                        height: 5,
+                      ),
                       Text(
                         widget.doctor['specialty']!,
                         style: const TextStyle(color: Colors.grey),
                       ),
-                      SizedBox(height: 5,),
+                      SizedBox(
+                        height: 5,
+                      ),
                       Row(
                         children: [
                           Image.asset('assets/images/location.png'),

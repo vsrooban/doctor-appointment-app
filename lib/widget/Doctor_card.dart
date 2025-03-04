@@ -4,11 +4,10 @@ import 'package:doctor_appointment_app/widget/favourite_button.dart';
 import 'package:flutter/material.dart';
 
 class DoctorsListCard extends StatefulWidget {
-   DoctorsListCard({
+  DoctorsListCard({
     super.key,
   });
 
-  
   final List<Map<String, String>> doctors = [
     {
       "name": "Dr. David Patel",
@@ -65,7 +64,8 @@ class _DoctorsListCardState extends State<DoctorsListCard> {
         final doctor = widget.doctors[index];
         return InkWell(
           onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context)=>DoctorDetailsScreen()));
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => DoctorDetailsScreen()));
           },
           child: Card(
             elevation: 5,
@@ -97,8 +97,7 @@ class _DoctorsListCardState extends State<DoctorsListCard> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Row(
-                          mainAxisAlignment:
-                              MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(doctor['name']!, style: AppTypography.h3),
                             const FavoriteButton(),
@@ -109,12 +108,14 @@ class _DoctorsListCardState extends State<DoctorsListCard> {
                         Row(
                           children: [
                             const Icon(Icons.location_on_outlined, size: 12),
-                            Text(doctor['hospital']!, style: AppTypography.bodySMedium),
+                            Text(doctor['hospital']!,
+                                style: AppTypography.bodySMedium),
                           ],
                         ),
                         Row(
                           children: [
-                            const Icon(Icons.star, color: Colors.amber, size: 14),
+                            const Icon(Icons.star,
+                                color: Colors.amber, size: 14),
                             Text(
                               ' ${doctor['rating']} | ${doctor['reviews']}',
                               style: AppTypography.bodyXSRegular,

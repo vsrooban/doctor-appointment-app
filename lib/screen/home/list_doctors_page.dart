@@ -29,11 +29,14 @@ class _AllDoctorsPageState extends State<AllDoctorsPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-             SizedBox(height: 20),
+            SizedBox(height: 20),
             Row(
               children: [
                 IconButton(
-                  onPressed: () { Navigator.pop(context, MaterialPageRoute(builder: (context) => HomeScreen()));},
+                  onPressed: () {
+                    Navigator.pop(context,
+                        MaterialPageRoute(builder: (context) => HomeScreen()));
+                  },
                   icon: const Icon(Icons.arrow_back, size: 24),
                 ),
                 const Spacer(),
@@ -43,31 +46,29 @@ class _AllDoctorsPageState extends State<AllDoctorsPage> {
             ),
             const SizedBox(height: 10),
             SizedBox(
-          height: 40,
-          width: MediaQuery.of(context).size.width,
-          child: SearchBar(
-            // onTap: () {
-            //   Navigator.pushReplacement(context,
-            //       MaterialPageRoute(builder: (context) => AllDoctorsPage()));
-            // },
-            textStyle: WidgetStateProperty.all(
-                AppTypography.bodySRegular.copyWith(color: Colors.grey)),
-            side: const WidgetStatePropertyAll(BorderSide(
-                color: Color.fromARGB(255, 199, 197, 197), width: 0.01)),
-            hintText: 'Search doctor...',
-            hintStyle: WidgetStateProperty.all(
-                AppTypography.bodySRegular.copyWith(color: Colors.grey)),
-            shape: WidgetStateProperty.all(
-              RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8),
-                side: const BorderSide(style: BorderStyle.solid, width: 0.1),
+              height: 40,
+              width: MediaQuery.of(context).size.width,
+              child: SearchBar(
+                textStyle: WidgetStateProperty.all(
+                    AppTypography.bodySRegular.copyWith(color: Colors.grey)),
+                side: const WidgetStatePropertyAll(BorderSide(
+                    color: Color.fromARGB(255, 199, 197, 197), width: 0.01)),
+                hintText: 'Search doctor...',
+                hintStyle: WidgetStateProperty.all(
+                    AppTypography.bodySRegular.copyWith(color: Colors.grey)),
+                shape: WidgetStateProperty.all(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                    side:
+                        const BorderSide(style: BorderStyle.solid, width: 0.1),
+                  ),
+                ),
+                backgroundColor:
+                    WidgetStateProperty.all(const Color(0xFFF3F4F6)),
+                shadowColor: WidgetStateProperty.all(Colors.transparent),
+                leading: Icon(Icons.search, color: Colors.grey),
               ),
             ),
-            backgroundColor: WidgetStateProperty.all(const Color(0xFFF3F4F6)),
-            shadowColor: WidgetStateProperty.all(Colors.transparent),
-            leading: Icon(Icons.search, color: Colors.grey),
-          ),
-        ),
             const SizedBox(height: 15),
             SizedBox(
               height: 40,
@@ -81,7 +82,8 @@ class _AllDoctorsPageState extends State<AllDoctorsPage> {
                       showCheckmark: false,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20)),
-                      label: Text(categories[index], style: AppTypography.bodySBold),
+                      label: Text(categories[index],
+                          style: AppTypography.bodySBold),
                       selected: selectedCategoryIndex == index,
                       onSelected: (selected) {
                         setState(() {
@@ -107,14 +109,19 @@ class _AllDoctorsPageState extends State<AllDoctorsPage> {
                 Text('532 founds', style: AppTypography.bodySBold),
                 Row(
                   children: [
-                    Text('Default', style: AppTypography.bodySBold.copyWith(color: Colors.grey)),
+                    Text('Default',
+                        style: AppTypography.bodySBold
+                            .copyWith(color: Colors.grey)),
                     const SizedBox(width: 4),
-                    const Icon(Icons.import_export, size: 20,color: Colors.grey,),
+                    const Icon(
+                      Icons.import_export,
+                      size: 20,
+                      color: Colors.grey,
+                    ),
                   ],
                 )
               ],
             ),
-            // const SizedBox(height: 15),
             Expanded(
               child: DoctorsListCard(),
             ),
@@ -124,4 +131,3 @@ class _AllDoctorsPageState extends State<AllDoctorsPage> {
     );
   }
 }
-

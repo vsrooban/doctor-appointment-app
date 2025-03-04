@@ -29,12 +29,16 @@ class RemoveFavoriteBottomSheet {
                 'Remove from Favorites?',
                 style: AppTypography.bodyLG,
               ),
-              Divider(thickness: .5,color: Colors.grey,),
+              Divider(
+                thickness: .5,
+                color: Colors.grey,
+              ),
               SizedBox(height: 16),
               Card(
                 elevation: 5,
                 color: Colors.white,
-                margin: const EdgeInsets.symmetric(horizontal: 9, vertical: 8.0),
+                margin:
+                    const EdgeInsets.symmetric(horizontal: 9, vertical: 8.0),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15),
                 ),
@@ -71,14 +75,18 @@ class RemoveFavoriteBottomSheet {
                             Text(specialty, style: AppTypography.bodySBold),
                             Row(
                               children: [
-                                const Icon(Icons.location_on_outlined, size: 12),
-                                Text(location, style: AppTypography.bodySRegular),
+                                const Icon(Icons.location_on_outlined,
+                                    size: 12),
+                                Text(location,
+                                    style: AppTypography.bodySRegular),
                               ],
                             ),
                             Row(
                               children: [
-                                const Icon(Icons.star, color: Colors.amber, size: 14),
-                                Text(' $ratings | $review', style: AppTypography.bodyXSRegular),
+                                const Icon(Icons.star,
+                                    color: Colors.amber, size: 14),
+                                Text(' $ratings | $review',
+                                    style: AppTypography.bodyXSRegular),
                               ],
                             ),
                           ],
@@ -93,15 +101,15 @@ class RemoveFavoriteBottomSheet {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   SizedBox(
-                    height: 40  ,
+                    height: 40,
                     child: ElevatedButton(
                       onPressed: () => Navigator.pop(context),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.grey[300],
                       ),
                       child: Text("Cancel",
-                          style:
-                              AppTypography.bodyLG.copyWith(color: Colors.black)),
+                          style: AppTypography.bodyLG
+                              .copyWith(color: Colors.black)),
                     ),
                   ),
                   SizedBox(
@@ -112,8 +120,8 @@ class RemoveFavoriteBottomSheet {
                         backgroundColor: Colors.black,
                       ),
                       child: Text("Yes, Remove",
-                          style:
-                              AppTypography.bodyLG.copyWith(color: Colors.white)),
+                          style: AppTypography.bodyLG
+                              .copyWith(color: Colors.white)),
                     ),
                   ),
                 ],
