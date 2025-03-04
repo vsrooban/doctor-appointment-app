@@ -65,7 +65,7 @@ class _DoctorsListCardState extends State<DoctorsListCard> {
         final doctor = widget.doctors[index];
         return InkWell(
           onTap: () {
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>DoctorDetailsScreen()));
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>DoctorDetailsScreen()));
           },
           child: Card(
             elevation: 5,
