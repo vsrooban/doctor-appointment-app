@@ -89,7 +89,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
 
   void _handleBackNavigation(BuildContext context) {
     if (widget.previousScreen == 'home') {
-      Navigator.pushReplacement(
+      Navigator.pop(
           context, MaterialPageRoute(builder: (context) => const HomeScreen()));
     } else {
       Navigator.pop(context);

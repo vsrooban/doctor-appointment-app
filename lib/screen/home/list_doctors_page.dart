@@ -33,7 +33,7 @@ class _AllDoctorsPageState extends State<AllDoctorsPage> {
             Row(
               children: [
                 IconButton(
-                  onPressed: () { Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));},
+                  onPressed: () { Navigator.pop(context, MaterialPageRoute(builder: (context) => HomeScreen()));},
                   icon: const Icon(Icons.arrow_back, size: 24),
                 ),
                 const Spacer(),
@@ -44,7 +44,7 @@ class _AllDoctorsPageState extends State<AllDoctorsPage> {
             const SizedBox(height: 10),
             SizedBox(
           height: 40,
-          width: 352,
+          width: MediaQuery.of(context).size.width,
           child: SearchBar(
             // onTap: () {
             //   Navigator.pushReplacement(context,
