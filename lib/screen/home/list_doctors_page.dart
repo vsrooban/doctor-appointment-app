@@ -46,10 +46,10 @@ class _AllDoctorsPageState extends State<AllDoctorsPage> {
           height: 40,
           width: 352,
           child: SearchBar(
-            onTap: () {
-              Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder: (context) => AllDoctorsPage()));
-            },
+            // onTap: () {
+            //   Navigator.pushReplacement(context,
+            //       MaterialPageRoute(builder: (context) => AllDoctorsPage()));
+            // },
             textStyle: WidgetStateProperty.all(
                 AppTypography.bodySRegular.copyWith(color: Colors.grey)),
             side: const WidgetStatePropertyAll(BorderSide(
@@ -109,9 +109,9 @@ class _AllDoctorsPageState extends State<AllDoctorsPage> {
                 Text('532 founds', style: AppTypography.bodySBold),
                 Row(
                   children: [
-                    Text('Default', style: AppTypography.bodySMedium.copyWith(color: Colors.grey)),
+                    Text('Default', style: AppTypography.bodySBold.copyWith(color: Colors.grey)),
                     const SizedBox(width: 4),
-                    const Icon(Icons.import_export, size: 18,color: Colors.grey,),
+                    const Icon(Icons.import_export, size: 20,color: Colors.grey,),
                   ],
                 )
               ],

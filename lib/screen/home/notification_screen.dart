@@ -14,13 +14,13 @@ class NotificationScreen extends StatefulWidget {
 class _NotificationScreenState extends State<NotificationScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(backgroundColor: Colors.white,
+    return Scaffold(
+      backgroundColor: Colors.white,
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
           const SizedBox(height: 20),
           Row(
-            
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               IconButton(
@@ -51,19 +51,19 @@ class _NotificationScreenState extends State<NotificationScreen> {
           const SizedBox(height: 10),
           _buildSectionHeader("TODAY"),
           _buildNotificationItem(
-              Icons.event_available,
+              "assets/images/calendar-tick.png",
               "Appointment Success",
               "You have successfully booked your appointment with Dr. Emily Walker.",
               "1h",
               Colors.green),
           _buildNotificationItem(
-              Icons.cancel,
+              "assets/images/calendar-remove.png",
               "Appointment Cancelled",
               "You have successfully cancelled your appointment with Dr. David Patel.",
               "2h",
               Colors.red),
           _buildNotificationItem(
-              Icons.schedule,
+              "assets/images/calendar-edit.png",
               "Schedule Changed",
               "You have successfully changed your appointment with Dr. Jesica Turner.",
               "8h",
@@ -71,13 +71,13 @@ class _NotificationScreenState extends State<NotificationScreen> {
           const SizedBox(height: 15),
           _buildSectionHeader("YESTERDAY"),
           _buildNotificationItem(
-              Icons.event_available,
+              "assets/images/calendar-tick.png",
               "Appointment Success",
               "You have successfully booked your appointment with Dr. David Patel.",
               "1d",
               Colors.green),
           _buildNotificationItem(
-              Icons.schedule,
+              "assets/images/calendar-edit.png",
               "Schedule Changed",
               "You have successfully changed your appointment with Dr. Jesica Turner.",
               "8h",
@@ -110,18 +110,21 @@ class _NotificationScreenState extends State<NotificationScreen> {
     );
   }
 
-  Widget _buildNotificationItem(IconData icon, String title, String subtitle,
+  Widget _buildNotificationItem(String imagePath, String title, String subtitle,
       String time, Color iconColor) {
     return ListTile(
       leading: CircleAvatar(
-        backgroundColor: iconColor.withValues(alpha: 0.2),
-        child: Icon(icon, color: iconColor),
+        backgroundColor: iconColor.withValues(alpha:  0.2),
+        child: Image.asset(
+          imagePath,
+          color: iconColor,
+        ),
       ),
-      title: Text(title, style: AppTypography.bodySBold),
-      subtitle: Text(subtitle, style: AppTypography.bodySRegular),
+      title: Text(title, style: AppTypography.bodyLG),
+      subtitle: Text(subtitle, style: AppTypography.bodySMedium.copyWith(color: Colors.grey)),
       trailing: Text(time,
           style: AppTypography.bodyXSRegular.copyWith(color: Colors.grey)),
-      contentPadding: const EdgeInsets.symmetric(vertical: 5),
+      contentPadding: const EdgeInsets.symmetric(vertical: 15),
     );
   }
 }

@@ -100,16 +100,16 @@ class _DoctorsListCardState extends State<DoctorsListCard> {
                           mainAxisAlignment:
                               MainAxisAlignment.spaceBetween,
                           children: [
-                            Text(doctor['name']!, style: AppTypography.bodyLG),
+                            Text(doctor['name']!, style: AppTypography.h3),
                             const FavoriteButton(),
                           ],
                         ),
-                        const Divider(thickness: .5, color: Colors.grey),
-                        Text(doctor['specialty']!, style: AppTypography.bodySBold),
+                        const Divider(thickness: .9, color: Colors.grey),
+                        Text(doctor['specialty']!, style: AppTypography.bodyLG),
                         Row(
                           children: [
                             const Icon(Icons.location_on_outlined, size: 12),
-                            Text(doctor['hospital']!, style: AppTypography.bodySRegular),
+                            Text(doctor['hospital']!, style: AppTypography.bodySMedium),
                           ],
                         ),
                         Row(
