@@ -23,7 +23,7 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          const SizedBox(height: 15),
+          const SizedBox(height: 25),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -38,7 +38,7 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
               const Spacer(),
             ],
           ),
-          const SizedBox(height: 15),
+          // const SizedBox(height: 15),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: List.generate(sections.length, (index) {
@@ -49,6 +49,7 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                   });
                 },
                 child: Column(
+                  
                   children: [
                     Text(
                       sections[index],
@@ -74,7 +75,7 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
             }),
           ),
           const Divider(thickness: 0.5, color: Colors.grey),
-          const SizedBox(height: 20),
+          // const SizedBox(height: 20),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.all(8.0),

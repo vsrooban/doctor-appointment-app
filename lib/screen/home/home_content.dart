@@ -114,11 +114,11 @@ class _HomeContentState extends State<HomeContent> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(height: 15),
+                SizedBox(height: 10),
                 HomeScreenSliderWidget(),
-                SizedBox(height: 15),
+                SizedBox(height: 10),
                 HomeScreenCategoriesWidget(),
-                // SizedBox(height: 15),
+                SizedBox(height: 10),
                 NearbyClinicsWidget(),
                 SizedBox(height: 10),
               ],

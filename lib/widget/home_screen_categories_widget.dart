@@ -68,8 +68,8 @@ class CategoryItem extends StatelessWidget {
       children: [
         Container(
           alignment: Alignment.center,
-          height: 50,
-          width: 50,
+          height: 62,
+          width: 62,
           decoration: BoxDecoration(
             color: bgColor,
             borderRadius: BorderRadius.circular(8),
@@ -78,7 +78,7 @@ class CategoryItem extends StatelessWidget {
         ),
         SizedBox(height: 4),
         Text(
-          label,
+          label,overflow: TextOverflow.ellipsis,
           style: const TextStyle(
             fontFamily: 'Inter',
             fontWeight: FontWeight.w700,
