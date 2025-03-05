@@ -104,12 +104,12 @@ class _DoctorsListCardState extends State<DoctorsListCard> {
                           ],
                         ),
                         const Divider(thickness: .9, color: Colors.grey),
-                        Text(doctor['specialty']!, style: AppTypography.bodyLG),
+                        Text(doctor['specialty']!, style: AppTypography.bodyLG.copyWith(color:Color(0xFF4B5563))),
                         Row(
                           children: [
                             const Icon(Icons.location_on_outlined, size: 12),
                             Text(doctor['hospital']!,
-                                style: AppTypography.bodySMedium),
+                                style: AppTypography.bodySMedium.copyWith(color:Color(0xFF4B5563))),
                           ],
                         ),
                         Row(
@@ -118,7 +118,7 @@ class _DoctorsListCardState extends State<DoctorsListCard> {
                                 color: Colors.amber, size: 14),
                             Text(
                               ' ${doctor['rating']} | ${doctor['reviews']}',
-                              style: AppTypography.bodyXSRegular,
+                              style: AppTypography.bodyXSRegular.copyWith(color:Color(0xFF6B7280)),
                             ),
                           ],
                         ),

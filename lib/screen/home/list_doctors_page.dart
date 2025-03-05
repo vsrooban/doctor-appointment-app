@@ -90,12 +90,12 @@ class _AllDoctorsPageState extends State<AllDoctorsPage> {
                           selectedCategoryIndex = index;
                         });
                       },
-                      selectedColor: Colors.black,
+                      selectedColor: const Color(0xFF1C2A3A),
                       backgroundColor: Colors.white,
                       labelStyle: TextStyle(
                         color: selectedCategoryIndex == index
                             ? Colors.white
-                            : Colors.black,
+                            : const Color(0xFF1C2A3A),
                       ),
                     ),
                   );
