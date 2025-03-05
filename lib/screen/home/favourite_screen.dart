@@ -61,24 +61,25 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                     ),
                     if (selectedIndex == index)
                       Container(
-                        margin: const EdgeInsets.only(top: 4),
                         height: 3,
                         width: 50,
-                        color: Colors.black,
+                        color: Color(0xff1C2A3A),
                       ),
                   ],
                 ),
               );
             }),
           ),
-          const Divider(
-              thickness: 1,
-              color:  Color(0xFFE5E7EB),
-            ),
+          Container(
+            height: 1,
+            color: Color(0xFFE5E7EB),
+          ),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.all(8.0),
-              child: selectedIndex == 0 ? FavoriteScreenDoctorCard() : HospitalList(),
+              child: selectedIndex == 0
+                  ? FavoriteScreenDoctorCard()
+                  : HospitalList(),
             ),
           ),
         ],

@@ -16,6 +16,7 @@ class _BookingCalendarState extends State<BookingCalendar> {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 269,
+      width: MediaQuery.of(context).size.width,
       child: Card(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
