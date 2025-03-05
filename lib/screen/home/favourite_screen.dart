@@ -62,7 +62,7 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                     if (selectedIndex == index)
                       Container(
                         height: 3,
-                        width: 50,
+                        width: 80,
                         color: Color(0xff1C2A3A),
                       ),
                   ],
