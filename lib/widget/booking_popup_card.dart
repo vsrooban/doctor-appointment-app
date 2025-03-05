@@ -49,7 +49,7 @@ class _AppointmentConfirmationDialogState extends State<AppointmentConfirmationD
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
                 padding: EdgeInsets.symmetric(vertical: 12),
               ),
-              onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=> BookingScreen()));},
+              onPressed: () {Navigator.pop(context, MaterialPageRoute(builder: (context)=> BookingScreen()));},
               child: Text("Done", style: AppTypography.button.copyWith(color: Colors.white)),
             ),
           ),
