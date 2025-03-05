@@ -1,3 +1,4 @@
+import 'package:doctor_appointment_app/screen/home/appointment_booking.dart';
 import 'package:doctor_appointment_app/screen/home/list_doctors_page.dart';
 import 'package:doctor_appointment_app/util/custom_theme.dart';
 import 'package:doctor_appointment_app/widget/doctor_details_card_widget.dart';
@@ -146,7 +147,13 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
               height: 50,
               width: 342,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => AppointmentBookingScreen()),
+                  );
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Color(0xFF1C2A3A),
                   shape: RoundedRectangleBorder(
