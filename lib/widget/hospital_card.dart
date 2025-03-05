@@ -1,4 +1,4 @@
-import 'package:doctor_appointment_app/widget/favourite_button.dart';
+import 'package:doctor_appointment_app/widget/screen_favourite_button.dart';
 import 'package:flutter/material.dart';
 import 'package:doctor_appointment_app/util/custom_theme.dart';
 
@@ -88,6 +88,8 @@ class _ClinicCardState extends State<ClinicCard> {
 
   @override
   Widget build(BuildContext context) {
+    double rating = double.tryParse(widget.rating) ?? 0.0; // Convert rating to double
+
     return Card(
       color: Colors.white,
       margin: EdgeInsets.all(10),
@@ -107,8 +109,8 @@ class _ClinicCardState extends State<ClinicCard> {
                 top: 10,
                 right: 10,
                 child: CircleAvatar(
-                  backgroundColor: Colors.grey.shade50,
-                  child: FavoriteButton(),
+                  backgroundColor: Color.fromARGB(73, 210, 212, 214),
+                  child: ScreenFavouriteButton(),
                 ),
               ),
             ],
@@ -128,20 +130,41 @@ class _ClinicCardState extends State<ClinicCard> {
                           style: AppTypography.bodySRegular)),
                 ]),
                 SizedBox(height: 5),
-                Row(children: [
-                  Icon(Icons.star, size: 16, color: Colors.orange),
-                  Text(" ${widget.rating} ", style: AppTypography.bodySBold),
-                  Text("(${widget.reviews} Reviews)",
-                      style: AppTypography.bodySRegular),
-                ]),
+                Row(
+                  children: [
+                    Text(" ${widget.rating} ", style: AppTypography.bodySBold),
+                    SizedBox(width: 4),
+                    ...List.generate(
+                      rating.floor(),
+                      (index) =>
+                          Icon(Icons.star, size: 16, color: Colors.orange),
+                    ),
+                    
+                    if (rating % 1 != 0)
+                      Icon(Icons.star_half, size: 16, color: Colors.orange),
+                    
+                    ...List.generate(
+                      5 - rating.ceil(),
+                      (index) => Icon(Icons.star_border,
+                          size: 16, color: Colors.orange),
+                    ),
+                    SizedBox(width: 4), 
+                    Text("(${widget.reviews} Reviews)",
+                        style: AppTypography.bodySRegular),
+                  ],
+                ),
                 SizedBox(height: 5),
+                Divider(
+              thickness: 1,
+              color: const Color(0xFFE5E7EB),
+            ),
                 Row(children: [
-                  Icon(Icons.directions_walk, size: 16, color: Colors.grey),
+                  Image.asset("assets/images/routing.png"),
                   SizedBox(width: 5),
                   Text("${widget.distance} / 40 min",
                       style: AppTypography.bodySRegular),
                   Spacer(),
-                  Icon(Icons.local_hospital, size: 16, color: Colors.grey),
+                  Image.asset("assets/images/icon_hospital_card.png"),
                   SizedBox(width: 5),
                   Text(widget.category, style: AppTypography.bodySRegular),
                 ]),

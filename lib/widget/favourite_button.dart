@@ -1,14 +1,21 @@
 import 'package:flutter/material.dart';
 
 class FavoriteButton extends StatefulWidget {
-  const FavoriteButton({super.key});
+  final bool isInitiallyFavorite; 
+  const FavoriteButton({super.key, this.isInitiallyFavorite = false}); 
 
   @override
   _FavoriteButtonState createState() => _FavoriteButtonState();
 }
 
 class _FavoriteButtonState extends State<FavoriteButton> {
-  bool isFavorite = false;
+  late bool isFavorite;
+
+  @override
+  void initState() {
+    super.initState();
+    isFavorite = widget.isInitiallyFavorite;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,11 +26,7 @@ class _FavoriteButtonState extends State<FavoriteButton> {
         });
       },
       child: Image.asset(
-        isFavorite
-            ? "assets/images/heart.png"
-            : "assets/images/heart-filled.png",
-        color: isFavorite ? Colors.grey : Colors.black,
-        colorBlendMode: BlendMode.srcIn,
+        isFavorite ? "assets/images/heart_filled.png" : "assets/images/heart.png",width: 15,height: 15,
       ),
     );
   }

@@ -1,10 +1,10 @@
 import 'package:doctor_appointment_app/screen/home/doctor_details_screen.dart';
 import 'package:doctor_appointment_app/util/custom_theme.dart';
-import 'package:doctor_appointment_app/widget/favourite_button.dart';
+import 'package:doctor_appointment_app/widget/screen_favourite_button.dart';
 import 'package:flutter/material.dart';
 
-class DoctorsListCard extends StatefulWidget {
-  DoctorsListCard({
+class FavoriteScreenDoctorCard extends StatefulWidget {
+  FavoriteScreenDoctorCard({
     super.key,
   });
 
@@ -52,10 +52,10 @@ class DoctorsListCard extends StatefulWidget {
   ];
 
   @override
-  State<DoctorsListCard> createState() => _DoctorsListCardState();
+  State<FavoriteScreenDoctorCard> createState() => _FavoriteScreenDoctorCardState();
 }
 
-class _DoctorsListCardState extends State<DoctorsListCard> {
+class _FavoriteScreenDoctorCardState extends State<FavoriteScreenDoctorCard> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -100,7 +100,7 @@ class _DoctorsListCardState extends State<DoctorsListCard> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(doctor['name']!, style: AppTypography.h3),
-                            const FavoriteButton(),
+                            const ScreenFavouriteButton(),
                           ],
                         ),
                         Divider(
