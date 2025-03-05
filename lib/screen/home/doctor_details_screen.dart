@@ -66,10 +66,22 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
             SizedBox(
               height: 15,
             ),
-            Text(
-              'Dr. David Patel, a dedicated cardiologist, brings a wealth of experience to Golden Gate Cardiology Center in Golden Gate, CA. view more',
-              style:
-                  AppTypography.bodySRegular.copyWith(color: Color(0xFF6B7280)),
+            Text.rich(
+              TextSpan(
+                text:
+                    'Dr. David Patel, a dedicated cardiologist, brings a wealth of experience to Golden Gate Cardiology Center in Golden Gate, CA. ',
+                style: AppTypography.bodySRegular
+                    .copyWith(color: Color(0xFF6B7280)),
+                children: [
+                  TextSpan(
+                    text: 'view more',
+                    style: AppTypography.bodySRegular.copyWith(
+                      color: Color.fromARGB(255, 2, 2, 2), // Change to your desired color
+                      decoration: TextDecoration.underline, // Underline effect
+                    ),
+                  ),
+                ],
+              ),
             ),
             SizedBox(
               height: 15,

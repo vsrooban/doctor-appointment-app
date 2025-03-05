@@ -96,6 +96,7 @@ class _DoctorCardState extends State<DoctorCard> {
             ),
             Divider(
               thickness: 1,
+              color: const Color(0xFFE5E7EB),
             ),
             SizedBox(
               height: 8,
@@ -146,17 +147,18 @@ class _DoctorCardState extends State<DoctorCard> {
               ],
             ),
             SizedBox(
-              height: 8,
+              height: 5,
             ),
             Divider(
               thickness: 1,
+              color: const Color(0xFFE5E7EB),
             ),
             SizedBox(
               height: 8,
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 SizedBox(
                   height: 37,
@@ -173,9 +175,9 @@ class _DoctorCardState extends State<DoctorCard> {
                             .copyWith(color: const Color(0xFF1C2A3A))),
                   ),
                 ),
-                SizedBox(
-                  width: 30,
-                ),
+                // SizedBox(
+                //   width: 30,
+                // ),
                 SizedBox(
                   height: 37,
                   width: 147,
