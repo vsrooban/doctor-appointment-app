@@ -35,14 +35,24 @@ class _BookingCalendarState extends State<BookingCalendar> {
                 bodyLarge: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                 bodyMedium: TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
               ),
+              dividerTheme: const DividerThemeData(
+                color: Color(0xffE5E7EB),
+                space: 1,
+                thickness: 1,
+              ),
             ),
-            child: CalendarDatePicker(
-              initialDate: selectedDate,
-              firstDate: DateTime.now(),
-              lastDate: DateTime(2030),
-              onDateChanged: (date) {
-                setState(() => selectedDate = date);
-                widget.onDateSelected(date);  // Send the selected date to parent
+            child: Builder(
+              builder: (context) {
+                return CalendarDatePicker(
+                  initialDate: selectedDate,
+                  firstDate: DateTime.now(),
+                  lastDate: DateTime(2030),
+                  onDateChanged: (date) {
+                    setState(() => selectedDate = date);
+                    widget.onDateSelected(date);
+                  },
+                  selectableDayPredicate: (day) => true,
+                );
               },
             ),
           ),
