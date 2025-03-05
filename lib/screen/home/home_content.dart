@@ -16,12 +16,14 @@ class HomeContent extends StatefulWidget {
 class _HomeContentState extends State<HomeContent> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(height: 20,),
-        Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Row(
+    return Padding(
+      padding: const EdgeInsets.all(15.0),
+      child: Column(
+        children: [
+          SizedBox(
+            height: 20,
+          ),
+          Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Column(
@@ -34,7 +36,11 @@ class _HomeContentState extends State<HomeContent> {
                   SizedBox(height: 10),
                   Row(
                     children: [
-                      Image.asset('assets/images/location_filled_icon.png',height: 20,width: 20,),
+                      Image.asset(
+                        'assets/images/location_filled_icon.png',
+                        height: 20,
+                        width: 20,
+                      ),
                       SizedBox(width: 10),
                       Text(
                         'Seattle, USA',
@@ -59,7 +65,6 @@ class _HomeContentState extends State<HomeContent> {
                         );
                       },
                       child: Image.asset('assets/images/notification-bing.png'),
-                     
                     ),
                     Positioned(
                       right: 0,
@@ -80,49 +85,50 @@ class _HomeContentState extends State<HomeContent> {
               ),
             ],
           ),
-        ),
-        SizedBox(
-          height: 40,
-          width: 352,
-          child: SearchBar(
-            onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => AllDoctorsPage()));
-            },
-            textStyle: WidgetStateProperty.all(
-                AppTypography.bodySRegular.copyWith(color: Colors.grey)),
-            side: const WidgetStatePropertyAll(BorderSide(
-                color: Color.fromARGB(255, 199, 197, 197), width: 0.01)),
-            hintText: 'Search doctor...',
-            hintStyle: WidgetStateProperty.all(
-                AppTypography.bodySRegular.copyWith(color: Colors.grey)),
-            shape: WidgetStateProperty.all(
-              RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8),
-                side: const BorderSide(style: BorderStyle.solid, width: 0.1),
+          SizedBox(height: 10),
+          SizedBox(
+            height: 40,
+            width: MediaQuery.of(context).size.width,
+            child: SearchBar(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => AllDoctorsPage()));
+              },
+              textStyle: WidgetStateProperty.all(
+                  AppTypography.bodySRegular.copyWith(color: Colors.grey)),
+              side: const WidgetStatePropertyAll(BorderSide(
+                  color: Color.fromARGB(255, 199, 197, 197), width: 0.01)),
+              hintText: 'Search doctor...',
+              hintStyle: WidgetStateProperty.all(
+                  AppTypography.bodySRegular.copyWith(color: Colors.grey)),
+              shape: WidgetStateProperty.all(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  side: const BorderSide(style: BorderStyle.solid, width: 0.1),
+                ),
+              ),
+              backgroundColor: WidgetStateProperty.all(const Color(0xFFF3F4F6)),
+              shadowColor: WidgetStateProperty.all(Colors.transparent),
+              leading: Icon(Icons.search, color: Colors.grey),
+            ),
+          ),
+          Expanded(
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  SizedBox(height: 10),
+                  HomeScreenSliderWidget(),
+                  SizedBox(height: 10),
+                  HomeScreenCategoriesWidget(),
+                  SizedBox(height: 10),
+                  NearbyClinicsWidget(),
+                  SizedBox(height: 10),
+                ],
               ),
             ),
-            backgroundColor: WidgetStateProperty.all(const Color(0xFFF3F4F6)),
-            shadowColor: WidgetStateProperty.all(Colors.transparent),
-            leading: Icon(Icons.search, color: Colors.grey),
           ),
-        ),
-        Expanded(
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                SizedBox(height: 10),
-                HomeScreenSliderWidget(),
-                SizedBox(height: 10),
-                HomeScreenCategoriesWidget(),
-                SizedBox(height: 10),
-                NearbyClinicsWidget(),
-                SizedBox(height: 10),
-              ],
-            ),
-          ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
