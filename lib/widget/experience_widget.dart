@@ -63,7 +63,7 @@ class _StatItemState extends State<StatItem> {
         CircleAvatar(
           radius: 30,
           backgroundColor: const Color(0xFFF3F4F6),
-          child: Image.asset(widget.imagePath, width: 30, height: 30),
+          child: Image.asset(widget.imagePath, width: 24, height: 24),
         ),
         const SizedBox(height: 5),
         Text(widget.value, style: AppTypography.bodySSemiBold),

@@ -88,7 +88,7 @@ class _ClinicCardState extends State<ClinicCard> {
 
   @override
   Widget build(BuildContext context) {
-    double rating = double.tryParse(widget.rating) ?? 0.0; // Convert rating to double
+    double rating = double.tryParse(widget.rating) ?? 0.0;
 
     return Card(
       color: Colors.white,
@@ -139,25 +139,23 @@ class _ClinicCardState extends State<ClinicCard> {
                       (index) =>
                           Icon(Icons.star, size: 16, color: Colors.orange),
                     ),
-                    
                     if (rating % 1 != 0)
                       Icon(Icons.star_half, size: 16, color: Colors.orange),
-                    
                     ...List.generate(
                       5 - rating.ceil(),
                       (index) => Icon(Icons.star_border,
                           size: 16, color: Colors.orange),
                     ),
-                    SizedBox(width: 4), 
+                    SizedBox(width: 4),
                     Text("(${widget.reviews} Reviews)",
                         style: AppTypography.bodySRegular),
                   ],
                 ),
                 SizedBox(height: 5),
                 Divider(
-              thickness: 1,
-              color: const Color(0xFFE5E7EB),
-            ),
+                  thickness: 1,
+                  color: const Color(0xFFE5E7EB),
+                ),
                 Row(children: [
                   Image.asset("assets/images/routing.png"),
                   SizedBox(width: 5),

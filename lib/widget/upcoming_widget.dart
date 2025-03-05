@@ -135,8 +135,10 @@ class _DoctorCardState extends State<DoctorCard> {
                       Row(
                         children: [
                           Image.asset('assets/images/location.png'),
-                          Text(widget.doctor['hospital']!,
-                              style: const TextStyle(fontSize: 12)),
+                          Expanded(
+                            child: Text(widget.doctor['hospital']!,
+                                style: const TextStyle(fontSize: 12),overflow: TextOverflow.ellipsis,),
+                          ),
                         ],
                       ),
                     ],
@@ -160,7 +162,7 @@ class _DoctorCardState extends State<DoctorCard> {
               children: [
                 SizedBox(
                   height: 37,
-                  width: 147,
+                  width: 137,
                   child: ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
@@ -178,7 +180,7 @@ class _DoctorCardState extends State<DoctorCard> {
                 // ),
                 SizedBox(
                   height: 37,
-                  width: 147,
+                  width: 137,
                   child: ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(

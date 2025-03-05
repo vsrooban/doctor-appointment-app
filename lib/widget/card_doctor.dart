@@ -113,9 +113,12 @@ class _DoctorsListCardState extends State<DoctorsListCard> {
                         Row(
                           children: [
                             const Icon(Icons.location_on_outlined, size: 12),
-                            Text(doctor['hospital']!,
-                                style: AppTypography.bodySMedium
-                                    .copyWith(color: Color(0xFF4B5563))),
+                            Expanded(
+                              child: Text(doctor['hospital']!,
+                                  style: AppTypography.bodySMedium.copyWith(
+                                      color: Color(0xFF4B5563),
+                                      overflow: TextOverflow.ellipsis)),
+                            ),
                           ],
                         ),
                         Row(
