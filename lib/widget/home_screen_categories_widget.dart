@@ -7,9 +7,9 @@ class HomeScreenCategoriesWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
+      // padding: const EdgeInsets.symmetric(horizontal: 20),
       height: 226,
-      width: 390,
+      width: MediaQuery.of(context).size.width,
       child: Column(
         children: [
           _buildHeader(),

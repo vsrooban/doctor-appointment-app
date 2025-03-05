@@ -45,7 +45,7 @@ class _HomeScreenSliderWidgetState extends State<HomeScreenSliderWidget> {
   }) {
     return Container(
       alignment: Alignment.center,
-      margin: EdgeInsets.symmetric(horizontal: 20),
+      margin: EdgeInsets.symmetric(horizontal: 5),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(15)),
       ),
@@ -59,7 +59,7 @@ class _HomeScreenSliderWidgetState extends State<HomeScreenSliderWidget> {
               imagePath,
               fit: BoxFit.cover,
               height: 163,
-              width: 382,
+              width: 402,
             ),
           ),
           Positioned(

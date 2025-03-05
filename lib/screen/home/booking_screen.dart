@@ -21,7 +21,7 @@ class _BookingScreenState extends State<BookingScreen> {
       backgroundColor: Colors.white,
       body: Column(
         children: [
-          const SizedBox(height: 30),
+          const SizedBox(height: 40),
           Container(
             alignment: Alignment.center,
             child: Text(
