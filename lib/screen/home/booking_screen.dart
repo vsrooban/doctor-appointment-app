@@ -52,15 +52,19 @@ class _BookingScreenState extends State<BookingScreen> {
                       Container(
                         margin: const EdgeInsets.only(top: 4),
                         height: 3,
-                        width: 80,
-                        color: Colors.black,
+                        width: 85,
+                        
+                        decoration: BoxDecoration(borderRadius: BorderRadius.only(topLeft: Radius.circular(4),topRight: Radius.circular(4)),color: const Color(0xFF1C2A3A),)
                       ),
                   ],
                 ),
               );
             }),
           ),
-          const Divider(thickness: 0.5, color: Colors.grey),
+          Container(
+            height: 1,
+            color: Color(0xFFE5E7EB),
+          ),
           Expanded(
             child: IndexedStack(
               index: selectedIndex,

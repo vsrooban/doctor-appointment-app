@@ -52,7 +52,8 @@ class FavoriteScreenDoctorCard extends StatefulWidget {
   ];
 
   @override
-  State<FavoriteScreenDoctorCard> createState() => _FavoriteScreenDoctorCardState();
+  State<FavoriteScreenDoctorCard> createState() =>
+      _FavoriteScreenDoctorCardState();
 }
 
 class _FavoriteScreenDoctorCardState extends State<FavoriteScreenDoctorCard> {
@@ -104,15 +105,21 @@ class _FavoriteScreenDoctorCardState extends State<FavoriteScreenDoctorCard> {
                           ],
                         ),
                         Divider(
-              thickness: 1,
-              color: const Color(0xFFE5E7EB),
-            ),
-                        Text(doctor['specialty']!, style: AppTypography.bodyLG.copyWith(color:Color(0xFF4B5563))),
+                          thickness: 1,
+                          color: const Color(0xFFE5E7EB),
+                        ),
+                        Text(doctor['specialty']!,
+                            style: AppTypography.bodyLG
+                                .copyWith(color: Color(0xFF4B5563))),
                         Row(
                           children: [
                             const Icon(Icons.location_on_outlined, size: 12),
-                            Text(doctor['hospital']!,
-                                style: AppTypography.bodySMedium.copyWith(color:Color(0xFF4B5563))),
+                            Expanded(
+                              child: Text(doctor['hospital']!,
+                                  style: AppTypography.bodySMedium.copyWith(
+                                      color: Color(0xFF4B5563),
+                                      overflow: TextOverflow.ellipsis)),
+                            ),
                           ],
                         ),
                         Row(
@@ -121,7 +128,8 @@ class _FavoriteScreenDoctorCardState extends State<FavoriteScreenDoctorCard> {
                                 color: Colors.amber, size: 14),
                             Text(
                               ' ${doctor['rating']} | ${doctor['reviews']}',
-                              style: AppTypography.bodyXSRegular.copyWith(color:Color(0xFF6B7280)),
+                              style: AppTypography.bodyXSRegular
+                                  .copyWith(color: Color(0xFF6B7280)),
                             ),
                           ],
                         ),
