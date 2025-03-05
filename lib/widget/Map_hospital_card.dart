@@ -95,83 +95,85 @@ class _ClinicCardState extends State<ClinicCard> {
       margin: EdgeInsets.all(10),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       elevation: 5,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Stack(
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.vertical(top: Radius.circular(15)),
-                child: Image.asset(widget.imagePath,
-                    fit: BoxFit.cover, width: double.infinity, height: 150),
-              ),
-              Positioned(
-                top: 10,
-                right: 10,
-                child: CircleAvatar(
-                  backgroundColor: Color.fromARGB(73, 210, 212, 214),
-                  child: ScreenFavouriteButton(),
-                ),
-              ),
-            ],
-          ),
-          Padding(
-            padding: const EdgeInsets.all(10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+      child: Expanded(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Stack(
               children: [
-                Text(widget.name, style: AppTypography.h2),
-                SizedBox(height: 5),
-                Row(children: [
-                  Icon(Icons.location_on, size: 16, color: Colors.grey),
-                  SizedBox(width: 5),
-                  Expanded(
-                      child: Text(widget.address,
-                          style: AppTypography.bodySRegular)),
-                ]),
-                SizedBox(height: 5),
-                Row(
-                  children: [
-                    Text(" ${widget.rating} ", style: AppTypography.bodySBold),
-                    SizedBox(width: 4),
-                    ...List.generate(
-                      rating.floor(),
-                      (index) =>
-                          Icon(Icons.star, size: 16, color: Colors.orange),
-                    ),
-                    
-                    if (rating % 1 != 0)
-                      Icon(Icons.star_half, size: 16, color: Colors.orange),
-                    
-                    ...List.generate(
-                      5 - rating.ceil(),
-                      (index) => Icon(Icons.star_border,
-                          size: 16, color: Colors.orange),
-                    ),
-                    SizedBox(width: 4), 
-                    Text("(${widget.reviews} Reviews)",
-                        style: AppTypography.bodySRegular),
-                  ],
+                ClipRRect(
+                  borderRadius: BorderRadius.vertical(top: Radius.circular(15)),
+                  child: Image.asset(widget.imagePath,
+                      fit: BoxFit.cover, width: double.infinity, height: 100),
                 ),
-                SizedBox(height: 5),
-                Divider(
-              thickness: 1,
-              color: const Color(0xFFE5E7EB),
-            ),
-                Row(children: [
-                  Image.asset("assets/images/routing.png"),
-                  SizedBox(width: 5),
-                  Text("${widget.distance} / 40 min",
-                      style: AppTypography.bodySRegular),
-                  Spacer(),
-                  Image.asset("assets/images/icon_hospital_card.png"),
-                  SizedBox(width: 5),
-                  Text(widget.category, style: AppTypography.bodySRegular),
-                ]),
+                Positioned(
+                  top: 10,
+                  right: 10,
+                  child: CircleAvatar(
+                    backgroundColor: Color.fromARGB(73, 210, 212, 214),
+                    child: ScreenFavouriteButton(),
+                  ),
+                ),
               ],
             ),
-          ),
-        ],
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(widget.name, style: AppTypography.h2),
+                  SizedBox(height: 5),
+                  Row(children: [
+                    Icon(Icons.location_on, size: 16, color: Colors.grey),
+                    SizedBox(width: 5),
+                    Expanded(
+                        child: Text(widget.address,
+                            style: AppTypography.bodySRegular)),
+                  ]),
+                  SizedBox(height: 5),
+                  Row(
+                    children: [
+                      Text(" ${widget.rating} ", style: AppTypography.bodySBold),
+                      SizedBox(width: 4),
+                      ...List.generate(
+                        rating.floor(),
+                        (index) =>
+                            Icon(Icons.star, size: 16, color: Colors.orange),
+                      ),
+                      
+                      if (rating % 1 != 0)
+                        Icon(Icons.star_half, size: 16, color: Colors.orange),
+                      
+                      ...List.generate(
+                        5 - rating.ceil(),
+                        (index) => Icon(Icons.star_border,
+                            size: 16, color: Colors.orange),
+                      ),
+                      SizedBox(width: 4), 
+                      Text("(${widget.reviews} Reviews)",
+                          style: AppTypography.bodySRegular),
+                    ],
+                  ),
+                  SizedBox(height: 5),
+                  Divider(
+                thickness: 1,
+                color: const Color(0xFFE5E7EB),
+              ),
+                  Row(children: [
+                    Image.asset("assets/images/routing.png"),
+                    SizedBox(width: 5),
+                    Text("${widget.distance} / 40 min",
+                        style: AppTypography.bodySRegular),
+                    Spacer(),
+                    Image.asset("assets/images/icon_hospital_card.png"),
+                    SizedBox(width: 5),
+                    Text(widget.category, style: AppTypography.bodySRegular),
+                  ]),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
