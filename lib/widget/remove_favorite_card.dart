@@ -1,5 +1,5 @@
 import 'package:doctor_appointment_app/util/custom_theme.dart';
-import 'package:doctor_appointment_app/widget/favourite_button.dart';
+import 'package:doctor_appointment_app/widget/screen_favourite_button.dart';
 import 'package:flutter/material.dart';
 
 class RemoveFavoriteBottomSheet {
@@ -30,9 +30,9 @@ class RemoveFavoriteBottomSheet {
                 style: AppTypography.bodyLG,
               ),
               Divider(
-                thickness: .5,
-                color: Colors.grey,
-              ),
+              thickness: 1,
+              color: const Color(0xFFE5E7EB),
+            ),
               SizedBox(height: 16),
               Card(
                 elevation: 5,
@@ -68,10 +68,13 @@ class RemoveFavoriteBottomSheet {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(name, style: AppTypography.bodyLG),
-                                FavoriteButton(),
+                                ScreenFavouriteButton(),
                               ],
                             ),
-                            const Divider(thickness: 0.3, color: Colors.grey),
+                            Divider(
+              thickness: 1,
+              color: const Color(0xFFE5E7EB),
+            ),
                             Text(specialty, style: AppTypography.bodySBold),
                             Row(
                               children: [

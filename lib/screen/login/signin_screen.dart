@@ -17,17 +17,11 @@ class _SigninPageState extends State<SigninPage> {
   final _formKey = GlobalKey<FormState>();
   bool _obscureText = true;
 
-  void continueWithGoogle() {
-  
-  }
+  void continueWithGoogle() {}
 
-  void continueWithFacebook() {
+  void continueWithFacebook() {}
 
-  }
-
-  void signUp() {
-    
-  }
+  void signUp() {}
 
   @override
   Widget build(BuildContext context) {
@@ -58,8 +52,7 @@ class _SigninPageState extends State<SigninPage> {
               Text("Hi, Welcome Back!", style: AppTypography.h1),
               SizedBox(height: 5),
               Text("Hope you're doing fine.",
-                  style:
-                      AppTypography.bodySBold.copyWith(color: Colors.grey)),
+                  style: AppTypography.bodySBold.copyWith(color: Colors.grey)),
               SizedBox(height: 35),
               _buildTextField(
                   emailController, "Your Email", Icons.email, screenWidth,
@@ -97,28 +90,26 @@ class _SigninPageState extends State<SigninPage> {
               Row(
                 children: [
                   Expanded(
-                      child: Divider(
-                    thickness: .5,
-                    color: Colors.grey,
-                  )),
+                    child: Divider(
+                      thickness: 1,
+                      color: const Color(0xFFE5E7EB),
+                    ),
+                  ),
                   SizedBox(width: 10),
                   Text("or",
-                      style:
-                          AppTypography.bodyLG.copyWith(color: Colors.grey)),
+                      style: AppTypography.bodyLG.copyWith(color: Colors.grey)),
                   SizedBox(width: 10),
                   Expanded(
-                      child: Divider(
-                    thickness: .5,
-                    color: Colors.grey,
-                  )),
+                    child: Divider(
+                      thickness: 1,
+                      color: const Color(0xFFE5E7EB),
+                    ),
+                  ),
                 ],
               ),
               SizedBox(height: 30),
-              _buildSocialButton(
-                  "Sign In with Google",
-                  "assets/images/google.png",
-                  continueWithGoogle,
-                  screenWidth),
+              _buildSocialButton("Sign In with Google",
+                  "assets/images/google.png", continueWithGoogle, screenWidth),
               SizedBox(height: 10),
               _buildSocialButton(
                   "Sign In with Facebook",
