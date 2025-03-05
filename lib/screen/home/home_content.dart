@@ -34,7 +34,7 @@ class _HomeContentState extends State<HomeContent> {
                   SizedBox(height: 10),
                   Row(
                     children: [
-                      Image.asset('assets/images/location_icon.png'),
+                      Image.asset('assets/images/location_filled_icon.png',height: 20,width: 20,),
                       SizedBox(width: 10),
                       Text(
                         'Seattle, USA',

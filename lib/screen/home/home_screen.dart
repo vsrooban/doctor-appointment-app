@@ -12,7 +12,30 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  Widget _buildNavItem(IconData icon, int index) {
+  int _selectedIndex = 0;
+
+  final List<String> _unselectedIcons = [
+    'assets/images/home_outline_icon.png',
+    'assets/images/location_outline_icon.png',
+    'assets/images/calendar_outline_icon.png',
+    'assets/images/profile_outline_icon.png',
+  ];
+
+  final List<String> _selectedIcons = [
+    'assets/images/home_filled_icon.png',
+    'assets/images/location_filled_icon.png',
+    'assets/images/calendar_filled_icon.png',
+    'assets/images/profile_filled_icon.png',
+  ];
+
+  final List<Widget> _screens = [
+    HomeContent(),
+    MapPage(),
+    BookingScreen(),
+    ProfileScreen(),
+  ];
+
+  Widget _buildNavItem(int index) {
     bool isSelected = _selectedIndex == index;
     return Container(
       padding: EdgeInsets.all(10),
@@ -22,22 +45,14 @@ class _HomeScreenState extends State<HomeScreen> {
             ? Color.fromARGB(255, 243, 244, 244)
             : Colors.transparent,
       ),
-      child: Icon(
-        icon,
-        size: 30,
-        color: isSelected ? const Color.fromARGB(255, 86, 85, 85) : Colors.grey,
+      child: Image.asset(
+
+        isSelected ? _selectedIcons[index] : _unselectedIcons[index],
+        width: 24,
+        height: 24,
       ),
     );
   }
-
-  int _selectedIndex = 0;
-
-  final List<Widget> _screens = [
-    HomeContent(),
-    MapPage(),
-    BookingScreen(),
-    ProfileScreen(),
-  ];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -58,24 +73,10 @@ class _HomeScreenState extends State<HomeScreen> {
         unselectedItemColor: Colors.grey,
         showUnselectedLabels: true,
         type: BottomNavigationBarType.fixed,
-        items: [
-          BottomNavigationBarItem(
-            icon: _buildNavItem(Icons.home, 0),
-            label: "",
-          ),
-          BottomNavigationBarItem(
-            icon: _buildNavItem(Icons.location_on, 1),
-            label: "",
-          ),
-          BottomNavigationBarItem(
-            icon: _buildNavItem(Icons.calendar_month, 2),
-            label: "",
-          ),
-          BottomNavigationBarItem(
-            icon: _buildNavItem(Icons.person, 3),
-            label: "",
-          ),
-        ],
+        items: List.generate(4, (index) => BottomNavigationBarItem(
+          icon: _buildNavItem(index),
+          label: "",
+        )),
       ),
     );
   }

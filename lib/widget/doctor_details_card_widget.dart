@@ -43,7 +43,10 @@ class DoctorDetailsCardWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(doctor['name']!, style: AppTypography.h3),
-                  const Divider(thickness: .3, color: Colors.grey),
+                  Divider(
+                    thickness: 1,
+                    color: const Color(0xFFE5E7EB),
+                  ),
                   Text(doctor['specialty']!, style: AppTypography.bodySBold),
                   Row(
                     children: [
