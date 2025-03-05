@@ -20,25 +20,22 @@ class _NearbyClinicsWidgetState extends State<NearbyClinicsWidget> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                'Nearby Medical Centers',
-                style: AppTypography.h3,
-              ),
-              Text(
-                'See All',
-                style: AppTypography.bodySMedium.copyWith(color: Colors.grey),
-              ),
-            ],
-          ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              'Nearby Medical Centers',
+              style: AppTypography.h3,
+            ),
+            Text(
+              'See All',
+              style: AppTypography.bodySMedium.copyWith(color: Colors.grey),
+            ),
+          ],
         ),
         const SizedBox(height: 10),
         Padding(
-          padding: const EdgeInsets.only(left: 25),
+          padding: const EdgeInsets.only(left: 1),
           child: SizedBox(
             height: 150,
             child: ListView.builder(
