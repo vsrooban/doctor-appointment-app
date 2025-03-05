@@ -50,12 +50,15 @@ class _BookingScreenState extends State<BookingScreen> {
                     ),
                     if (selectedIndex == index)
                       Container(
-                        margin: const EdgeInsets.only(top: 4),
-                        height: 3,
-                        width: 85,
-                        
-                        decoration: BoxDecoration(borderRadius: BorderRadius.only(topLeft: Radius.circular(4),topRight: Radius.circular(4)),color: const Color(0xFF1C2A3A),)
-                      ),
+                          margin: const EdgeInsets.only(top: 4),
+                          height: 3,
+                          width: 85,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(4),
+                                topRight: Radius.circular(4)),
+                            color: const Color(0xFF1C2A3A),
+                          )),
                   ],
                 ),
               );

@@ -63,7 +63,7 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                       Container(
                         height: 3,
                         width: 80,
-                        color: Color(0xff1C2A3A),
+                        decoration: BoxDecoration(borderRadius: BorderRadius.only(topLeft: Radius.circular(4),topRight: Radius.circular(4)),color: const Color(0xFF1C2A3A),)
                       ),
                   ],
                 ),

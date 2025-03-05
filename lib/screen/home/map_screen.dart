@@ -88,7 +88,7 @@ class _DoctorMapScreenState extends State<DoctorMapScreen> {
             right: 16, // Adjusted from 0
             child: CarouselSlider(
               options: CarouselOptions(
-                height: 323,
+                height: 325,
                 enlargeCenterPage: true,
                 viewportFraction: 0.85,
               ),
