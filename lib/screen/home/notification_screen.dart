@@ -61,7 +61,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
               Colors.red),
           _buildNotificationItem(
               "assets/images/calendar-edit.png",
-              "Schedule Changed",
+              "Scheduled Changed",
               "You have successfully changed your appointment with Dr. Jesica Turner.",
               "8h",
               Colors.grey),
@@ -73,12 +73,12 @@ class _NotificationScreenState extends State<NotificationScreen> {
               "You have successfully booked your appointment with Dr. David Patel.",
               "1d",
               Colors.green),
-          _buildNotificationItem(
-              "assets/images/calendar-edit.png",
-              "Schedule Changed",
-              "You have successfully changed your appointment with Dr. Jesica Turner.",
-              "8h",
-              Colors.grey),
+          // _buildNotificationItem(
+          //     "assets/images/calendar-edit.png",
+          //     "Schedule Changed",
+          //     "You have successfully changed your appointment with Dr. Jesica Turner.",
+          //     "8h",
+          //     Colors.grey),
         ],
       ),
     );
@@ -111,17 +111,22 @@ class _NotificationScreenState extends State<NotificationScreen> {
       String time, Color iconColor) {
     return ListTile(
       leading: CircleAvatar(
-        backgroundColor: iconColor.withValues(alpha: 0.2),
+        radius: 35,
         child: Image.asset(
           imagePath,
-          color: iconColor,
+          width: 60,
+          height: 60,
         ),
       ),
       title: Text(title, style: AppTypography.bodyLG),
       subtitle: Text(subtitle,
           style: AppTypography.bodySMedium.copyWith(color: Colors.grey)),
       trailing: Text(time,
-          style: AppTypography.bodyXSRegular.copyWith(color: Colors.grey)),
+          style: AppTypography.bodySRegular.copyWith(
+            color: Colors.grey,
+            fontSize: 14,
+            fontWeight: FontWeight.w600,
+          )),
       contentPadding: const EdgeInsets.symmetric(vertical: 15),
     );
   }
