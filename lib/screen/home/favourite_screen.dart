@@ -1,7 +1,6 @@
 import 'package:doctor_appointment_app/util/custom_theme.dart';
-import 'package:doctor_appointment_app/widget/doctor_card.dart';
+import 'package:doctor_appointment_app/widget/favorite_screen_doctor_card.dart';
 import 'package:doctor_appointment_app/widget/hospital_card.dart';
-import 'package:doctor_appointment_app/widget/remove_favorite_card.dart';
 import 'package:flutter/material.dart';
 
 class FavouriteScreen extends StatefulWidget {
@@ -72,25 +71,14 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
               );
             }),
           ),
-          const Divider(thickness: 0.5, color: Colors.grey),
+          const Divider(
+              thickness: 1,
+              color:  Color(0xFFE5E7EB),
+            ),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.all(8.0),
-              child: InkWell(
-                onDoubleTap: () {
-                  RemoveFavoriteBottomSheet.show(
-                    context,
-                    name: "Dr. David Patel",
-                    specialty: "Cardiologist",
-                    location: "Cardiology Center, USA",
-                    image: "assets/images/doctor_4.png",
-                    ratings: '4.9',
-                    review: "405 Reviews",
-                    onRemove: () {},
-                  );
-                },
-                child: selectedIndex == 0 ? DoctorsListCard() : HospitalList(),
-              ),
+              child: selectedIndex == 0 ? FavoriteScreenDoctorCard() : HospitalList(),
             ),
           ),
         ],

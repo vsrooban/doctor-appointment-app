@@ -27,7 +27,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
             children: [
               const Text("Logout", style: AppTypography.h2),
               const SizedBox(height: 10),
-              Divider(thickness: 1, color: Colors.grey),
+              Divider(
+              thickness: 1,
+              color: const Color(0xFFE5E7EB),
+            ),
               const SizedBox(height: 10),
               const Text(
                 "Are you sure you want to log out?",
@@ -123,9 +126,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ProfileMenuItem(
                   icon: Image.asset("assets/images/user-edit.png"),
                   text: "Edit Profile"),
-              const Divider(),
+              Divider(
+              thickness: 1,
+              color: const Color(0xFFE5E7EB),
+            ),
               ProfileMenuItem(
-                icon: Image.asset("assets/images/heart.png"),
+                icon: Image.asset("assets/images/favorite.png",width: 30,height: 30,),
                 text: "Favorite",
                 onTap: () {
                   Navigator.push(
@@ -136,7 +142,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   );
                 },
               ),
-              const Divider(),
+              Divider(
+              thickness: 1,
+              color:  Color(0xFFE5E7EB),
+            ),
               ProfileMenuItem(
                 icon: Image.asset("assets/images/notification.png"),
                 text: "Notifications",
@@ -149,19 +158,31 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   );
                 },
               ),
-              const Divider(),
+               Divider(
+              thickness: 1,
+              color:  Color(0xFFE5E7EB),
+            ),
               ProfileMenuItem(
                   icon: Image.asset("assets/images/setting-2.png"),
                   text: "Settings"),
-              const Divider(),
+               Divider(
+              thickness: 1,
+              color:  Color(0xFFE5E7EB),
+            ),
               ProfileMenuItem(
                   icon: Image.asset("assets/images/message-question.png"),
                   text: "Help and Support"),
-              const Divider(),
+               Divider(
+              thickness: 1,
+              color: const Color(0xFFE5E7EB),
+            ),
               ProfileMenuItem(
                   icon: Image.asset("assets/images/security-safe.png"),
                   text: "Terms and Conditions"),
-              Divider(),
+             Divider(
+              thickness: 1,
+              color: const Color(0xFFE5E7EB),
+            ), 
               ProfileMenuItem(
                 icon: Image.asset("assets/images/logout.png"),
                 text: "Log Out",
@@ -194,7 +215,7 @@ class ProfileMenuItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: icon,
-      title: Text(text, style: AppTypography.bodyLG),
+      title: Text(text, style: AppTypography.bodyLG.copyWith(color: Color(0xff6B7280))),
       trailing: showTrailingIcon
           ? const Icon(
               Icons.arrow_forward_ios,
