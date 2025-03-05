@@ -1,6 +1,6 @@
 import 'package:doctor_appointment_app/screen/home/home_screen.dart';
 import 'package:doctor_appointment_app/util/custom_theme.dart';
-import 'package:doctor_appointment_app/widget/doctor_card.dart';
+import 'package:doctor_appointment_app/widget/card_doctor.dart';
 import 'package:flutter/material.dart';
 
 class AllDoctorsPage extends StatefulWidget {

@@ -103,14 +103,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   decoration: BoxDecoration(
                     shape: BoxShape.rectangle,
                     borderRadius: BorderRadius.circular(6),
-                    color: Colors.black,
+                    color: Color(0xff1C2A3A)
                   ),
                   padding: const EdgeInsets.all(8),
-                  child: const Icon(
-                    Icons.edit,
-                    color: Colors.white,
-                    size: 16,
-                  ),
+                  child: Image.asset('assets/images/pencil.png')
                 ),
               ),
             ],
