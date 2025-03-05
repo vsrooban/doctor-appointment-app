@@ -34,7 +34,7 @@ class _AppointmentConfirmationDialogState extends State<AppointmentConfirmationD
           const SizedBox(height: 8),
           Text(
             "Your appointment with Dr. David Patel is confirmed for $formattedDate, at ${widget.time}.",
-            style: AppTypography.bodySRegular,
+            style: AppTypography.h4,
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 20),
@@ -51,11 +51,9 @@ class _AppointmentConfirmationDialogState extends State<AppointmentConfirmationD
             ),
           ),
 
-          // Edit Appointment Link
           TextButton(
             onPressed: () {
               Navigator.of(context).pop();
-              // Logic to navigate to appointment editing
             },
             child: Text("Edit your appointment", style: AppTypography.bodySMedium.copyWith(color: Colors.black)),
           ),
