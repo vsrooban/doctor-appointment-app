@@ -44,24 +44,10 @@ class _HorizontalClinicListState extends State<HorizontalClinicList> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              'Nearby Medical Centers',
-              style: AppTypography.h3,
-            ),
-            Text(
-              'See All',
-              style: AppTypography.bodySMedium.copyWith(color: Colors.grey),
-            ),
-          ],
-        ),
         const SizedBox(height: 10),
         SizedBox(
           height: 220,
           child: ListView(
-      
             scrollDirection: Axis.horizontal,
             children: clinics.map((clinic) {
               return ClinicCard(
@@ -81,7 +67,7 @@ class _HorizontalClinicListState extends State<HorizontalClinicList> {
   }
 }
 
-class ClinicCard extends StatelessWidget {
+class ClinicCard extends StatefulWidget {
   final String imagePath;
   final String name;
   final String address;
@@ -102,8 +88,13 @@ class ClinicCard extends StatelessWidget {
   });
 
   @override
+  State<ClinicCard> createState() => _ClinicCardState();
+}
+
+class _ClinicCardState extends State<ClinicCard> {
+  @override
   Widget build(BuildContext context) {
-    double parsedRating = double.tryParse(rating) ?? 0.0;
+    double parsedRating = double.tryParse(widget.rating) ?? 0.0;
 
     return Container(
       // margin: const EdgeInsets.only(right: 5),
@@ -128,7 +119,7 @@ class ClinicCard extends StatelessWidget {
               topRight: Radius.circular(15),
             ),
             child: Image.asset(
-              imagePath,
+              widget.imagePath,
               height: 121,
               width: double.infinity,
               fit: BoxFit.cover,
@@ -139,21 +130,26 @@ class ClinicCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(name, style: AppTypography.h4.copyWith(color: Color(0xFF4B5563))),
+                Text(widget.name,
+                    style: AppTypography.h4.copyWith(color: Color(0xFF4B5563))),
                 const SizedBox(height: 5),
                 Row(
                   children: [
                     Icon(Icons.location_on, size: 16, color: Colors.grey),
                     const SizedBox(width: 5),
                     Expanded(
-                      child: Text(address, style: AppTypography.bodyXSBold.copyWith(color: Color(0xFF6B7280))),
+                      child: Text(widget.address,
+                          style: AppTypography.bodyXSBold
+                              .copyWith(color: Color(0xFF6B7280))),
                     ),
                   ],
                 ),
                 const SizedBox(height: 5),
                 Row(
                   children: [
-                    Text(" $rating ", style: AppTypography.bodySBold.copyWith(color: Color(0xFF6B7280))),
+                    Text(" ${widget.rating} ",
+                        style: AppTypography.bodySBold
+                            .copyWith(color: Color(0xFF6B7280))),
                     ...List.generate(
                       parsedRating.floor(),
                       (index) =>
@@ -167,8 +163,9 @@ class ClinicCard extends StatelessWidget {
                           size: 16, color: Colors.orange),
                     ),
                     const SizedBox(width: 4),
-                    Text("($reviews Reviews)",
-                        style: AppTypography.bodyXSBold.copyWith(color: Color(0xFF6B7280))),
+                    Text("(${widget.reviews} Reviews)",
+                        style: AppTypography.bodyXSBold
+                            .copyWith(color: Color(0xFF6B7280))),
                   ],
                 ),
                 const SizedBox(height: 5),
@@ -177,12 +174,15 @@ class ClinicCard extends StatelessWidget {
                   children: [
                     Image.asset("assets/images/routing.png"),
                     const SizedBox(width: 5),
-                    Text("$distance / 40 min",
-                        style: AppTypography.bodyXSBold.copyWith(color: Color(0xFF6B7280))),
+                    Text("${widget.distance} / 40 min",
+                        style: AppTypography.bodyXSBold
+                            .copyWith(color: Color(0xFF6B7280))),
                     const Spacer(),
                     Image.asset("assets/images/icon_hospital_card.png"),
                     const SizedBox(width: 5),
-                    Text(category, style: AppTypography.bodyXSBold.copyWith(color: Color(0xFF6B7280))),
+                    Text(widget.category,
+                        style: AppTypography.bodyXSBold
+                            .copyWith(color: Color(0xFF6B7280))),
                   ],
                 ),
               ],

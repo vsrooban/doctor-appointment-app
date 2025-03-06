@@ -45,7 +45,9 @@ class _DoctorMapScreenState extends State<DoctorMapScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(
+
         children: [
+        
           // Custom Search Bar
           Positioned(
             top: 50,
