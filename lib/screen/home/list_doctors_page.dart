@@ -55,7 +55,7 @@ class _AllDoctorsPageState extends State<AllDoctorsPage> {
                     color: Color.fromARGB(255, 199, 197, 197), width: 0.01)),
                 hintText: 'Search doctor...',
                 hintStyle: WidgetStateProperty.all(
-                    AppTypography.bodySRegular.copyWith(color: Colors.grey)),
+                    AppTypography.bodySRegular.copyWith(color: const Color(0xFF9CA3AF))),
                 shape: WidgetStateProperty.all(
                   RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
@@ -66,7 +66,7 @@ class _AllDoctorsPageState extends State<AllDoctorsPage> {
                 backgroundColor:
                     WidgetStateProperty.all(const Color(0xFFF3F4F6)),
                 shadowColor: WidgetStateProperty.all(Colors.transparent),
-                leading: Icon(Icons.search, color: Colors.grey),
+                leading: Image.asset('assets/images/search_icon.png',height: 15,width: 15,),
               ),
             ),
             const SizedBox(height: 15),

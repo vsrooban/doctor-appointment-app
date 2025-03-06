@@ -1,6 +1,6 @@
+import 'package:doctor_appointment_app/util/custom_theme.dart';
 import 'package:doctor_appointment_app/widget/map_hospital_card.dart';
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 
 class DoctorMapScreen extends StatefulWidget {
   const DoctorMapScreen({super.key});
@@ -55,58 +55,58 @@ class _DoctorMapScreenState extends State<DoctorMapScreen> {
               height: 40,
               width: MediaQuery.of(context).size.width,
               child: SearchBar(
-                textStyle: WidgetStateProperty.all(
-                  const TextStyle(fontSize: 14, color: Colors.grey),
-                ),
-                side: const WidgetStatePropertyAll(
-                  BorderSide(
-                      color: Color.fromARGB(255, 199, 197, 197), width: 0.01),
-                ),
-                hintText: 'Search doctor...',
-                hintStyle: WidgetStateProperty.all(
-                  const TextStyle(fontSize: 14, color: Colors.grey),
-                ),
-                shape: WidgetStateProperty.all(
-                  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    side:
-                        const BorderSide(style: BorderStyle.solid, width: 0.1),
+                  onTap: () {},
+                  textStyle: WidgetStateProperty.all(
+                      AppTypography.bodySRegular.copyWith(color: Colors.grey)),
+                  side: const WidgetStatePropertyAll(BorderSide(
+                      color: Color.fromARGB(255, 199, 197, 197), width: 0.01)),
+                  hintText: 'Search Doctor, Hospital',
+                  hintStyle: WidgetStateProperty.all(AppTypography.bodySRegular
+                      .copyWith(color: const Color(0xFF9CA3AF))),
+                  shape: WidgetStateProperty.all(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      side: const BorderSide(
+                          style: BorderStyle.solid, width: 0.1),
+                    ),
                   ),
-                ),
-                backgroundColor:
-                    WidgetStateProperty.all(const Color(0xFFF3F4F6)),
-                shadowColor: WidgetStateProperty.all(Colors.transparent),
-                leading: const Icon(Icons.search, color: Colors.grey),
-              ),
+                  backgroundColor:
+                      WidgetStateProperty.all(const Color.fromARGB(255, 255, 255, 255)),
+                  shadowColor: WidgetStateProperty.all(Colors.transparent),
+                  leading: Image.asset(
+                    'assets/images/search_icon.png',
+                    height: 15,
+                    width: 15,
+                  )),
             ),
           ),
 
-          // Sliding Hospital Cards
+          // Horizontally Scrollable ListView
           Positioned(
             bottom: 20,
-            left: 16, // Adjusted from 0
-            right: 16, // Adjusted from 0
-            child: CarouselSlider(
-              options: CarouselOptions(
-                height: 325,
-                enlargeCenterPage: true,
-                viewportFraction: 0.85,
+            left: 16,
+            right: 16,
+            child: SizedBox(
+              height: 252,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: clinics.length,
+                itemBuilder: (context, index) {
+                  final clinic = clinics[index];
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: ClinicCard(
+                      imagePath: clinic["image"]!,
+                      name: clinic["name"]!,
+                      address: clinic["address"]!,
+                      rating: clinic["rating"]!,
+                      reviews: clinic["reviews"]!,
+                      distance: clinic["distance"]!,
+                      category: clinic["category"]!,
+                    ),
+                  );
+                },
               ),
-              items: clinics.map((clinic) {
-                return Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 4.0), // Added padding
-                  child: ClinicCard(
-                    imagePath: clinic["image"]!,
-                    name: clinic["name"]!,
-                    address: clinic["address"]!,
-                    rating: clinic["rating"]!,
-                    reviews: clinic["reviews"]!,
-                    distance: clinic["distance"]!,
-                    category: clinic["category"]!,
-                  ),
-                );
-              }).toList(),
             ),
           ),
         ],
