@@ -11,7 +11,7 @@ class SigninPage extends StatefulWidget {
 
 class _SigninPageState extends State<SigninPage> {
   final TextEditingController emailController =
-      TextEditingController(text: "test@boodskap.io");
+      TextEditingController(text: "demo@boodskap.io");
   final TextEditingController passwordController =
       TextEditingController(text: "welcome123");
   final _formKey = GlobalKey<FormState>();
