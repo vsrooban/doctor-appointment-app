@@ -31,7 +31,7 @@ class _HomeContentState extends State<HomeContent> {
                 children: [
                   Text(
                     'Location',
-                    style: AppTypography.bodySMedium,
+                    style: AppTypography.bodySMedium.copyWith(color: Color(0xFF6B7280)),
                   ),
                   SizedBox(height: 10),
                   Row(
@@ -44,7 +44,7 @@ class _HomeContentState extends State<HomeContent> {
                       SizedBox(width: 10),
                       Text(
                         'Seattle, USA',
-                        style: AppTypography.bodySSemiBold,
+                        style: AppTypography.bodySSemiBold.copyWith(color: Color(0xFF374151)),
                       ),
                     ],
                   ),
@@ -64,19 +64,19 @@ class _HomeContentState extends State<HomeContent> {
                                   previousScreen: 'home')),
                         );
                       },
-                      child: Image.asset('assets/images/notification-bing.png'),
+                      child: Image.asset('assets/images/bell_image.png',height: 20,width: 20,),
                     ),
                     Positioned(
                       right: 0,
-                      top: 3,
-                      bottom: 16,
+                      // top: 1,
+                      bottom: 12,
                       child: Container(
-                        width: 12,
-                        height: 12,
+                        width: 8,
+                        height: 8,
                         decoration: BoxDecoration(
-                          color: Colors.red,
+                          color: const Color(0xFFEF0000),
                           shape: BoxShape.circle,
-                          border: Border.all(color: Colors.red, width: 2),
+                          border: Border.all(color: const Color(0xFFEF0000), width: 2),
                         ),
                       ),
                     ),
@@ -100,7 +100,7 @@ class _HomeContentState extends State<HomeContent> {
                   color: Color.fromARGB(255, 199, 197, 197), width: 0.01)),
               hintText: 'Search doctor...',
               hintStyle: WidgetStateProperty.all(
-                  AppTypography.bodySRegular.copyWith(color: Colors.grey)),
+                  AppTypography.bodySRegular.copyWith(color: const Color(0xFF9CA3AF))),
               shape: WidgetStateProperty.all(
                 RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8),
@@ -109,7 +109,7 @@ class _HomeContentState extends State<HomeContent> {
               ),
               backgroundColor: WidgetStateProperty.all(const Color(0xFFF3F4F6)),
               shadowColor: WidgetStateProperty.all(Colors.transparent),
-              leading: Icon(Icons.search, color: Colors.grey),
+              leading: Image.asset('assets/images/search_icon.png',height: 15,width: 15,)
             ),
           ),
           Expanded(

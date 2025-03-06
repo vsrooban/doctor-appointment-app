@@ -25,7 +25,7 @@ class _NearbyClinicsWidgetState extends State<NearbyClinicsWidget> {
           children: [
             Text(
               'Nearby Medical Centers',
-              style: AppTypography.h3,
+              style: AppTypography.h3.copyWith(color: Color(0xFF1C2A3A)),
             ),
             Text(
               'See All',
