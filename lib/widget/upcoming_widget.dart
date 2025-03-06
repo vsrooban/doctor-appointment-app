@@ -11,10 +11,19 @@ class UpcomingWidget extends StatefulWidget {
 class _UpcomingWidgetState extends State<UpcomingWidget> {
   final List<Map<String, String>> doctors = const [
     {
+      "date": "June 25, 2023 - 1.00 PM",
+      "name": "Dr. James Robinson",
+      "specialty": "Orthopedic Surgery",
+      "hospital": "Elite Ortho Clinic, USA",
+      "rating": "4.7",
+      "reviews": "5,223 Reviews",
+      "image": "assets/images/doctor_3.png"
+    },
+    {
       "date": "May 22, 2023 - 10.00 AM",
-      "name": "Dr. David Patel",
-      "specialty": "Cardiologist",
-      "hospital": "Cardiology Center, USA",
+      "name": "Dr. Daniel Lee",
+      "specialty": "Gastroenterologist",
+      "hospital": "Digestive Institute, USA",
       "rating": "5.0",
       "reviews": "1,872 Reviews",
       "image": "assets/images/doctor_4.png"
@@ -22,20 +31,11 @@ class _UpcomingWidgetState extends State<UpcomingWidget> {
     {
       "date": "June 19, 2023 - 11.10 AM",
       "name": "Dr. Jessica Turner",
-      "specialty": "Gynecologist",
+      "specialty": "Cardiologist",
       "hospital": "Women's Clinic, Seattle, USA",
       "rating": "4.9",
       "reviews": "127 Reviews",
       "image": "assets/images/doctor_2.png"
-    },
-    {
-      "date": "June 25, 2023 - 1.00 PM",
-      "name": "Dr. Michael Johnson",
-      "specialty": "Orthopedic Surgery",
-      "hospital": "Maple Associates, NY, USA",
-      "rating": "4.7",
-      "reviews": "5,223 Reviews",
-      "image": "assets/images/doctor_3.png"
     },
     {
       "date": "July 05, 2023 - 9.00 AM",
