@@ -1,3 +1,4 @@
+import 'package:doctor_appointment_app/screen/home/google_map.dart';
 import 'package:doctor_appointment_app/util/custom_theme.dart';
 import 'package:doctor_appointment_app/widget/map_hospital_card.dart';
 import 'package:flutter/material.dart';
@@ -47,6 +48,7 @@ class _DoctorMapScreenState extends State<DoctorMapScreen> {
       body: Stack(
 
         children: [
+          MapWithMarkers(),
         
           // Custom Search Bar
           Positioned(
