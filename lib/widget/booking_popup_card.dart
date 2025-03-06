@@ -1,4 +1,4 @@
-import 'package:doctor_appointment_app/screen/home/booking_screen.dart';
+import 'package:doctor_appointment_app/screen/home/home_screen.dart';
 import 'package:doctor_appointment_app/util/custom_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -25,7 +25,7 @@ class _AppointmentConfirmationDialogState extends State<AppointmentConfirmationD
     return AlertDialog(
       backgroundColor: Colors.white,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)), 
-      contentPadding: EdgeInsets.all(20),
+      contentPadding: EdgeInsets.all(10),
       content: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -49,7 +49,9 @@ class _AppointmentConfirmationDialogState extends State<AppointmentConfirmationD
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
                 padding: EdgeInsets.symmetric(vertical: 12),
               ),
-              onPressed: () {Navigator.pop(context, MaterialPageRoute(builder: (context)=> BookingScreen()));},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> HomeScreen()));
+              },
               child: Text("Done", style: AppTypography.button.copyWith(color: Colors.white)),
             ),
           ),
