@@ -90,12 +90,12 @@ class _ClinicCardState extends State<ClinicCard> {
   Widget build(BuildContext context) {
     double rating = double.tryParse(widget.rating) ?? 0.0; // Convert rating to double
 
-    return Card(
-      color: Colors.white,
-      margin: EdgeInsets.all(10),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-      elevation: 5,
-      child: Expanded(
+    return Expanded(
+      child: Card(
+        color: Colors.white,
+        margin: EdgeInsets.all(10),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+        elevation: 5,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
