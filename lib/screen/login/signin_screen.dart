@@ -174,7 +174,7 @@ class _SigninPageState extends State<SigninPage> {
               if (value.isEmpty) {
                 return "This field cannot be empty";
               }
-              if (isEmail && value != "test@boodskap.io") {
+              if (isEmail && value != "demo@boodskap.io") {
                 return "Invalid email";
               }
               if (isPassword && value != "welcome123") {
