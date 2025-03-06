@@ -18,6 +18,8 @@ class MapWithMarkers extends StatelessWidget {
     LatLng(13.084684, 80.180368),
   ];
 
+  MapWithMarkers({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
