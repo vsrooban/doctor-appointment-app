@@ -120,7 +120,7 @@ class RemoveFavoriteBottomSheet {
                     child: ElevatedButton(
                       onPressed: () => Navigator.pop(context),
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.black,
+                        backgroundColor: const Color(0xFF1C2A3A),
                       ),
                       child: Text("Yes, Remove",
                           style: AppTypography.bodyLG
