@@ -4,7 +4,7 @@ import 'package:latlong2/latlong.dart';
 
 class MapWithMarkers extends StatelessWidget {
   final LatLng mapCenter = LatLng(13.085016, 80.181948);
-  final double initialZoom = 17.0;
+  final double initialZoom = 16.0;
 
   // List of markers with different images
   final List<Map<String, dynamic>> markers = [
