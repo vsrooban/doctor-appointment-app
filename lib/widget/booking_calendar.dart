@@ -70,7 +70,7 @@ class _BookingCalendarState extends State<BookingCalendar> {
                         ))
                     .toList(),
               ),
-              const SizedBox(height: 2),
+              // const SizedBox(height: 2),
               Expanded(
                 child: _buildCalendarGrid(),
               ),
@@ -87,7 +87,7 @@ class _BookingCalendarState extends State<BookingCalendar> {
     int startingWeekday = firstDayOfMonth.weekday % 7;
     int daysInMonth =
         DateTime(currentMonth.year, currentMonth.month + 1, 0).day;
-    int totalDays = 35; // Fixed to 5 rows x 7 columns
+    int totalDays = 42; // Fixed to 5 rows x 7 columns
 
     // Previous month filler dates
     int prevMonthDays = DateTime(currentMonth.year, currentMonth.month, 0).day;
@@ -159,6 +159,7 @@ class _BookingCalendarState extends State<BookingCalendar> {
 
     return GridView.count(
       crossAxisCount: 7,
+      childAspectRatio: 1.65,
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       children: dayWidgets,
