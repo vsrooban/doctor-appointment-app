@@ -123,7 +123,7 @@ class _ClinicCardState extends State<ClinicCard> {
                 Text(widget.name, style: AppTypography.h2),
                 SizedBox(height: 5),
                 Row(children: [
-                  Icon(Icons.location_on, size: 16, color: Colors.grey),
+                  Icon(Icons.location_on, size: 16, color: Color(0xff6B7280)),
                   SizedBox(width: 5),
                   Expanded(
                       child: Text(widget.address,

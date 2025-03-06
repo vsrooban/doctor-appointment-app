@@ -117,7 +117,7 @@ class _FavoriteScreenDoctorCardState extends State<FavoriteScreenDoctorCard> {
                             Expanded(
                               child: Text(doctor['hospital']!,
                                   style: AppTypography.bodySMedium.copyWith(
-                                      color: Color(0xFF4B5563),
+                                      color: Color(0xff6B7280),
                                       overflow: TextOverflow.ellipsis)),
                             ),
                           ],

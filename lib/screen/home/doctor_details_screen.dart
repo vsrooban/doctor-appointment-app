@@ -162,7 +162,7 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(25)),
                         ),
-                        child: Text("Booking Appointment",
+                        child: Text("Book Appointment",
                             style: AppTypography.bodySBold
                                 .copyWith(color: Colors.white)),
                       ),

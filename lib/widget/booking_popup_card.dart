@@ -1,4 +1,3 @@
-import 'package:doctor_appointment_app/screen/home/home_screen.dart';
 import 'package:doctor_appointment_app/util/custom_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -36,7 +35,7 @@ class _AppointmentConfirmationDialogState extends State<AppointmentConfirmationD
           const SizedBox(height: 10),
           Text(
             "Your appointment with Dr. David Patel is confirmed for $formattedDate, at ${widget.time}.",
-            style: AppTypography.bodySMedium,
+            style: AppTypography.bodySMedium.copyWith(color: Color(0xff6B7280)),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 25),
@@ -50,7 +49,7 @@ class _AppointmentConfirmationDialogState extends State<AppointmentConfirmationD
                 padding: EdgeInsets.symmetric(vertical: 12),
               ),
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=> HomeScreen()));
+                Navigator.of(context).pop();
               },
               child: Text("Done", style: AppTypography.button.copyWith(color: Colors.white)),
             ),
@@ -60,7 +59,7 @@ class _AppointmentConfirmationDialogState extends State<AppointmentConfirmationD
             onPressed: () {
               Navigator.of(context).pop();
             },
-            child: Text("Edit your appointment", style: AppTypography.bodySMedium.copyWith(color: Colors.black)),
+            child: Text("Edit your appointment", style: AppTypography.bodySMedium.copyWith(color: Color(0xff6B7280))),
           ),
         ],
       ),
