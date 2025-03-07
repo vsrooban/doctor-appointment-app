@@ -120,19 +120,19 @@ class _ClinicCardState extends State<ClinicCard> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(widget.name, style: AppTypography.h2),
+                Text(widget.name, style: AppTypography.h2.copyWith(color: Color(0xFF4B5563))),
                 SizedBox(height: 5),
                 Row(children: [
                   Icon(Icons.location_on, size: 16, color: Color(0xff6B7280)),
                   SizedBox(width: 5),
                   Expanded(
                       child: Text(widget.address,
-                          style: AppTypography.bodySRegular)),
+                          style: AppTypography.bodySRegular.copyWith(color: Color(0xFF6B7280)))),
                 ]),
                 SizedBox(height: 5),
                 Row(
                   children: [
-                    Text(" ${widget.rating} ", style: AppTypography.bodySBold),
+                    Text(" ${widget.rating} ", style: AppTypography.bodySBold.copyWith(color: Color(0xFF6B7280))),
                     SizedBox(width: 4),
                     ...List.generate(
                       rating.floor(),
@@ -148,7 +148,7 @@ class _ClinicCardState extends State<ClinicCard> {
                     ),
                     SizedBox(width: 4),
                     Text("(${widget.reviews} Reviews)",
-                        style: AppTypography.bodySRegular),
+                        style: AppTypography.bodySRegular.copyWith(color: Color(0xFF6B7280))),
                   ],
                 ),
                 SizedBox(height: 5),
@@ -157,14 +157,14 @@ class _ClinicCardState extends State<ClinicCard> {
                   color: const Color(0xFFE5E7EB),
                 ),
                 Row(children: [
-                  Image.asset("assets/images/routing.png"),
+                  Image.asset("assets/images/routing.png",height: 16,width: 16,),
                   SizedBox(width: 5),
                   Text("${widget.distance} / 40 min",
-                      style: AppTypography.bodySRegular),
+                      style: AppTypography.bodySRegular.copyWith(color: Color(0xFF6B7280))),
                   Spacer(),
-                  Image.asset("assets/images/icon_hospital_card.png"),
+                  Image.asset("assets/images/icon_hospital_card.png",height: 16,width: 16,),
                   SizedBox(width: 5),
-                  Text(widget.category, style: AppTypography.bodySRegular),
+                  Text(widget.category, style: AppTypography.bodySRegular.copyWith(color: Color(0xFF6B7280))),
                 ]),
               ],
             ),

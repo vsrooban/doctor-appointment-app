@@ -99,9 +99,9 @@ class _NotificationScreenState extends State<NotificationScreen> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(title, style: AppTypography.h3.copyWith(color: Colors.black54)),
+          Text(title, style: AppTypography.h3.copyWith(color: const Color(0xFF6B7280))),
           Text("Mark all as read",
-              style: AppTypography.bodySBold.copyWith(color: Colors.black)),
+              style: AppTypography.bodySBold.copyWith(color: const Color(0xFF1C2A3A))),
         ],
       ),
     );
@@ -118,12 +118,12 @@ class _NotificationScreenState extends State<NotificationScreen> {
           height: 60,
         ),
       ),
-      title: Text(title, style: AppTypography.bodyLG),
+      title: Text(title, style: AppTypography.bodyLG.copyWith(color: Color(0xFF1C2A3A))),
       subtitle: Text(subtitle,
-          style: AppTypography.bodySMedium.copyWith(color: Colors.grey)),
+          style: AppTypography.bodySMedium.copyWith(color: const Color(0xFF6B7280))),
       trailing: Text(time,
           style: AppTypography.bodySRegular.copyWith(
-            color: Colors.grey,
+            color: const Color(0xFF6B7280),
             fontSize: 14,
             fontWeight: FontWeight.w600,
           )),
