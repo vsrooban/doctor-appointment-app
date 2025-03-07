@@ -28,9 +28,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
               const Text("Logout", style: AppTypography.h2),
               const SizedBox(height: 10),
               Divider(
-              thickness: 1,
-              color: const Color(0xFFE5E7EB),
-            ),
+                thickness: 1,
+                color: const Color(0xFFE5E7EB),
+              ),
               const SizedBox(height: 10),
               const Text(
                 "Are you sure you want to log out?",
@@ -100,34 +100,41 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 bottom: 15,
                 right: 17,
                 child: Container(
-                  decoration: BoxDecoration(
-                    shape: BoxShape.rectangle,
-                    borderRadius: BorderRadius.circular(6),
-                    color: Color(0xff1C2A3A)
-                  ),
-                  padding: const EdgeInsets.all(8),
-                  child: Image.asset('assets/images/pencil.png')
-                ),
+                    decoration: BoxDecoration(
+                        shape: BoxShape.rectangle,
+                        borderRadius: BorderRadius.circular(6),
+                        color: Color(0xff1C2A3A)),
+                    padding: const EdgeInsets.all(8),
+                    child: Image.asset('assets/images/pencil.png')),
               ),
             ],
           ),
         ),
         const SizedBox(height: 2),
-        const Text("Daniel Martinez", style: AppTypography.h2),
+        Text("Daniel Martinez",
+            style: AppTypography.h2.copyWith(color: Color(0xFF1F2A37))),
         const Text("+123 856479683", style: AppTypography.bodySRegular),
         const SizedBox(height: 10),
         Expanded(
           child: ListView(
             children: [
               ProfileMenuItem(
-                  icon: Image.asset("assets/images/user-edit.png"),
+                  icon: Image.asset(
+                    "assets/images/user-edit.png",
+                    height: 24,
+                    width: 24,
+                  ),
                   text: "Edit Profile"),
               Divider(
-              thickness: 1,
-              color: const Color(0xFFE5E7EB),
-            ),
+                thickness: 1,
+                color: const Color(0xFFE5E7EB),
+              ),
               ProfileMenuItem(
-                icon: Image.asset("assets/images/favorite.png",width: 30,height: 30,),
+                icon: Image.asset(
+                  "assets/images/favorite.png",
+                  height: 24,
+                  width: 24,
+                ),
                 text: "Favorite",
                 onTap: () {
                   Navigator.push(
@@ -139,11 +146,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 },
               ),
               Divider(
-              thickness: 1,
-              color:  Color(0xFFE5E7EB),
-            ),
+                thickness: 1,
+                color: Color(0xFFE5E7EB),
+              ),
               ProfileMenuItem(
-                icon: Image.asset("assets/images/notification.png"),
+                icon: Image.asset(
+                  "assets/images/notification.png",
+                  height: 24,
+                  width: 24,
+                ),
                 text: "Notifications",
                 onTap: () {
                   Navigator.push(
@@ -154,33 +165,50 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   );
                 },
               ),
-               Divider(
-              thickness: 1,
-              color:  Color(0xFFE5E7EB),
-            ),
+              Divider(
+                thickness: 1,
+                color: Color(0xFFE5E7EB),
+              ),
               ProfileMenuItem(
-                  icon: Image.asset("assets/images/setting-2.png"),
+                  icon: Image.asset(
+                    "assets/images/setting-2.png",
+                    height: 24,
+                    width: 24,
+                  ),
                   text: "Settings"),
-               Divider(
-              thickness: 1,
-              color:  Color(0xFFE5E7EB),
-            ),
+              Divider(
+                thickness: 1,
+                color: Color(0xFFE5E7EB),
+              ),
               ProfileMenuItem(
-                  icon: Image.asset("assets/images/message-question.png"),
-                  text: "Help and Support"),
-               Divider(
-              thickness: 1,
-              color: const Color(0xFFE5E7EB),
-            ),
+                icon: Image.asset(
+                  "assets/images/message-question.png",
+                  height: 24,
+                  width: 24,
+                ),
+                text: "Help and Support",
+              ),
+              Divider(
+                thickness: 1,
+                color: const Color(0xFFE5E7EB),
+              ),
               ProfileMenuItem(
-                  icon: Image.asset("assets/images/security-safe.png"),
+                  icon: Image.asset(
+                    "assets/images/security-safe.png",
+                    height: 24,
+                    width: 24,
+                  ),
                   text: "Terms and Conditions"),
-             Divider(
-              thickness: 1,
-              color: const Color(0xFFE5E7EB),
-            ), 
+              Divider(
+                thickness: 1,
+                color: const Color(0xFFE5E7EB),
+              ),
               ProfileMenuItem(
-                icon: Image.asset("assets/images/logout.png"),
+                icon: Image.asset(
+                  "assets/images/logout.png",
+                  height: 24,
+                  width: 24,
+                  ),
                 text: "Log Out",
                 showTrailingIcon: false,
                 onTap: _showLogoutDialog,
@@ -211,7 +239,8 @@ class ProfileMenuItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: icon,
-      title: Text(text, style: AppTypography.bodyLG.copyWith(color: Color(0xff6B7280))),
+      title: Text(text,
+          style: AppTypography.bodyLG.copyWith(color: Color(0xff6B7280))),
       trailing: showTrailingIcon
           ? const Icon(
               Icons.arrow_forward_ios,

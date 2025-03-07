@@ -44,15 +44,15 @@ class _SigninPageState extends State<SigninPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text("Health",
-                      style: AppTypography.h1.copyWith(color: Colors.grey)),
-                  Text("Pal", style: AppTypography.h1),
+                      style: AppTypography.h1.copyWith(color: const Color(0xFF6B7280))),
+                  Text("Pal", style: AppTypography.h1.copyWith(color: Color(0xFF111928))),
                 ],
               ),
               SizedBox(height: 20),
-              Text("Hi, Welcome Back!", style: AppTypography.h1),
+              Text("Hi, Welcome Back!", style: AppTypography.h1.copyWith(color: Color(0xFF1C2A3A))),
               SizedBox(height: 5),
               Text("Hope you're doing fine.",
-                  style: AppTypography.bodySBold.copyWith(color: Colors.grey)),
+                  style: AppTypography.bodySBold.copyWith(color: const Color(0xFF6B7280))),
               SizedBox(height: 35),
               _buildTextField(
                   emailController, "Your Email", Icons.email, screenWidth,
@@ -119,19 +119,19 @@ class _SigninPageState extends State<SigninPage> {
               SizedBox(height: 25),
               Text("Forgot Password",
                   style: AppTypography.bodySSemiBold
-                      .copyWith(color: Colors.blue, fontSize: 18)),
+                      .copyWith(color: const Color(0xFF1C64F2), fontSize: 14)),
               SizedBox(height: 20),
               GestureDetector(
                 onTap: signUp,
                 child: Text.rich(
                   TextSpan(
                     text: "Don't have an account yet? ",
-                    style: AppTypography.bodyLG.copyWith(color: Colors.grey),
+                    style: AppTypography.bodyLG.copyWith(color: const Color(0xFF6B7280)),
                     children: [
                       TextSpan(
                         text: "  Sign Up",
                         style: AppTypography.bodySBold
-                            .copyWith(color: Colors.blue, fontSize: 18),
+                            .copyWith(color: const Color(0xFF1C64F2), fontSize: 14),
                       ),
                     ],
                   ),
