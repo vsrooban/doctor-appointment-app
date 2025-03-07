@@ -2,20 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 
-class MapWithMarkers extends StatefulWidget {
+class MapWithMarkers extends StatelessWidget {
 
   MapWithMarkers({super.key});
 
-  @override
-  State<MapWithMarkers> createState() => _MapWithMarkersState();
-}
-
-class _MapWithMarkersState extends State<MapWithMarkers> {
   final LatLng mapCenter = LatLng(13.085016, 80.181948);
 
   final double initialZoom = 16.0;
 
-  // List of markers with different images
   final List<Map<String, dynamic>> markers = [
     {"location": LatLng(13.087625, 80.181837), "image": 'assets/images/doctor_1.png'},
     {"location": LatLng(13.087593, 80.180431), "image": 'assets/images/doctor_2.png'},
