@@ -75,12 +75,6 @@ class _NotificationScreenState extends State<NotificationScreen> {
               "You have successfully booked your appointment with Dr. David Patel.",
               "1d",
               Colors.green),
-          // _buildNotificationItem(
-          //     "assets/images/calendar-edit.png",
-          //     "Schedule Changed",
-          //     "You have successfully changed your appointment with Dr. Jesica Turner.",
-          //     "8h",
-          //     Colors.grey),
         ],
       ),
     );

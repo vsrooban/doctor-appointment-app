@@ -18,41 +18,42 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(
-              height: 30,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                IconButton(
-                    onPressed: () {
-                      Navigator.pop(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => AllDoctorsPage()));
-                    },
-                    icon: Icon(Icons.arrow_back)),
-                    Spacer(),
-                Text(
-                  'Doctor Details',
-                  style: AppTypography.h1,
-                ),
-                Spacer(),
-                SizedBox(
-                  height: 20,
-                  width: 20,
-                  child: FavoriteButton(),
-                ),
-              ],
-            ),
-            SizedBox(height: 15),
-            Expanded(
-              child: SingleChildScrollView(
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(
+            height: 30,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              IconButton(
+                  onPressed: () {
+                    Navigator.pop(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => AllDoctorsPage()));
+                  },
+                  icon: Icon(Icons.arrow_back)),
+                  Spacer(),
+              Text(
+                'Doctor Details',
+                style: AppTypography.h1,
+              ),
+              Spacer(),
+              SizedBox(
+                height: 20,
+                width: 20,
+                child: FavoriteButton(),
+              ),
+              SizedBox(width: 15,)
+            ],
+          ),
+          SizedBox(height: 15),
+          Expanded(
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal:16),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -174,8 +175,8 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
                 ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
