@@ -46,7 +46,6 @@ class _HomeScreenState extends State<HomeScreen> {
             : Colors.transparent,
       ),
       child: Image.asset(
-
         isSelected ? _selectedIcons[index] : _unselectedIcons[index],
         width: 24,
         height: 24,
@@ -62,25 +61,34 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: _screens[_selectedIndex],
-      bottomNavigationBar: BottomNavigationBar(
+    return PopScope(
+      canPop: _selectedIndex == 0,
+      onPopInvokedWithResult: (didPop, result) {
+        if (!didPop && _selectedIndex != 0) {
+          setState(() {
+            _selectedIndex = 0;
+          });
+        }
+      },
+      child: Scaffold(
         backgroundColor: Colors.white,
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.grey,
-        showUnselectedLabels: true,
-        type: BottomNavigationBarType.fixed,
-        items: List.generate(4, (index) => BottomNavigationBarItem(
-          icon: _buildNavItem(index),
-          label: "",
-        )),
+        body: _screens[_selectedIndex],
+        bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: Colors.white,
+          currentIndex: _selectedIndex,
+          onTap: _onItemTapped,
+          selectedItemColor: Colors.white,
+          unselectedItemColor: Colors.grey,
+          showUnselectedLabels: true,
+          type: BottomNavigationBarType.fixed,
+          items: List.generate(
+              4,
+              (index) => BottomNavigationBarItem(
+                    icon: _buildNavItem(index),
+                    label: "",
+                  )),
+        ),
       ),
     );
   }
 }
-
-
-

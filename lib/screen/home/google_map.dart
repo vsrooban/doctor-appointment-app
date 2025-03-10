@@ -40,7 +40,6 @@ class MapWithMarkers extends StatelessWidget {
           initialCenter: mapCenter,
           initialZoom: initialZoom,
           onTap: (tapPosition, latLng) {
-            print("Tapped location: ${latLng.latitude}, ${latLng.longitude}");
           },
         ),
         children: [
