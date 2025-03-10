@@ -59,7 +59,8 @@ class HomeScreenCategoriesWidget extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text('Categories', style: AppTypography.h3.copyWith(color: Color(0xFF1C2A3A))),
+        Text('Categories',
+            style: AppTypography.h3.copyWith(color: Color(0xFF1C2A3A))),
         Text('See All',
             style: AppTypography.bodySMedium.copyWith(color: Colors.grey)),
       ],

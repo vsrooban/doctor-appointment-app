@@ -208,7 +208,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   "assets/images/logout.png",
                   height: 24,
                   width: 24,
-                  ),
+                ),
                 text: "Log Out",
                 showTrailingIcon: false,
                 onTap: _showLogoutDialog,

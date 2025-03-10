@@ -30,9 +30,9 @@ class RemoveFavoriteBottomSheet {
                 style: AppTypography.bodyLG,
               ),
               Divider(
-              thickness: 1,
-              color: const Color(0xFFE5E7EB),
-            ),
+                thickness: 1,
+                color: const Color(0xFFE5E7EB),
+              ),
               SizedBox(height: 16),
               Card(
                 elevation: 5,
@@ -72,9 +72,9 @@ class RemoveFavoriteBottomSheet {
                               ],
                             ),
                             Divider(
-              thickness: 1,
-              color: const Color(0xFFE5E7EB),
-            ),
+                              thickness: 1,
+                              color: const Color(0xFFE5E7EB),
+                            ),
                             Text(specialty, style: AppTypography.bodySBold),
                             Row(
                               children: [

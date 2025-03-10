@@ -27,7 +27,7 @@ class _AllDoctorsPageState extends State<AllDoctorsPage> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(height: 20),
+          SizedBox(height: 30),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [

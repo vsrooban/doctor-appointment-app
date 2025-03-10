@@ -16,10 +16,9 @@ class _NotificationScreenState extends State<NotificationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: ListView(
-        padding: const EdgeInsets.all(16),
+      body: Column(
         children: [
-          const SizedBox(height: 20),
+          const SizedBox(height: 30),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -45,36 +44,46 @@ class _NotificationScreenState extends State<NotificationScreen> {
                       AppTypography.bodySRegular.copyWith(color: Colors.white),
                 ),
               ),
+              SizedBox(
+                width: 10,
+              )
             ],
           ),
-          const SizedBox(height: 10),
-          _buildSectionHeader("TODAY"),
-          _buildNotificationItem(
-              "assets/images/calendar-tick.png",
-              "Appointment Success",
-              "You have successfully booked your appointment with Dr. Emily Walker.",
-              "1h",
-              Colors.green),
-          _buildNotificationItem(
-              "assets/images/calendar-remove.png",
-              "Appointment Cancelled",
-              "You have successfully cancelled your appointment with Dr. David Patel.",
-              "2h",
-              Colors.red),
-          _buildNotificationItem(
-              "assets/images/calendar-edit.png",
-              "Scheduled Changed",
-              "You have successfully changed your appointment with Dr. Jesica Turner.",
-              "8h",
-              Colors.grey),
-          const SizedBox(height: 15),
-          _buildSectionHeader("YESTERDAY"),
-          _buildNotificationItem(
-              "assets/images/calendar-tick.png",
-              "Appointment Success",
-              "You have successfully booked your appointment with Dr. David Patel.",
-              "1d",
-              Colors.green),
+          Expanded(
+            child: ListView(
+              padding: const EdgeInsets.all(16),
+              children: [
+                const SizedBox(height: 10),
+                _buildSectionHeader("TODAY"),
+                _buildNotificationItem(
+                    "assets/images/calendar-tick.png",
+                    "Appointment Success",
+                    "You have successfully booked your appointment with Dr. Emily Walker.",
+                    "1h",
+                    Colors.green),
+                _buildNotificationItem(
+                    "assets/images/calendar-remove.png",
+                    "Appointment Cancelled",
+                    "You have successfully cancelled your appointment with Dr. David Patel.",
+                    "2h",
+                    Colors.red),
+                _buildNotificationItem(
+                    "assets/images/calendar-edit.png",
+                    "Scheduled Changed",
+                    "You have successfully changed your appointment with Dr. Jesica Turner.",
+                    "8h",
+                    Colors.grey),
+                const SizedBox(height: 15),
+                _buildSectionHeader("YESTERDAY"),
+                _buildNotificationItem(
+                    "assets/images/calendar-tick.png",
+                    "Appointment Success",
+                    "You have successfully booked your appointment with Dr. David Patel.",
+                    "1d",
+                    Colors.green),
+              ],
+            ),
+          ),
         ],
       ),
     );
@@ -95,9 +104,11 @@ class _NotificationScreenState extends State<NotificationScreen> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(title, style: AppTypography.h3.copyWith(color: const Color(0xFF6B7280))),
+          Text(title,
+              style: AppTypography.h3.copyWith(color: const Color(0xFF6B7280))),
           Text("Mark all as read",
-              style: AppTypography.bodySBold.copyWith(color: const Color(0xFF1C2A3A))),
+              style: AppTypography.bodySBold
+                  .copyWith(color: const Color(0xFF1C2A3A))),
         ],
       ),
     );
@@ -114,9 +125,11 @@ class _NotificationScreenState extends State<NotificationScreen> {
           height: 60,
         ),
       ),
-      title: Text(title, style: AppTypography.bodyLG.copyWith(color: Color(0xFF1C2A3A))),
+      title: Text(title,
+          style: AppTypography.bodyLG.copyWith(color: Color(0xFF1C2A3A))),
       subtitle: Text(subtitle,
-          style: AppTypography.bodySMedium.copyWith(color: const Color(0xFF6B7280))),
+          style: AppTypography.bodySMedium
+              .copyWith(color: const Color(0xFF6B7280))),
       trailing: Text(time,
           style: AppTypography.bodySRegular.copyWith(
             color: const Color(0xFF6B7280),

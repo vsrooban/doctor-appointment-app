@@ -35,7 +35,7 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
                             builder: (context) => AllDoctorsPage()));
                   },
                   icon: Icon(Icons.arrow_back)),
-                  Spacer(),
+              Spacer(),
               Text(
                 'Doctor Details',
                 style: AppTypography.h1,
@@ -46,14 +46,16 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
                 width: 20,
                 child: FavoriteButton(),
               ),
-              SizedBox(width: 15,)
+              SizedBox(
+                width: 15,
+              )
             ],
           ),
           SizedBox(height: 15),
           Expanded(
             child: SingleChildScrollView(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal:16),
+                padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -76,9 +78,8 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
                           TextSpan(
                             text: 'view more',
                             style: AppTypography.bodySRegular.copyWith(
-                              color: Color(0xFF020202), // Change to your desired color
-                              decoration:
-                                  TextDecoration.underline, // Underline effect
+                              color: Color(0xFF020202),
+                              decoration: TextDecoration.underline,
                             ),
                           ),
                         ],
@@ -170,7 +171,9 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
                                 .copyWith(color: Colors.white)),
                       ),
                     ),
-                    SizedBox(height: 20,)
+                    SizedBox(
+                      height: 20,
+                    )
                   ],
                 ),
               ),

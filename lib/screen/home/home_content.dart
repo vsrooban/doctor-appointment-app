@@ -21,7 +21,7 @@ class _HomeContentState extends State<HomeContent> {
       child: Column(
         children: [
           SizedBox(
-            height: 20,
+            height: 30,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

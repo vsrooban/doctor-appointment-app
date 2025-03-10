@@ -2,7 +2,6 @@ import 'package:doctor_appointment_app/screen/home/booking_screen.dart';
 import 'package:doctor_appointment_app/screen/home/home_content.dart';
 import 'package:doctor_appointment_app/screen/home/map_screen.dart';
 import 'package:doctor_appointment_app/screen/home/profile_screen.dart';
-import 'package:doctor_appointment_app/util/custom_theme.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -83,34 +82,5 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-class MapPage extends StatefulWidget {
-  const MapPage({super.key});
 
-  @override
-  State<MapPage> createState() => _MapPageState();
-}
 
-class _MapPageState extends State<MapPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text("Map Page", style: AppTypography.h2),
-    );
-  }
-}
-
-class DatePage extends StatefulWidget {
-  const DatePage({super.key});
-
-  @override
-  State<DatePage> createState() => _DatePageState();
-}
-
-class _DatePageState extends State<DatePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text("Date Page", style: AppTypography.h2),
-    );
-  }
-}
