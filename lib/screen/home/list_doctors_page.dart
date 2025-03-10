@@ -24,29 +24,29 @@ class _AllDoctorsPageState extends State<AllDoctorsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                IconButton(
-                  onPressed: () {
-                    Navigator.pop(context,
-                        MaterialPageRoute(builder: (context) => HomeScreen()));
-                  },
-                  icon: const Icon(Icons.arrow_back, size: 24),
-                ),
-                const Spacer(),
-                Text('All Doctors', style: AppTypography.h1),
-                const Spacer(),
-              ],
-            ),
-            const SizedBox(height: 10),
-            SizedBox(
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(height: 20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              IconButton(
+                onPressed: () {
+                  Navigator.pop(context,
+                      MaterialPageRoute(builder: (context) => HomeScreen()));
+                },
+                icon: const Icon(Icons.arrow_back, size: 24),
+              ),
+              const Spacer(),
+              Text('All Doctors', style: AppTypography.h1),
+              const Spacer(),
+            ],
+          ),
+          const SizedBox(height: 10),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal:16),
+            child: SizedBox(
               height: 40,
               width: MediaQuery.of(context).size.width,
               child: SearchBar(
@@ -70,8 +70,11 @@ class _AllDoctorsPageState extends State<AllDoctorsPage> {
                 leading: Image.asset('assets/images/search_icon.png',height: 15,width: 15,),
               ),
             ),
-            const SizedBox(height: 15),
-            SizedBox(
+          ),
+          const SizedBox(height: 15),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal:16),
+            child: SizedBox(
               height: 40,
               child: ListView.builder(
                 padding: EdgeInsets.zero,
@@ -104,8 +107,11 @@ class _AllDoctorsPageState extends State<AllDoctorsPage> {
                 },
               ),
             ),
-            const SizedBox(height: 15),
-            Row(
+          ),
+          const SizedBox(height: 15),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal:16),
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text('532 founds', style: AppTypography.bodySBold),
@@ -124,11 +130,14 @@ class _AllDoctorsPageState extends State<AllDoctorsPage> {
                 )
               ],
             ),
-            Expanded(
+          ),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal:16),
               child: DoctorsListCard(),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
