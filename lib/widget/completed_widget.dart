@@ -139,7 +139,8 @@ class _DoctorCardState extends State<DoctorCard> {
                           Expanded(
                             child: Text(
                               widget.doctor['hospital']!,
-                              style: const TextStyle(fontSize: 12),overflow: TextOverflow.ellipsis,
+                              style: const TextStyle(fontSize: 12),
+                              overflow: TextOverflow.ellipsis,
                             ),
                           ),
                         ],
@@ -178,9 +179,6 @@ class _DoctorCardState extends State<DoctorCard> {
                             .copyWith(color: const Color(0xFF1C2A3A))),
                   ),
                 ),
-                // SizedBox(
-                //   width: 30,
-                // ),
                 SizedBox(
                   height: 37,
                   width: 137,

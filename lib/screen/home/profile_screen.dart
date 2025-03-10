@@ -51,9 +51,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.pushReplacement(
+                      Navigator.pushAndRemoveUntil(
                         context,
                         MaterialPageRoute(builder: (context) => SigninPage()),
+                        (Route<dynamic> route) => false,
                       );
                     },
                     style: ElevatedButton.styleFrom(
@@ -208,7 +209,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   "assets/images/logout.png",
                   height: 24,
                   width: 24,
-                  ),
+                ),
                 text: "Log Out",
                 showTrailingIcon: false,
                 onTap: _showLogoutDialog,

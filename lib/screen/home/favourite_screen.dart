@@ -62,10 +62,14 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                     ),
                     if (selectedIndex == index)
                       Container(
-                        height: 3,
-                        width: 80,
-                        decoration: BoxDecoration(borderRadius: BorderRadius.only(topLeft: Radius.circular(4),topRight: Radius.circular(4)),color: const Color(0xFF1C2A3A),)
-                      ),
+                          height: 3,
+                          width: 80,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(4),
+                                topRight: Radius.circular(4)),
+                            color: const Color(0xFF1C2A3A),
+                          )),
                   ],
                 ),
               );

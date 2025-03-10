@@ -104,13 +104,14 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             child: Column(
               children: [
                 SizedBox(height: 10),
-                Text(title, style: AppTypography.h2.copyWith(color: Color(0xFF374151))),
+                Text(title,
+                    style: AppTypography.h2.copyWith(color: Color(0xFF374151))),
                 SizedBox(height: 10),
                 Text(
                   description,
                   textAlign: TextAlign.center,
-                  style:
-                      AppTypography.bodySSemiBold.copyWith(color: const Color(0xFF6B7280)),
+                  style: AppTypography.bodySSemiBold
+                      .copyWith(color: const Color(0xFF6B7280)),
                 ),
                 SizedBox(height: 20),
                 ElevatedButton(

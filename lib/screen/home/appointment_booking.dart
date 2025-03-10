@@ -42,8 +42,7 @@ class _AppointmentBookingScreenState extends State<AppointmentBookingScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Header
-                const SizedBox(height: 20),
+                const SizedBox(height: 30),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
@@ -57,15 +56,13 @@ class _AppointmentBookingScreenState extends State<AppointmentBookingScreen> {
                   ],
                 ),
                 const SizedBox(height: 20),
-          
-                // Select Date
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal:16),
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: Text('Select Date', style: AppTypography.h3),
                 ),
                 const SizedBox(height: 10),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal:16),
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: BookingCalendar(
                     onDateSelected: (date) {
                       setState(() {
@@ -74,17 +71,14 @@ class _AppointmentBookingScreenState extends State<AppointmentBookingScreen> {
                     },
                   ),
                 ),
-          
                 const SizedBox(height: 25),
-          
-                // Select Hour
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal:16),
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: Text('Select Hour', style: AppTypography.h3),
                 ),
                 const SizedBox(height: 15),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal:16),
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: Wrap(
                     spacing: 10,
                     runSpacing: 18,
@@ -93,9 +87,12 @@ class _AppointmentBookingScreenState extends State<AppointmentBookingScreen> {
                       return GestureDetector(
                         onTap: () => setState(() => selectedTime = time),
                         child: Container(
-                          padding: EdgeInsets.symmetric(vertical: 12, horizontal: 18),
+                          padding: EdgeInsets.symmetric(
+                              vertical: 12, horizontal: 18),
                           decoration: BoxDecoration(
-                            color: isSelected ? Color(0xff1C2A3A) : Color(0xffF9FAFB),
+                            color: isSelected
+                                ? Color(0xff1C2A3A)
+                                : Color(0xffF9FAFB),
                             borderRadius: BorderRadius.circular(8),
                           ),
                           child: Text(
@@ -112,10 +109,8 @@ class _AppointmentBookingScreenState extends State<AppointmentBookingScreen> {
                   ),
                 ),
                 const SizedBox(height: 40),
-          
-                // Confirm Button
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal:16),
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: Center(
                     child: SizedBox(
                       height: 48,
@@ -131,21 +126,17 @@ class _AppointmentBookingScreenState extends State<AppointmentBookingScreen> {
                           if (selectedTime != null) {
                             showDialog(
                               context: context,
-                              builder: (context) => AppointmentConfirmationDialog(
+                              builder: (context) =>
+                                  AppointmentConfirmationDialog(
                                 date: selectedDate,
                                 time: selectedTime!,
                               ),
                             );
-                          } 
-                          // else {
-                          //   ScaffoldMessenger.of(context).showSnackBar(
-                          //     SnackBar(content: Text("Please select a time slot")),
-                          //   );
-                          // }
+                          }
                         },
                         child: Text("Confirm",
-                            style:
-                                AppTypography.button.copyWith(color: Colors.white)),
+                            style: AppTypography.button
+                                .copyWith(color: Colors.white)),
                       ),
                     ),
                   ),

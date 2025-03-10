@@ -95,7 +95,7 @@ class _DoctorCardState extends State<DoctorCard> {
               widget.doctor['date']!,
               style: AppTypography.h3,
             ),
-             Divider(
+            Divider(
               thickness: 1,
               color: const Color(0xFFE5E7EB),
             ),
@@ -137,8 +137,11 @@ class _DoctorCardState extends State<DoctorCard> {
                         children: [
                           Image.asset('assets/images/location.png'),
                           Expanded(
-                            child: Text(widget.doctor['hospital']!,
-                                style: const TextStyle(fontSize: 12),overflow: TextOverflow.ellipsis,),
+                            child: Text(
+                              widget.doctor['hospital']!,
+                              style: const TextStyle(fontSize: 12),
+                              overflow: TextOverflow.ellipsis,
+                            ),
                           ),
                         ],
                       ),
@@ -150,7 +153,7 @@ class _DoctorCardState extends State<DoctorCard> {
             SizedBox(
               height: 5,
             ),
-             Divider(
+            Divider(
               thickness: 1,
               color: const Color(0xFFE5E7EB),
             ),
@@ -176,9 +179,6 @@ class _DoctorCardState extends State<DoctorCard> {
                             .copyWith(color: const Color(0xFF1C2A3A))),
                   ),
                 ),
-                // SizedBox(
-                //   width: 30,
-                // ),
                 SizedBox(
                   height: 37,
                   width: 137,

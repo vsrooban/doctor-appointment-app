@@ -3,7 +3,6 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 
 class MapWithMarkers extends StatelessWidget {
-
   MapWithMarkers({super.key});
 
   final LatLng mapCenter = LatLng(13.085016, 80.181948);
@@ -11,12 +10,26 @@ class MapWithMarkers extends StatelessWidget {
   final double initialZoom = 16.0;
 
   final List<Map<String, dynamic>> markers = [
-    {"location": LatLng(13.087625, 80.181837), "image": 'assets/images/doctor_1.png'},
-    {"location": LatLng(13.087593, 80.180431), "image": 'assets/images/doctor_2.png'},
-    {"location": LatLng(13.082751, 80.181742), "image": 'assets/images/doctor_3.png'},
-    {"location": LatLng(13.086475, 80.182256), "image": 'assets/images/doctor_4.png'},
-    {"location": LatLng(13.084521, 80.179088), "image": 'assets/images/doctor_5.png'},
-    
+    {
+      "location": LatLng(13.087625, 80.181837),
+      "image": 'assets/images/doctor_1.png'
+    },
+    {
+      "location": LatLng(13.087593, 80.180431),
+      "image": 'assets/images/doctor_2.png'
+    },
+    {
+      "location": LatLng(13.082751, 80.181742),
+      "image": 'assets/images/doctor_3.png'
+    },
+    {
+      "location": LatLng(13.086475, 80.182256),
+      "image": 'assets/images/doctor_4.png'
+    },
+    {
+      "location": LatLng(13.084521, 80.179088),
+      "image": 'assets/images/doctor_5.png'
+    },
   ];
 
   @override
@@ -27,12 +40,11 @@ class MapWithMarkers extends StatelessWidget {
           initialCenter: mapCenter,
           initialZoom: initialZoom,
           onTap: (tapPosition, latLng) {
-            print("Tapped location: ${latLng.latitude}, ${latLng.longitude}");
           },
         ),
         children: [
           TileLayer(
-           urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+            urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
             subdomains: ['a', 'b', 'c'],
           ),
           MarkerLayer(

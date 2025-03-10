@@ -172,13 +172,21 @@ class _ClinicCardState extends State<ClinicCard> {
                 Divider(thickness: 1, color: const Color(0xFFE5E7EB)),
                 Row(
                   children: [
-                    Image.asset("assets/images/routing.png",height: 16,width: 16,),
+                    Image.asset(
+                      "assets/images/routing.png",
+                      height: 16,
+                      width: 16,
+                    ),
                     const SizedBox(width: 5),
                     Text("${widget.distance} / 40 min",
                         style: AppTypography.bodyXSBold
                             .copyWith(color: Color(0xFF6B7280))),
                     const Spacer(),
-                    Image.asset("assets/images/icon_hospital_card.png",height: 16,width: 16,),
+                    Image.asset(
+                      "assets/images/icon_hospital_card.png",
+                      height: 16,
+                      width: 16,
+                    ),
                     const SizedBox(width: 5),
                     Text(widget.category,
                         style: AppTypography.bodyXSBold

@@ -70,7 +70,6 @@ class _BookingCalendarState extends State<BookingCalendar> {
                         ))
                     .toList(),
               ),
-              // const SizedBox(height: 2),
               Expanded(
                 child: _buildCalendarGrid(),
               ),
@@ -87,9 +86,8 @@ class _BookingCalendarState extends State<BookingCalendar> {
     int startingWeekday = firstDayOfMonth.weekday % 7;
     int daysInMonth =
         DateTime(currentMonth.year, currentMonth.month + 1, 0).day;
-    int totalDays = 42; // Fixed to 5 rows x 7 columns
+    int totalDays = 42;
 
-    // Previous month filler dates
     int prevMonthDays = DateTime(currentMonth.year, currentMonth.month, 0).day;
     int prevMonthStart = prevMonthDays - startingWeekday + 1;
 
@@ -102,22 +100,19 @@ class _BookingCalendarState extends State<BookingCalendar> {
       bool isSelected;
 
       if (i < startingWeekday) {
-        // Fill missing dates from previous month
         thisDate = DateTime(
             currentMonth.year, currentMonth.month - 1, prevMonthStart + i);
-        isSelected = false; // No selection for previous month
+        isSelected = false;
       } else if (dayCounter <= daysInMonth) {
-        // Current month dates
         thisDate = DateTime(currentMonth.year, currentMonth.month, dayCounter);
         isSelected = selectedDate.year == thisDate.year &&
             selectedDate.month == thisDate.month &&
             selectedDate.day == thisDate.day;
         dayCounter++;
       } else {
-        // Fill remaining with next month dates
         thisDate =
             DateTime(currentMonth.year, currentMonth.month + 1, nextMonthDay++);
-        isSelected = false; // No selection for next month
+        isSelected = false;
       }
 
       dayWidgets.add(
@@ -147,8 +142,7 @@ class _BookingCalendarState extends State<BookingCalendar> {
                 fontSize: 10,
                 color: thisDate.month == currentMonth.month
                     ? (isSelected ? Colors.white : const Color(0xff111827))
-                    : const Color(
-                        0xff9CA3AF), // Grey for non-current month dates
+                    : const Color(0xff9CA3AF),
                 fontWeight: FontWeight.bold,
               ),
             ),

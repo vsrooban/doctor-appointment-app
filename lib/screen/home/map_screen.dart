@@ -46,11 +46,8 @@ class _DoctorMapScreenState extends State<DoctorMapScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(
-
         children: [
           MapWithMarkers(),
-        
-          // Custom Search Bar
           Positioned(
             top: 50,
             left: 16,
@@ -74,8 +71,8 @@ class _DoctorMapScreenState extends State<DoctorMapScreen> {
                           style: BorderStyle.solid, width: 0.1),
                     ),
                   ),
-                  backgroundColor:
-                      WidgetStateProperty.all(const Color.fromARGB(255, 255, 255, 255)),
+                  backgroundColor: WidgetStateProperty.all(
+                      const Color.fromARGB(255, 255, 255, 255)),
                   shadowColor: WidgetStateProperty.all(Colors.transparent),
                   leading: Image.asset(
                     'assets/images/search_icon.png',
@@ -84,8 +81,6 @@ class _DoctorMapScreenState extends State<DoctorMapScreen> {
                   )),
             ),
           ),
-
-          // Horizontally Scrollable ListView
           Positioned(
             bottom: 20,
             left: 16,
