@@ -31,6 +31,7 @@ class _AllDoctorsPageState extends State<AllDoctorsPage> {
           children: [
             SizedBox(height: 20),
             Row(
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 IconButton(
                   onPressed: () {
@@ -73,6 +74,7 @@ class _AllDoctorsPageState extends State<AllDoctorsPage> {
             SizedBox(
               height: 40,
               child: ListView.builder(
+                padding: EdgeInsets.zero,
                 scrollDirection: Axis.horizontal,
                 itemCount: categories.length,
                 itemBuilder: (context, index) {

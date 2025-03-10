@@ -60,6 +60,7 @@ class _UpcomingWidgetState extends State<UpcomingWidget> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      padding: EdgeInsets.zero,
       itemCount: doctors.length,
       itemBuilder: (context, index) => DoctorCard(doctor: doctors[index]),
     );

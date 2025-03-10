@@ -45,6 +45,7 @@ class _AppointmentBookingScreenState extends State<AppointmentBookingScreen> {
                 // Header
                 const SizedBox(height: 20),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     IconButton(
                       onPressed: () => Navigator.pop(context),

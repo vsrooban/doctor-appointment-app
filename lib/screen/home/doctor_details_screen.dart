@@ -27,7 +27,7 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
               height: 30,
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 IconButton(
                     onPressed: () {
@@ -37,10 +37,12 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
                               builder: (context) => AllDoctorsPage()));
                     },
                     icon: Icon(Icons.arrow_back)),
+                    Spacer(),
                 Text(
                   'Doctor Details',
                   style: AppTypography.h1,
                 ),
+                Spacer(),
                 SizedBox(
                   height: 20,
                   width: 20,

@@ -60,6 +60,7 @@ class _FavoriteScreenDoctorCardState extends State<FavoriteScreenDoctorCard> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      padding: EdgeInsets.zero,
       itemCount: widget.doctors.length,
       itemBuilder: (context, index) {
         final doctor = widget.doctors[index];

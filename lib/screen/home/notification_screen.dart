@@ -21,7 +21,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
         children: [
           const SizedBox(height: 20),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               IconButton(
                 icon: const Icon(Icons.arrow_back, color: Colors.black),
@@ -29,7 +29,9 @@ class _NotificationScreenState extends State<NotificationScreen> {
                   _handleBackNavigation(context);
                 },
               ),
+              Spacer(),
               Text('Notification', style: AppTypography.h1),
+              Spacer(),
               Container(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
