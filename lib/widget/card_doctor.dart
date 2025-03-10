@@ -59,6 +59,7 @@ class _DoctorsListCardState extends State<DoctorsListCard> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      padding: EdgeInsets.zero,
       itemCount: widget.doctors.length,
       itemBuilder: (context, index) {
         final doctor = widget.doctors[index];

@@ -43,6 +43,7 @@ class _HospitalListState extends State<HospitalList> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      padding: EdgeInsets.zero,
       itemCount: clinics.length,
       itemBuilder: (context, index) {
         return ClinicCard(

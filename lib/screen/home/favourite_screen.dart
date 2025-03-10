@@ -35,6 +35,7 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
               const Spacer(),
               Center(child: Text('Favorites', style: AppTypography.h1)),
               const Spacer(),
+              SizedBox(),
             ],
           ),
           Row(
